@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片墙</title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#box1{
+				width: 810px;
+				margin: 0 auto;
+			}
+			#box1 h3{
+				color: #884F1D;
+				font-size: 20px;
+				text-align: center;
+				border-bottom: 1px dashed #ADB3B7;
+				padding-bottom: 10px;
+			}
+			#box1 ul{
+				background: red;
+				margin-top: 15px;
+			}
+			#box1 ul li{
+				width: 150px;
+				height: 120px;
+				background: #F0EEEE;
+				float: left;
+				list-style: none;
+				margin: 5px;
+				border: 1px solid #232323;
+				text-align: center;
+			}
+			#box1 ul li img{
+				width: 136px;
+				height: 106px;
+				margin-top: 3px;
+				padding: 3px;
+				border: 1px solid #A1A7AF;
+				background: white;
+			}
+			
+			
+			#box1 ul li img:hover{
+				width: 300px;
+				height: 200px;
+				position: relative;
+				left: -82px;
+				top: -47px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			宽度：
+				width：150*5 = 750
+				margin：5*2 * 5 = 50
+				border：1*2 * 5 = 10
+				
+				
+			left：
+				(300-136)/2 = 82
+			top:
+				(200-106)/2=47
+		-->
+		<div id="box1">
+			<h3>Hoverbox Image Gallery</h3>
+			<ul>
+				<li><img src="img/photo01.jpg" ></li>
+				<li><img src="img/photo02.jpg" ></li>
+				<li><img src="img/photo03.jpg" ></li>
+				<li><img src="img/photo04.jpg" ></li>
+				<li><img src="img/photo05.jpg" ></li>
+				<li><img src="img/photo06.jpg" ></li>
+				<li><img src="img/photo07.jpg" ></li>
+				<li><img src="img/photo08.gif" ></li>
+				<li><img src="img/photo09.jpg" ></li>
+				<li><img src="img/photo10.jpg" ></li>
+				<li><img src="img/photo11.jpg" ></li>
+				<li><img src="img/photo12.jpg" ></li>
+				<li><img src="img/photo13.jpg" ></li>
+				<li><img src="img/photo14.jpg" ></li>
+				<li><img src="img/photo15.jpg" ></li>
+				<li><img src="img/photo16.jpg" ></li>
+				<li><img src="img/photo17.jpg" ></li>
+				<li><img src="img/photo18.jpg" ></li>
+				<li><img src="img/photo19.jpg" ></li>
+				<li><img src="img/photo20.jpg" ></li>
+			</ul>
+		</div>
+	</body>
+</html>

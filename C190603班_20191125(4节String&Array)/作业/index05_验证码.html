@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>验证码</title>
+		<style>
+			#myspan{
+				display: inline-block;
+				width: 80px;
+				background-color: pink;
+				border: 1px solid red;
+				font-size: 20px;
+				text-align: center;
+				font-weight: bold;
+				cursor: pointer;
+				/*
+				 * cursor: default;用于设置指针光标的形状
+				 * default：默认值
+				 * crosshair,十字
+				 * pointer,手型
+				 */
+			}
+		</style>
+	</head>
+	<body onload="test()">
+		<input type="text" id="myinput" />
+		<span id="myspan" onclick="test()"></span>
+		<button onclick="check()">验证</button>
+	</body>
+	<script>
+		/*
+		 * 1.产生验证码
+		 * 	[a-z],97-122
+		 * [A-Z],65-90
+		 * [0-9],48,57
+		 * 
+		 * [48,122]之间：
+		 * 		58-64,91-96
+		 * 2.显示到页面上
+		 * 3.验证：获取输入框的内容，和验证码比较
+		 */
+		//用于生成验证码
+		function getCode(len){//4
+			var code="";
+			for(var i=0;i<len;i++){
+				var num = Math.floor(Math.random()*(122-48+1)+48); 
+				if(num > 57 && num < 65|| num >90&&num<97){
+					i--;
+					continue;
+				}
+				code = code+String.fromCharCode(num);//a
+			}
+			return code;
+		}
+		
+		//获取验证码，并显示到页面上
+		var code;
+		function test(){
+			//1.获取验证码
+			code= getCode(4);
+//			alert(code);
+			//2.获取span元素对象
+			var e1= document.getElementById("myspan");
+			//3.将code显示到span上
+			e1.innerHTML=code;
+		}
+		
+		//验证
+		function check(){
+			//1.获取输入框的内容
+			var input1=document.getElementById("myinput").value;
+			//2.获取验证码
+			//3.比较
+			if(input1.toLowerCase()==code.toLowerCase()){
+				alert("通过");
+			}else{
+				alert("失败");
+				test();
+			}
+			
+		}
+		
+		
+	</script>
+</html>

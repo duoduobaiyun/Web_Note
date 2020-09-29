@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Number转换</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * Number()，可以将其他的类型转为number类型
+			 */
+			//1.null-->number
+			console.log(Number(null)); // 0
+			//2.undefined-->number
+			console.log(Number(undefined)); //NaN
+			//3.boolean-->number
+			console.log(Number(true)); // 1
+			console.log(Number(false)); // 0
+			
+			//4.string-->number
+			//长的像数值的，可以直接转为数值
+			console.log(Number('123')); // 123
+			console.log(Number('-123')); // -123
+			console.log(Number('12.4')); //12.4
+			console.log(Number('-12.4')); //-12.4
+			console.log(Number('     12.4')); //12.4
+			
+			//空字符串，--->0
+			console.log(Number('')); // 0
+			console.log(Number('    ')); //0
+			
+			//包含了非数值的其他的字符，当NaN，not a number
+			console.log(Number('wangergou')); //NaN
+			console.log(Number('wangergou+123')); //NaN
+			console.log(Number('wangergou123')); //NaN
+			
+			
+			/*
+			 * parseInt()，将其他的类型(通常是字符串)尝试转为int类型。如果不能转为：NaN
+			 * 	parse：解析
+			 * 	int：整数
+			 * 
+			 * 直接截取整数部分
+			 */
+			console.log(parseInt('123'));  //123
+			console.log(parseInt('-123')); //-123
+			console.log(parseInt('12.4')); //12
+			console.log(parseInt('12.8')); //12  
+			console.log(parseInt('123abc')); //123
+			console.log(parseInt('123.4abc')); //123
+			console.log(parseInt('abc123'));//NaN
+			
+			
+			/*
+			 * parseFloat(),将其他的类型，解析未float，小数类型
+			 * 	float：浮点，小数
+			 */
+			console.log(parseFloat('123')); // 123
+			console.log(parseFloat('-123')); // -123
+			console.log(parseFloat('123.4')); // 123.4
+			console.log(parseFloat('123.45')); // 123.45
+			console.log(parseFloat('123.45abc')); // 123.45
+			console.log(parseFloat('abc123.45abc')); // NaN
+			console.log(parseFloat(' 123.45abc')); //123.45
+			console.log(parseFloat('123.45abc678')); // 12.45
+			
+		</script>
+	</body>
+</html>

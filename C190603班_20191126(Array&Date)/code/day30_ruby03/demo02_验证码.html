@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>验证码</title>
+		<style type="text/css">
+			#span1{
+				display: inline-block;
+				width: 80px;
+				background-color: pink;
+				border: 1px red solid;
+				text-align: center;
+				cursor: pointer;
+				font-weight: bold;
+				font-size: 20px;
+				/*
+				 * cursor：指针光标的形状
+				 * 	pointer：手型
+				 * 	crosshair：十字
+				 */
+				
+			}
+		</style>
+	</head>
+	<body onload="test()">
+		<input type="text" name="num" id="num" value="" />
+		<span id="span1" onclick="test()">验证码</span>
+		<button onclick="check()">验证</button>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 验证码：
+		 * a-z:97-122
+		 * A-Z:65-90
+		 * 0-9:48-57
+		 * 
+		 * 随机数的取值范围：48-122
+		 * 
+		 * 	58-64,91-96，不要
+		 * 
+		 * [0,74]+48-->[48,122]
+		 * 	
+		 */
+		//生成验证码
+		function getCode(){//4位
+			var code= "";
+			for(var i = 1;i< 5;){
+				var num = parseInt(Math.random()*(122-48+1))+48; // 59
+				if(num > 57 && num < 65 || num > 90 && num < 97){
+					continue;
+				}
+//				console.log(i+","+num+","+String.fromCharCode(num));
+				code += String.fromCharCode(num);
+				i++;
+			}
+			
+			console.log(code)
+			return code;
+			
+		}
+		var code ;//全局变量
+		
+		//产生验证码，显示到页面上
+		function test(){
+			
+			//1.获取验证码
+			code = getCode();
+			
+			//2.获取span对象
+			var span1 = document.getElementById("span1");
+			
+			//3.显示验证码
+			span1.innerHTML = code;
+		}
+		
+//		test();
+		
+		//验证
+		function check(){
+			//输入框的数据，和验证码进行比较
+			var input1 = document.getElementById("num");
+			var inputCode = input1.value;
+			if(inputCode.toLowerCase() == code.toLowerCase()){
+				alert("通过")
+			}else{
+				alert("验证错误")
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+	</script>
+</html>

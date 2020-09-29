@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>作业</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		/*
+2.设计一个函数，打印给定范围内的所有的素数。范围由两个参数传入
+3.设计一个函数，打印水仙花数。
+5.设计一个函数，打印1-100内，包含7，或者是7的倍数的数字。
+	7,14,17,21,27,28,35,37,42....
+	
+6.设计一个函数，求从2000年开始，到2019年10月底的总天数。
+7.古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，
+假如兔子都不死，问每个月的兔子总数为多少？12个月
+8.设计一个函数，能够接收一个整数作为参数：n，打印n行的表格。
+9.循环表白，使用确认框
+		 */
+		//2，求素数
+		function primeNumber(a,b){
+			var count= 0;
+			for(var i = a;i <= b;i++){
+				var flag = true;
+				for(var j = 2;j <= Math.sqrt(i);j++){
+					if(i % j == 0){
+						flag = false;
+						break;
+					}
+				}
+				if(flag){
+					count++;
+					console.log(i);
+				}
+			}
+			console.log(a+"-"+b+",之间的素数的数量是："+count);
+			
+		}
+		primeNumber(49,100);
+		
+		//3.水仙花数:3位
+		function narcissistiNumber(){
+			for(var i=100;i<1000;i++){
+				var a = parseInt(i/ 100);
+				var b = parseInt(i / 10) % 10;
+				var c = i % 10;
+				if(Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3) == i){
+					console.log(i);
+				}
+			}
+		}
+		narcissistiNumber();
+		
+		//5.设计一个函数，打印1-100内，包含7，或者是7的倍数的数字。
+		function numbers(){
+			for(var i = 1;i < 100;i++){
+				var a = parseInt(i / 10);//十
+				var b = i % 10;//个
+				if(i % 7 == 0 || a == 7 || b == 7){
+					console.log(i);
+				}
+			}
+		}
+		numbers()
+		
+		
+		//8设计一个函数，能够接收一个整数作为参数：n，打印n行的表格。
+		function printTable(n){
+			document.write("<table border='1' width='300px' cellspacing='0'>")
+			for(var i= 1;i <= n;i++){
+				var color ;
+				if(i % 3 == 1){
+					color = "bgcolor='red'";
+				}else if(i % 3 == 2 ){
+					color = "bgcolor='green'";
+				}else{
+					color = "bgcolor='blue'";
+				}
+				document.write("<tr "+color+">")
+				document.write("<td>")
+				document.write(i);
+				document.write("</td>")
+				document.write("</tr>")
+				
+			}
+			
+			document.write("</table>")
+		}
+		printTable(10)
+		/*
+		 * 古典问题：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，
+假如兔子都不死，问每个月的兔子总数为多少？12个月
+	fionacci：斐波那契数列
+		第一项是1，第二项是1，从第三项开始是前两项之和
+		 */
+		function fibonacci(n){
+			var a = 1;//第1项
+			var b = 1;//第2项
+			var c = 0;//当前项
+			for(var i = 3;i<=n;i++){
+				c = a + b;
+				a = b;
+				b = c;
+			}
+			console.log(c);
+			
+		}
+		function fibonacci2(){
+			var f1 = 1;//奇数月的兔子数,1月
+			var f2 = 1;//偶数月的兔子数，2月
+	
+			
+			for(var i = 3;i <= 12;i+=2){
+				f1 += f2;
+				f2 += f1;
+			}
+			console.log(f2);
+		}
+		fibonacci(12);
+		fibonacci2()
+		
+		//循环表白，使用确认框
+		function test(){
+			while(true){
+				var flag = confirm("你是猪吗？");//boolean:true,false
+				if(flag){
+					alert("哈哈哈哈，终于承认了。。")
+					break;
+				}
+			}
+		}
+		test();
+	</script>
+</html>

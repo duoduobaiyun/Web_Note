@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>json数据</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * json：用于存储和交换数据的格式。
+			 * 
+			 * 		就是存储数据的方式。
+			 * 
+			 * 语法：以键值对的形式进行存储。
+			 * 		name，value
+			 * 		也叫名值对
+			 * 
+			 * name-->value
+			 * name-->value
+			 * 
+			 * 电话本：
+			 * name		value
+			 * 王二狗-->138129484884,
+			 * 李小花-->138792948484
+			 * 。。。
+			 * 
+			 * 
+			 * json对象：理解object
+			 */
+			
+			//单个一条数据---->json的对象：由花括号{}括起来的一组名值对
+			//多条数据---->多个json的对象---->json的数组
+			
+			
+			//1.定义一个json对象,
+			var jsonObj1 = {"msg":"登录成功","code":100};
+			console.log(typeof jsonObj1);//object
+			
+			var jsonObj2 = {
+				"name":"王二狗",
+				"age":19,
+				"address":"南昌市湾里区"
+				};
+			console.log(typeof jsonObj2);//object
+			
+			
+			//获取到json对象后，那么就可以根据name获取value值
+			/*
+			 * 对象通过.,来访问name，就可以获取value值了
+			 * 写法一：
+			 * 		obj.name-->value
+			 * 
+			 * 写法二：
+			 * 		obj["name"]--->value
+			 */
+			console.log(jsonObj1.msg);//根据name获取值
+			console.log(jsonObj1.code);//
+			
+			
+			console.log(jsonObj2.name);
+			console.log(jsonObj2.age);
+			console.log(jsonObj2.address);
+			
+			console.log(jsonObj1["msg"]);
+			console.log(jsonObj1["code"]);
+			
+			//遍历获取所有的value值
+			for(var x in jsonObj2){
+				console.log(jsonObj2[x]);
+			}
+			
+			
+			
+			/*
+			 * for in循环
+			 * A：数组用
+			 * B：对象用
+			 */
+			
+			var a = ['a','b','c','d'];
+			for(var x in a){
+				console.log(a[x]);
+			}
+			
+			/*
+			 * 创建2个json对象，
+			 * 一个存储：狗的信息
+			 * 	毛色，年龄，品种
+			 * 
+			 * 第二个对象：车
+			 * 	颜色，品牌，价格
+			 * 
+			 * 通过name获取value，打印输出
+			 */
+			
+			
+			
+			
+			
+			
+			/*
+			 * 生成json数据
+			 * 解析json数据
+			 */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>string类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+		 * String(),用于将其他的类型转为字符串类型
+		 * 
+		 * null-->'null'
+		 */
+		
+		//1.null--->string
+			var a1 = null;
+			console.log(typeof a1);//ojbect
+			
+			var s1 = String(a1);
+			console.log(s1); //数值：null
+			console.log(typeof s1); //string
+			
+			//2.undefined-->string
+			console.log(String(undefined));
+			
+			//3.boolean
+			var b1 = true;
+			var b2 = false;
+			
+			var s2 = String(b1);
+			var s3 = String(b2);
+			console.log(b1);
+			console.log(b2);
+			console.log(s2);
+			console.log(s3);
+			
+			console.log(typeof b1);
+			console.log(typeof b2);
+			console.log(typeof s2);
+			console.log(typeof s3);
+			
+			// number -->string
+			// 123-->'123'
+			
+		</script>
+		
+	</body>
+</html>

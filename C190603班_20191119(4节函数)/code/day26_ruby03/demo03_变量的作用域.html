@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>变量的作用域</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 1.作用域：可以作用的范围。(在哪个区间能够使用)
+		 * 	全局的变量:哪里都可以使用
+		 * 	局部的变量:函数内部定义的变量，只能在函数内部使用，局部变量
+		 * 		如果在函数内部定义变量时，省略了var，那么这种变量也是全局变量。
+		 */
+		var i = 100;//全局的变量
+		console.log(i);
+		
+		function foo(){
+			console.log(i);
+		}
+		foo();
+		
+		var j
+		console.log(j); //undefined
+		
+		function foo2(){
+			var m = 200;//函数内部定义，局部变量
+			console.log(m);
+		}
+		foo2();
+//		console.log(m);//不能访问
+
+
+		//注意点：
+		var a = 10;//全局变量
+		function test1(){
+			var b = 20;//局部变量，只能在该函数内部使用
+			c = 30; //省略了var定义变量-->全局变量
+			a++;//函数里，可以访问全局变量，
+		}
+		console.log(a);//10
+//		console.log(b);//undefined
+//		console.log(c);//undefined
+		
+		test1();
+		console.log(a); // 11
+//		console.log(b); 
+		console.log(c); //30
+		
+		
+		
+		/*
+		 * 2.扩展内容:变量也支持预解析，变量的提升。
+		 * 
+		 * 正常使用变量：
+		 * 		先定义，赋值，然后才访问使用
+		 * 	变量的提升：可以先赋值使用，再定义。
+		 * 		默认将变量的定义提升到使用之前。
+		 */
+		//正常
+		var m ;//定义变量
+		m = 5;//赋值
+		console.log(m);//访问
+		
+		
+		
+		var n;//定义
+		//变量提升
+		n = 6; //赋值
+		console.log(n);//访问
+		
+		
+		//注意：只有声明的变量支持提升，初始化不支持提升。
+		//正常的
+		var x = 15;//初始化
+		console.log(x);
+		
+		console.log(y);//undefined
+		var y = 16;// var y ,y =16,只提升定义，不提升赋值
+		
+		
+		
+		
+		/*
+		 * 3.变量的作用域链：
+		 */
+		var num = 123;//全局
+		function test2(){
+			var num = 456;//局部
+			for(var i =1;i<10;i++){
+				var num = 789;
+				console.log(num);//456
+			}
+			
+		}
+		test2();
+		
+		/*
+		 * 坑：
+		 */
+		var abc = 1314;//全局变量
+		function test3(){
+			console.log(abc);// 1314 ,undefined
+			var abc = 2314;
+			
+		}
+		test3();
+		
+	</script>
+	<script type="text/javascript">
+		console.log(i);//也是可以使用
+	</script>
+</html>

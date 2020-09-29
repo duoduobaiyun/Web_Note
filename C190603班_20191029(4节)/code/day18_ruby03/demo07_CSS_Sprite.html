@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS雪碧</title>
+		<style type="text/css">
+			li{
+				width: 105px;
+				height: 120px;
+				float: left;
+				list-style: none;
+				/*border: 1px solid red;*/
+				background: url(img/class.jpg) no-repeat;
+			}
+			.bg1{
+				background-position: 0px 0px;
+			}
+			.bg2{
+				background-position: -110px 0px;
+			}
+			.bg3{
+				background-position: 0px -120px;
+			}
+			.bg4{
+				background-position:-110px -120px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			CSS雪碧：
+			也叫CSS Sprite，CSS精灵
+			一种图像的合并技术。
+			
+			CSS雪碧技术是把多张背景图像合成到一张背景图像上，通过背景定位的负值在容器中显示部分图像。
+
+		-->
+		<ul>
+			<li class="bg1"></li>
+			<li class="bg2"></li>
+			<li class="bg3"></li>
+			<li class="bg4"></li>
+		</ul>
+	</body>
+</html>

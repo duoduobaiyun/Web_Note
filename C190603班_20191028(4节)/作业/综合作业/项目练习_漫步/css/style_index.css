@@ -1,0 +1,248 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	text-decoration: none;
+	font-family: "微软雅黑", "Times New Roman";
+}
+
+ul {
+	list-style: none;
+}
+
+div#header,
+div#imgCenter,
+div#imgMenu,
+div#imgLive,
+div#footer {
+	margin: 0 auto;
+	/*border: solid 1px red;*/
+}
+
+
+/*header 部分*/
+
+div#header {
+	width: 960px;
+	height: 402px;
+	background: url(../img/bg.png) no-repeat;
+}
+
+div#header div {
+	width: 100%;
+	height: 54px;
+	background-color: rgba(255, 255, 255, 0.8);
+	/*border:solid 1px red;*/
+}
+
+div#header div h1 {
+	float: left;
+	width: 64px;
+	height: 54px;
+	line-height: 54px;
+	background: url(../img/logo.png) no-repeat 50%;
+	margin-left: 145px;
+	margin-right: 10px;
+	/*border:solid 1px red;*/
+}
+
+div#header ul#nav {
+	float: left;
+	height: 54px;
+	width: 450px;
+	/*border:solid 1px red;*/
+}
+
+div#header ul#nav li {
+	float: left;
+	height: 54px;
+	line-height: 54px;
+	margin-left: 18px;
+}
+
+div#header ul#login {
+	height: 54px;
+	float: left;
+	/*border:solid 1px red;*/
+}
+
+div#header ul#login li {
+	float: left;
+	height: 54px;
+	line-height: 54px;
+}
+
+div#header ul#login li.sina {
+	width: 30px;
+	background: url(../img/sina.png) no-repeat center;
+	background-size: 80%;
+}
+
+div#header ul#login li.qq {
+	width: 30px;
+	background: url(../img/qq.png) no-repeat center;
+	background-size: 80%;
+}
+
+div#header ul#login li a {
+	color: #6bd1f2;
+	margin:0 5px;
+}
+
+
+/*中间图片部分*/
+
+div#imgCenter {
+	width: 960px;
+	height: 890px;
+}
+
+div#imgCenter p {
+	font-size: 24px;
+	text-align: center;
+	margin: 30px 0;
+}
+
+div#imgCenter div {
+	width: 670px;
+	height: 720px;
+	margin: 0 auto;
+}
+
+
+/*大图菜单*/
+div#imgMenu {
+	width: 960px;
+	height: 1200px;
+}
+
+div#imgMenu p {
+	text-align: center;
+	line-height: 50px;
+	margin-bottom:20px;
+	color: white;
+}
+
+div#imgMenu p.font24 {
+	padding-top:50px;
+	font-size:24px;
+}
+div#imgMenu p.font12 {
+	font-size:12px;
+}
+div#imgMenu p.font14 {
+	font-size:14px;
+}
+
+div#imgMenu div#menu0 {
+	background-image: url(../img/img3_0.png);
+	height: 400px;	
+}
+
+div#imgMenu div#menu1 {
+	background-image: url(../img/img4_0.png);
+	height: 400px;
+}
+
+div#imgMenu div#menu2 {
+	background-image: url(../img/img5_0.png);
+	height: 400px;
+}
+
+div#imgMenu div div {
+	height: 400px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+div#imgMenu div:hover {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/*生活照部分*/
+div#imgLive {
+	width: 680px;
+	height: 700px;
+}
+
+div#imgLive p {
+	font-size: 24px;
+	text-align: center;
+	margin: 30px 0;
+}
+
+div#imgLive div.imgDiv {
+	position:relative;
+	float:left;
+	margin-left: 10px;
+	text-align: center;
+	opacity: 0.7;
+}
+
+div#imgLive div.imgDiv:hover {
+	opacity: 1.0;
+}
+
+div#imgLive div.imgDiv img {
+	/*width:214px;
+	height:214px;*/
+	border-radius: 20px;
+}
+
+div#imgLive div.imgDiv div.headImg img {
+	position:absolute;
+	left:10px;
+	top:180px;
+	width:60px;
+	height:60px;
+	border-radius: 30px;
+}
+
+
+
+
+/*尾部*/
+div#footer {
+	width: 960px;
+	height: 201px;
+	background-color: #333333;
+	margin-bottom:50px;
+	text-align: center;
+}
+
+div#footer div#footer-main {
+	width: 680px;
+	height: 201px;
+	margin: 0 auto;
+	/*border:solid 1px red;*/
+}
+
+div#footer ul{
+	float:left;
+	font-weight: 200;
+	margin-top:20px;	
+	margin-right:65px;	
+}
+
+div#footer ul li a {
+	font-size: 12px;
+	color:#999;
+}
+
+div#footer ul li a.first {
+	color:#fff;
+}
+
+div#footer ul li img {
+	width:15px;
+	margin:2px;
+}
+
+div#footer ul#ul-six  {
+	margin:0px;	
+}
+
+div#footer ul#ul-six img {
+	width: 60px;
+	margin:20px;
+}

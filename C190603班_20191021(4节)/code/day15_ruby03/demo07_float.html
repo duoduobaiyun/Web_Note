@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动</title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 400px;
+				background: pink;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+			}
+			#box1{
+				background: red;
+				float: left;
+			}
+			#box2{
+				background: green;
+				width: 150px;
+				height: 150px;
+			}
+			#box3{
+				background: yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--
+			2.内容默认提升半层
+			浮动的元素，会遮挡没有浮动的元素。
+				浮动的元素:飘着的
+				没有浮动的元素：文档流。
+			
+			但是不会遮挡没有浮动的元素的文本内容。
+
+			
+		-->
+		<div id="box">
+			<div id="box1">框1</div>
+			<div id="box2">我是第二个div</div>
+			<div id="box3">框3</div>
+		</div>
+	</body>
+</html>

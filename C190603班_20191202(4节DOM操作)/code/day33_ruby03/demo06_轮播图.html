@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>轮播图</title>
+		<style type="text/css">
+			#box{
+				width: 600px;
+				height: 220px;
+				margin: 0 auto;
+				position: relative;
+			}
+			#box img{
+				width: 600px;
+				height: 220px;
+			}
+			#box ul{
+				list-style: none;
+				height: 10px;
+				position: absolute;
+				right: 150px;
+				bottom: 10px;
+			}
+			
+			#box ul li{
+				float: left;
+				width: 10px;
+				height: 10px;
+				background-color: cornflowerblue;
+				margin-left: 10px;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/101.jpg" id="pic"/>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			/*
+			 * 轮播图-->换图片
+			 * step1：所有图片的路径-->数组
+			 * 		img/101.jpg
+			 * 		img/102.jpg
+			 * 		...
+			 * 
+			 * step2：获取img对象
+			 * 		img标签对象，
+			 * 
+			 * step3：操作img的src属性值
+			 * 	设计一个函数：更换图片
+			 * 		A：index，下标
+			 * 		B：img.src = "img/"+ 数组[index]
+			 * 			通过控制index的值，设置src的图片的路径，
+			 * 			index=0,1,2,3,4
+			 * 		C：index的边界值：如果index的值为5，
+			 * 			重新设置为：index = 0；
+			 * 
+			 * step4：设置小圆点：
+			 * 		图片1-->list
+			 * 		图片2-->list
+			 * 		。。
+			 * 		图片5-->list
+			 * 
+			 * 		图片1-->index:0
+			 * 		A：5张图，对应了5个list，每个图片和小圆点的list，是对应的。
+			 * 		B：可是使用图片的index，来直接操作list
+			 * 			index：图/list
+			 * 
+			 * 		C：先把所有的小圆点都设置为蓝色，当前的小圆点设置白色
+			 * 
+			 * 
+			 * 
+			 * this：这个，指代对象。
+			 * 	window，document，btn，select。。。。
+			 * 
+			 * 动态添加属性：
+			 * 	元素.属性= 新的属性值
+			 * 
+			 * 	元素.属性
+			 */
+			
+			var images = ['101.jpg','102.jpg','103.jpg','104.jpg','105.jpg'];
+			var img = document.getElementById("pic");
+			var lis = document.getElementsByTagName("li");//5个list
+			lis[0].style.backgroundColor = 'white';
+			
+			
+			var index = 0;//下标
+			function change(){
+				index++;//1,2,3,4,5
+				if(index == images.length){
+					index = 0;
+				}
+				img.src = "img/"+images[index];//"img/101.jpg"-->"img/102.jpg"-->"img/103.jpg"---->"img/105.jpg"-->"img/101.jpg"
+				changeColor();
+			}
+			
+			//改变小圆点的背景颜色
+			function changeColor(){
+				//1.所有的list设置为蓝色
+				for(var i=0;i<lis.length;i++){
+					lis[i].style.backgroundColor = 'cornflowerblue';
+				}
+				//2.当前的图片对应的list设置为白色
+				lis[index].style.backgroundColor = 'white';
+				
+			}
+			
+			var t = setInterval(change,2000);
+			
+			
+			//鼠标移入事件：
+			document.getElementById("box").onmouseover = function(){
+				clearInterval(t)
+			}
+			//鼠标移出：
+			document.getElementById("box").onmouseout  = function(){
+				t = setInterval(change,2000);
+			}
+			
+			
+			
+			//每个list的鼠标移入，点击
+			
+//			lis[0].onmouseover = function(){
+//				index = 0;
+//				img.src = "img/"+images[index];
+//				changeColor();
+//			}
+//			
+//			lis[1].onmousemove = function(){
+//				index = 1;
+//				img.src = "img/"+images[index];
+//				changeColor();
+//			}
+
+			
+			for(var i=0;i<lis.length;i++){//i=5
+//				alert(i);//0,1,2,3,4
+				//动态添加tag标记，用于记住i的值
+				/*
+				<li tag="0"></li>
+				<li tag="1"></li>
+				<li tag="2"></li>
+				<li tag="3"></li>
+				<li tag="4"></li>
+				 */
+				lis[i].tag = i;//<list tag = "0">,<li tag="1"></li>,<li tag="2"></li>
+				
+				lis[i].onmouseover = function(){//定义函数，函数没有被执行
+//					console.log(i);
+//					console.log(this.tag) // 0,1,2,3,4
+					index = this.tag;
+					img.src = "img/"+images[index];
+					changeColor();
+				}
+				
+//				lis[i].onmouseover = function(){
+//					index = i;
+//					img.src = "img/"+images[index];
+//					changeColor();
+//				}
+			}
+			
+		</script>
+	</body>
+</html>

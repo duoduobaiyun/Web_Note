@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内部样式</title>
+		<style>
+			/*此处写css的样式*/
+			/*id选择器：#+id值*/
+			#p2{
+				color: red;
+			}
+			#p3{color: green;}
+			#p4{color: green;}
+			
+			/*类选择器：.+class值*/
+			.cla1{
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+	<!--
+		内部样式：写在head的style里
+		语法：先写选择器，后写样式
+		选择器{样式;}
+		
+		id选择器：
+			先给标签添加id属性，使用#加id值，唯一定位这个标签
+		
+		class选择器：类
+			面向对象，面向过程
+				C语言
+				Java语言，
+				
+			类选择器
+	-->
+		<p>第一个段落</p>
+		<p id="p2">第二个段落</p>
+		<p >第三个段落</p>
+		
+		<hr />
+		<p>漩涡鸣人</p>
+		<p class="cla1">宇智波佐助</p>
+		<p class="cla1">宇智波鼬</p>
+		<!--
+			课堂练习：
+			1.使用内部样式，
+				先页面上创建3个div，第2个div通过id选择器，添加宽度，高度，边框线
+			2.使用内部样式
+				页面上3个p，使用类选择器，给第1个、第3个p，添加文字颜色和文字大小样式
+		-->
+	</body>
+</html>

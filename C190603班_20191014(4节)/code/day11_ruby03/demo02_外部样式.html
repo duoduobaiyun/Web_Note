@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>外部样式</title>
+		<link href="css/mycss.css" rel="stylesheet" type="text/css" />
+		
+		<!--<style>
+			@import url("css/mycss.css");
+			
+			div{
+				width: 300px;
+				height: 200px;
+				background-color: pink;
+			}
+		</style>-->
+	</head>
+	<body>
+		<!--
+			CSS：Cascading Style Sheet，层叠样式表
+			
+			外部样式：
+			step1：先创建一个html的文件
+			step2：再创建一个css文件
+			step3：链接文件：<link>
+				link写再head标签里，使用link标签表示当前的html文档，要引入的css文件
+				
+				3个必要的属性：
+					href：要引入的css的路径
+					rel：定义当前的文档和被引入的文档的关系，此处固定写法："stylesheet"，表示要引入的是样式表iao文件
+					type：引入的文件的类型：MIME类型，大类型/小类型
+						text/css
+						text/js
+						text/html
+						
+						
+						image/png
+						image/jpg
+						image/gif
+						
+						
+			外部方式：
+				1.连接式：通过link标签来引入要使用css文件
+				2.导入式：通过import语句
+		-->
+		<h3>外部样式</h3>
+		<p id="p1">个段落的样式，通过引入 的外部css文件来设置</p>
+		<div></div>
+	</body>
+</html>

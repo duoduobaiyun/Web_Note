@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建表格</title>
+		<style>
+			td{
+				width: 50px;
+				height: 30px;
+				border: 1px solid black;
+				text-align: center;
+				line-height: 30px;
+			}
+			/*奇数行tr设置背景颜色*/
+			.odd{
+				background-color: #D3D3D3;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="test()">创建1</button>
+		<table id="tab1"></table>
+	</body>
+	<script>
+		/*
+		 * 动态创建表格：
+		 * 1.获取table对象
+		 * 2.创建tr
+		 * 3.创建td：3个
+		 * 4.创建文本对象
+		 * 
+		 * 	document.querySelctor()
+		 * 	document.createElement()
+		 * 	document.createTextNode()
+		 * 	appendChild()
+		 * 	removeChild()
+		 */
+		var count = 1;
+		function test(){
+			/*
+			 * querySelector("css选择器名称")，获取第一个
+			 * querySelectorAll(),获取到一个数组
+			 */
+			var table = document.querySelector("#tab1");//通过css选择器获取：id，类，标签
+			
+			var tr1=document.createElement("tr");
+			
+			if(count%2==1){
+				tr1.setAttribute("class","odd");
+			}
+			
+			for(var i=0;i<3;i++){
+				var td = document.createElement("td");
+				
+				if(i==2){
+					//创建td里的a标签
+					var a = document.createElement("a");
+					a.innerHTML="删除";
+					a.href="#";
+					td.appendChild(a);
+					//点击
+					a.onclick=function(){
+						//当a被点击的时候，删除该行
+						/*
+						 * table,
+						 * tr：td：a
+						 */
+						table.removeChild(this.parentNode.parentNode);
+					}
+				}else{
+					//i:0,i:1,
+					td.innerHTML=count+"-"+i;
+				}
+				
+				tr1.appendChild(td);
+			}
+			
+			table.appendChild(tr1);
+			count++;
+		}
+	</script>
+</html>

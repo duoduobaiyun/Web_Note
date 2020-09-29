@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>包含选择器</title>
+		<style>
+		/*包含选择器：父标签 子标签*/
+			#game li{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			区分开：
+			div,p{}，分组选择器
+			div p{}，包含选择器
+		-->
+		<ol>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ol>
+		
+		<ul id="game">
+			<li>连连看</li>
+			<li>蜘蛛纸牌</li>
+			<li>扫雷</li>
+			<li>祖玛</li>
+		</ul>
+		<ul>
+			<li>喜羊羊</li>
+			<li>复仇者联盟</li>
+			<li>电锯狂人</li>
+			<li>速度与激情</li>
+		</ul>
+	</body>
+</html>

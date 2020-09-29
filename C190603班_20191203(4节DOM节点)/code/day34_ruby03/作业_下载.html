@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下载</title>
+		<style type="text/css">
+			#div1{
+				height: 20px;
+				width: 0px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="download()">下载</button>
+		<div id="div1"></div>
+		
+		<script type="text/javascript">
+			/*
+			 * 点击按钮，进行下载：
+			 * 	更改div的宽度
+			 */
+			var t1 = 0 ;
+			function download(){
+				t1 = setInterval(down,50);//t1:1,2,3
+			}
+			var count = 0;
+			function down(){
+				if(count >= 100){
+					clearInterval(t1);//
+				}
+				//step1：找到div
+				var div1 = document.getElementById("div1");
+				//step2：获取div的宽度,设置宽度
+				var width = window.getComputedStyle(div1).width;
+//				console.log(width);//"10px"
+//				console.log(typeof width)
+				width = parseInt(width);
+				if(width >= 500){
+					return;
+				}
+				
+				
+//				console.log(width);//10
+//				console.log(typeof width);
+				width = width + 5;
+				console.log(width);
+				div1.style.width = width+"px";
+				
+				//step3：累加count，显示到div上
+				count++;
+				div1.innerHTML = count+"%";
+				div1.style.textAlign = 'center';
+				console.log("t1:"+t1+",count:"+count+",width:"+width);
+			}
+		</script>
+	</body>
+</html>

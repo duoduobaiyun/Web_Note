@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 作业1：输出1-100中7的倍数。
+		 */
+		for(var i = 1;i <= 100;i++){
+			if(i % 7 == 0){
+				console.log(i);
+			}	
+		}
+		
+		/*
+		 * 作业2：统计1月-5月的总天数。
+		 */
+		var day = 0;//表示每个月的天数
+		var sum = 0;//表示总天数
+		var year = 2019;
+		/*
+		 * for(从1月到5月){
+		 * 		判断每个月的天数：day
+		 * 		sum += day；
+		 * }
+		 */
+		for(var month = 1;month <= 5;month++){
+			switch(month){
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					day = 31;
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					day = 30;
+					break;
+				case 2:
+					if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+						day = 29;
+					}else{
+						day = 28;
+					}
+					break;
+			}
+			sum += day;
+		}
+		console.log(sum);//151
+		
+		
+		/*
+		 * 作业3：统计1月-12月，奇数月的总天数。
+				1月3月5月7月。。。11月
+				for(从1月到12月){
+					每个月的天数
+					sum += day
+				}
+		 */
+		day = 0;
+		sum = 0;
+		year = 2019;
+		for(var i = 1;i <= 12;i+=2){ // 1,3,5,7,9,11
+			switch(i){
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					day = 31;
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					day = 30;
+					break;
+				case 2:
+					if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+						day = 29;
+					}else{
+						day = 28;
+					}
+					break;
+			}
+//			if(i % 2 !=1){//判断奇数月：i：1，3，5，7，9，11
+//				sum += day;
+//			}
+			sum += day;
+			
+		}
+		console.log(sum);//184
+		console.log('---------')
+		
+		/*
+		 * 作业4：操场上有一群人，人数在100到200之间。三人一组多1人，四人一组多2人，
+					五人一组多3人。问操场上共有多少人。
+		 */
+//		var i = 100;// 101,102,103...200
+		for(var i = 100;i<=200;i++){
+			if(i % 3 == 1 &&  i % 4 == 2 && i % 5 == 3){
+				console.log(i); // 118,178
+				break;//找到一个，结束循环
+			}
+		}
+		
+		/*
+		 * 作业6：两个自然数x，y相除，商3余10，被除数，除数，商，余数的和是163，求被除数，除数
+				
+			
+		 */
+		for(var x = 0;x <= 150;x++){
+			var y = 150-x;
+			if(parseInt(x / y) == 3 && x % y == 10){
+				console.log(x) // 115
+				console.log(y) // 35
+			}
+		}
+		/*
+		 * 作业7：一个四位数，恰好等于去掉它的首位数字之后所剩的三位数的3倍，这个四位数是多少。
+				1000
+				9999
+					3285-->285
+				
+		 */
+		for(var i = 1000;i<10000;i++){
+			if(i % 1000 * 3 == i){
+				console.log(i);	 //1500
+			}
+		}
+		/*
+		 * 作业8:打印出1-500所有的自然数中不包含4的自然数，共有多少个
+		 * 1,2,3,5,6,7,8,9,10,11,12,13,15,16,17,....500
+		 * 		284:  28 
+		 * 			2
+		 * 			8
+		 * 			4
+		 */
+		var count = 0;//计数，统计
+		for(var i = 1;i<=500;i++){
+			var bai = parseInt(i / 100);
+			var ge = i % 10;
+			var shi = parseInt(i / 10) % 10;
+//			if(bai == 4 || shi == 4 || ge == 4){
+//				continue;//跳过这次循环
+//			}
+//			console.log(i);
+			if(bai != 4 && shi !=4 && ge !=4){
+				console.log(i);
+				count++;//计数器
+			}
+		}
+		console.log("-->"+count)
+	</script>
+</html>

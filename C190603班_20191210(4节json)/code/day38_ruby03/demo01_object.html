@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 对象类型：Object
+			 * Person，人
+			 * 
+			 * step1：创建对象
+			 * 		var obj = new Object();
+			 * step2：给该对象，添加属性和方法
+			 * 		obj.属性= 赋值；//添加属性
+			 * 		obj.方法名 = function(){}；//添加方法
+			 * 
+			 * step3：对象可以访问属性和方法
+			 * 
+			 * 
+			 */
+			var p = new Object();//创建对象
+			p.name = '王二狗';//给对象p，添加name属性
+			console.log(p.name);//访问对象的name属性，获取该属性值
+			p.age = 28;//给p对象，添加age属性，并赋值
+			console.log(p.age);
+			//给p对象，添加方法
+			p.eat = function(){
+				console.log('要开始吃东西啦。。。')
+				console.log('吃的开心。。');
+				console.log('吃完了。。擦擦嘴。。');
+			}
+			
+			p.eat();
+			
+			
+			//内置对象：step1：创建对象，step2：直接操作属性和方法
+			var s1 = new String('haha');
+			console.log(s1.length);//对象访问属性
+			s1.charAt(0);//对象访问方法
+			
+			
+			/*
+			 * 定义一个对象表示狗：
+			 * 添加属性-->外部特征：变量
+			 * 添加方法-->动作行为：函数
+			 * 
+			 * 	毛色，年龄，种类，抓老鼠(),看家()
+			 * 
+			 * 对象通过点，来打印属性值，调用方法执行
+			 */
+			
+			var dog = new Object();
+			dog.color = '黄色';//赋值-->存储
+			dog.age = 2;
+			dog.kind = '金毛';
+			
+			dog.catchMouse = function(){
+				console.log('二黄抓老鼠很开心。。。')
+			}
+			
+			dog.lookHouse = function(){
+				console.log('二黄看家。。')
+			}
+			
+			
+			console.log(dog.color);
+			console.log(dog.age);
+			console.log(dog.kind);
+			
+			dog.catchMouse();
+			dog.lookHouse();
+			
+			
+			var color = '黄色';
+			var age = 2;
+			var kind = '金毛';
+			
+			//对象：便于存储一组属性值
+			
+			
+			var num = 100;//赋值--->存储--->取值
+			console.log(num * 2);//获取数据，进行操作
+			//变量，仅能存储一个单个数据
+			
+			//数组，存储一组数据，习惯上存储一组相同类型
+			
+			//对象：使用属性存储一组数据。存储的这组数据，类型不一定一致。string，number，boolean。。这组数据是和当前这个对象相关的。
+			//人的信息：name，age，address。。。。
+			
+		</script>
+	</body>
+</html>

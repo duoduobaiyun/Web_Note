@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>margin的传值</title>
+		<style type="text/css">
+			#box1{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				/*border: 1px solid gold;*/
+			}
+			#box2{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			margin的传值：
+				1.标签嵌套
+				2.只针对于margin-top
+				
+			如果在子标签种设置了margin-top，但是实际上会将这个值，传递给了父标签
+			
+			
+			注意点：
+				如果父标签中有边框线，或者是内容(文本，图片。。。)，那么不会发生margin的传值
+		-->
+		<div id="box1">
+			文字
+			<div id="box2">王二狗</div>
+		</div>
+	</body>
+</html>

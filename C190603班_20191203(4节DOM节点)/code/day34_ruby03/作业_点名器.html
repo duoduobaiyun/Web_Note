@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>点名器</title>
+		<style type="text/css">
+			div{
+				margin: 0 auto;
+				width: 150px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+			}
+			#name{
+				
+				border: 1px dotted red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="name">
+			
+		</div>
+		<div>
+			<button onclick="start()">开始</button>
+			<button onclick="stop()">结束</button>
+		</div>
+		
+		<script type="text/javascript">
+			var names = ['赵丽颖','张天爱','迪丽热巴','成毅','杨紫',
+			'郑爽','李易峰','关晓彤','杨洋','何明翰',
+			'胡歌','徐梵溪','李沁','吴磊','宋轶',
+			'唐嫣','张馨予','靳东','毛晓彤','陈翔',
+			'王子文','陈晓','刘昊然','马思纯','徐璐',
+			'张艺兴','熊梓淇','刘诗诗','林更新','雷佳音'];
+			var index = 0;
+			
+			var t1;
+			function start(){
+				t1 = setInterval(showName,100);
+			}
+			
+			function showName(){
+				var divName = document.getElementById("name");
+				if(index == names.length){
+					index = 0;
+				}
+				divName.innerHTML = names[index];
+				index++;
+			}
+			
+			function stop(){
+				
+				clearInterval(t1);
+				console.log(index);
+			}
+		</script>
+	</body>
+</html>

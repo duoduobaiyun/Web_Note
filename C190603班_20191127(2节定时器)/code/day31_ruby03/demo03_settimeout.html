@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="start()">开始</button>
+		<br />
+		<button onclick="test()">开始计数</button>
+		<div id="div1"></div>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * setTimeOut(function,时间)，延迟执行
+		 * setIntervale(function,时间)，时间间隔
+		 */
+		
+//		setTimeout(foo,1000);//1s后，执行foo
+//		setInterval(foo,1000);//每隔1s，执行foo
+		
+		function start(){
+			//延迟2s后，执行foo
+			setTimeout(foo,2000);
+		}
+		
+		function foo(){
+			console.log("helloworld");
+		}
+		
+		var t1 ;
+		function test(){
+			//立即执行getCount()函数
+			t1 = setTimeout(getCount,0);
+		}
+		
+		var num = 0;
+		
+		function getCount(){
+			var div1 = document.getElementById("div1");
+			num ++;
+			div1.innerHTML = num;//1,2,3...
+			
+			t1 = setTimeout(getCount,1000);
+			if(num == 10){
+				clearTimeout(t1);
+			}
+		}
+	</script>
+</html>

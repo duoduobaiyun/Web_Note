@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数的参数</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 函数的参数:
+		 * 	形参:
+		 * 	实参:
+		 * 
+		 * js中内置的参数对象：arguments，用于表示参数的集合。
+		 * 
+		 * 	集合：一组数据。
+		 * 		可以通过[编号]-->实参
+		 * 		arguments[0],第一个参数
+		 * 
+		 * 	
+		 */
+		//设计一个函数，求一组数据的和
+		function foo(){
+			console.log(arguments.length); //5
+			console.log(arguments[0]); //第一个实参
+			console.log(arguments[1]);//第二个实参
+			console.log(arguments[2]);//第3个实参
+			console.log(arguments[3]);//第4个实参
+			console.log(arguments[4]);//第5个实参
+			var sum = 0;
+//			sum += arguments[0];
+//			sum += arguments[1];
+//			sum += arguments[2];
+//			sum += arguments[3];
+//			sum += arguments[4];
+			for(var i = 0;i< arguments.length;i++){
+				sum += arguments[i];
+			}
+			console.log(sum);
+			
+		}
+		foo(1,2,3,4,5);
+	</script>
+</html>

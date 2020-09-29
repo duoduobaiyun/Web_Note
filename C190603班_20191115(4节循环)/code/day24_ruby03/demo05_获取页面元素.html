@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取页面的元素</title>
+	</head>
+	<body>
+		用户名：<input type="text" id="username" name='' value='' size=''/>
+		<br />
+		密码：<input type="password"  id="pwd"/>
+		<br />
+		<button onclick="getValue()">按钮</button>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 需求：点击按钮后，将input输入框,用户名中的内容，打印到控制台上。
+		 * step1：给按钮添加点击事件：onclick
+		 * step2：点击事件，对应函数：获取输入框中数据，并打印
+		 */
+		function getValue(){
+			//step1：获取输入框的内容
+			//A：先获取输入框对象：element：元素
+			var obj1 = document.getElementById("username");//根据id值，获取页面上的元素
+			//B：根据元素获取里面的数值
+			var username = obj1.value; //根据找到的input元素，获取里面的数值
+//			alert(username);
+			//step2:打印
+			console.log(username)
+			
+			
+			//获取密码框中数据
+			var obj2 = document.getElementById("pwd");
+			var pwd = obj2.value;
+			console.log(pwd);
+		}
+	</script>
+</html>

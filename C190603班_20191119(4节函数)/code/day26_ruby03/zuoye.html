@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+1.消化课堂代码，将课堂代码写一遍。
+2.定义一个函数，用于求1-n的和
+3.定义一个函数，用于返回给定年份是否是闰年。
+4.定义一个函数，求n的阶乘，并返回结果。
+5.定义一个函数，接收三角形的三条边长作为参数，求三角形的面积，并返回结果。
+6.定义一个函数，接收2个数作为参数，并返回较大的数。
+7.定义一个函数，接收两个整数，方法返回两个数的最大公约数。
+8.定义一个函数，接收两个整数，方法返回两个数的最小公倍数。
+
+	24，32
+约数：
+	1，2，3，4，6，8，12，24
+	1，2，4，8，16，32
+
+公约数：
+	1，2，4，8
+最大公约数：
+	8
+	
+		24，32
+		
+		
+	辗转相除法：
+		
+倍数：
+	24，48，72，96，120.。。
+	32，64，96，128.。。。
+公倍数:
+	96,
+
+	
+最小公倍数：两个数相乘除以最大公约数。
+	24*32 / 8 = 96
+	
+	暴力破解：
+
+
+9.定义一个函数，用于打印矩形，矩形的宽和高，由参数传入。
+10.定义一个函数，打印平行四边形，边长由参数传入。
+		 */
+		function leapYear(year){
+			if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+				
+			}
+		}
+		
+		function areaTriangle(a,b,c){
+			var p = (a+b+c)/2;
+			var s = Math.sqrt((p-a)*(p-b)*(p-c)*p);
+			console.log("面积是："+s);
+		}
+		areaTriangle(3,4,5);
+		
+		function getMax(a,b){
+//			if(a > b){
+//				console.log(a)
+//			}else{
+//				console.log(b);//a <= b
+//			}
+			console.log(a > b ? a : b);
+		}
+		
+		//最大公约数
+		function commonDivisor(a,b){
+			for(var i = a < b ? a : b;i>=1;i--){
+				if(a % i == 0 && b % i == 0){
+					return i; //返回结果
+					console.log(i);
+					break;
+				}
+			}
+		}
+		
+		//最小公倍数：两个数相乘，除以最大公约数
+		function commonMultiple2(a,b){
+			var n = a * b / commonDivisor(a,b);
+			console.log(n);
+		}
+		commonDivisor(24,32);
+		commonMultiple2(24,32);
+		
+		//辗转相除法:最大公约数
+		function commonDivisor2(a,b){
+			var max = a > b ? a : b;
+			var min = a < b ? a : b;
+			var res = 1;
+			while(true){
+				res = max % min;
+				if ( res == 0){
+					console.log(min);
+					break;
+				}
+				max = min;
+				min = res;
+			}
+			
+		}
+		//最小公倍数：暴力破解，依次尝试
+		function commonMultiple(a,b){
+			for(var i = a > b?a:b;i <= a * b;i++){
+				if(i % a == 0 && i % b == 0){
+					console.log(i);
+					break;
+				}
+			}
+		}
+		
+		
+//		9.定义一个函数，用于打印矩形，矩形的宽和高，由参数传入。
+
+		function printShape1(a,b){
+			//a是长度，b是宽度
+			for(var i= 1;i <= a;i++ ){
+				for(var j =0;j<b;j++){
+					document.write("*")
+				}
+				document.write("<br />")
+			}
+		}
+		printShape1(3,4);
+		printShape1(10,80);
+		
+	//10.定义一个函数，打印平行四边形，边长由参数传入。
+		function printShape2(a){
+			for(var i=1;i<=a;i++){
+				for(var j = 0;j <a-i;j++){
+					document.write("&nbsp;")
+				}
+				for(var k = 0;k <a;k++){
+					document.write("*");
+				}
+				document.write("<br />")
+			}
+		}
+		printShape2(5);
+	</script>
+</html>

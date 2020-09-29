@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>留言板</title>
+		<style type="text/css">
+			*{
+				margin: 0 auto;
+				padding: 0;
+			}
+			#div1{
+				width: 450px;
+				height: 400px;
+				border: 2px solid #EEEEEE;
+			}
+			#div1 h3{
+				color: pink;
+				text-align: center;
+				height: 50px;
+				border-bottom: 2px solid #999999;
+				line-height: 50px;
+			}
+			#div2{
+				width: 410px;
+				height: 100px;
+				padding: 5px;
+				border: 2px solid #EEEEEE;
+				margin-top: 20px;
+			}
+			#input1{
+				width: 410px;
+				height: 100px;
+				display: block;
+				margin-top: 20px;
+			}
+			#btn{
+				width: 410px;
+				height: 50px;
+				display: block;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<h3>留言板</h3>
+			<div id="div2">
+				<em>请输入留言信息</em>
+			</div>
+			<input id="input1" type="text" />
+			<input type="button" id="btn" value="发布留言" onclick="show()" />
+		</div>
+		
+		<script type="text/javascript">
+			/*
+			 * 实现留言板
+			 */
+			function show(){
+				//step1：获取需要的对象
+				var input1 = document.getElementById('input1');
+				var div2 = document.getElementById('div2');
+				var em = document.getElementsByTagName('em')[0];
+				
+				//step2：获取输入框的内容
+				var value = input1.value;
+				if(value == ''){
+					alert('请输入内容再发布');
+					return;
+				}
+				//step3：根据输入框的内容，创建list，并且添加到div2上
+				var liNode = document.createElement('li');
+				var textNode = document.createTextNode(value);
+				liNode.appendChild(textNode);
+				div2.appendChild(liNode);
+				liNode.style.backgroundColor = 'pink';
+				liNode.style.marginBottom = '5px';
+				
+				//step4：em消失
+				em.style.display = 'none';
+				
+				//step5:每个list添加鼠标移入和移出事件：改变背景颜色
+				liNode.onmouseover = function(){
+					this.style.backgroundColor = 'grey';
+				}
+				
+				liNode.onmouseout = function(){
+					this.style.backgroundColor = 'pink';
+				}
+				
+				//step6：每个list添加点击事件：删除节点
+				liNode.onclick = function(){
+					div2.removeChild(this);
+					if(div2.children.length == 1){
+						console.log(div2.children.length);
+						em.style.display = '';
+					}
+				}
+				input1.value = '';
+			}
+		</script>
+	</body>
+</html>

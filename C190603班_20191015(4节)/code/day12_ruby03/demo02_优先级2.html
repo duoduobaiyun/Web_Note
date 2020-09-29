@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>样式的优先级</title>
+		
+		<link href="css/demo02css.css" rel="stylesheet" type="text/css" />
+		<style>
+			.content2{
+				color: green;
+				font-size: 30px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<!--
+			优先级不分内部样式还是外部样式，
+				如果是同一个优先级的选择器：比如都是class，或者都是tag，或者都是id选择器。。。
+					到底应用哪个样式，取决于先后顺序，后写的样式，会覆盖前面的同一种样式
+		-->
+		<p class="content2">一个段落</p>
+	</body>
+</html>

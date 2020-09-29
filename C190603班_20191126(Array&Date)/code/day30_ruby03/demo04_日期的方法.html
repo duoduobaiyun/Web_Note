@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日期的方法</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 日期的常用方法:
+		 * 1年365天
+		 * 1天24小时
+		 * 1小时60分
+		 * 1分60秒
+		 * 1秒1000毫秒
+		 * 1毫秒1000微妙
+		 * 1微妙1000纳秒
+		 * 1纳秒1000皮秒
+		 * 
+		 * 
+		 * 1.date转为string
+		 * 	toLocaleString()
+		 * 	toLocaleDateString()
+		 * 	toLocaleTimeString()
+		 * 
+		 * 2.获取年，月，日，时，分，秒，毫秒
+		 * 	getFullYear(),年
+		 * 	getMonth()，月
+		 * 		返回值：0-11，加1
+		 * 	getDate(),日
+		 * 	getDay(),星期
+		 * 	getHours(),时，
+		 * 	getMinutes(),分
+		 * 	getSeconds()，秒
+		 * 	getMilliseconds()，毫秒
+		 * 
+		 * 
+		 * 
+		 * 3.设置：set
+		 */
+		var date = new Date();
+		//直接打印date：
+		console.log(date); //Tue Nov 26 2019 17:08:46 GMT+0800 (伊尔库茨克标准时间)
+		//将日期转为String，打印输出，有固定格式：年/月/日	 下午 时:分:秒
+		console.log(date.toLocaleString()); //2019/11/26 下午5:09:20
+		console.log(date.toLocaleDateString()); //2019/11/26
+		console.log(date.toLocaleTimeString()) //下午5:10:37
+		
+		
+		//2.日期的方法
+		var year= date.getFullYear();
+		console.log("年："+year)//2019
+		
+		var month = date.getMonth();//返回值是：[0,11]
+		console.log("月："+(month+1));//10
+		
+		var day = date.getDate();//获取日期
+		console.log("日："+day);//26
+		
+		var week = date.getDay();
+		console.log("星期："+week);//2
+		
+		var hour = date.getHours();//17
+		console.log("时："+hour)
+		
+		var minute = date.getMinutes();
+		console.log("分钟："+minute);
+		
+		var second = date.getSeconds();
+		console.log("秒："+second)
+		
+		var msecond = date.getMilliseconds();
+		console.log("毫秒："+msecond)
+		
+		
+		
+		//2019年11月26日	17:16:33
+		
+		var myDate = date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+		console.log(myDate)
+		
+		
+		//了解：
+		
+		var date2 = new Date();
+		console.log(date2);
+		date2.setFullYear(2017);//设置年份
+		console.log(date2);
+		
+	</script>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>发布评论</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			fieldset{	
+				width: 80%; 
+				padding: 20px; 
+				border: 1px solid gray; 
+				border-radius: 10px;
+				margin: 20px auto;
+			}
+			#username{
+				width: 80%;
+				height: 25px;
+				border: 1px solid gray;
+				border-radius: 10px;
+				padding: 0 10px;
+			}
+			#content{
+				width: 80%;
+				height: 60px;
+				border: 1px solid gray;
+				border-radius: 10px;
+				padding: 10px;
+				margin: 20px auto;
+			}
+			#myform input[type='submit']{
+				width: 80px;
+				height: 30px;
+				border-radius: 15px;
+				border: none;
+				background-color: #555555;
+				color: #FFFFFF;
+				cursor: pointer;
+			}	
+			
+			#div1{
+				width: 80%;
+				height: 50px;
+				background-color: #808080;
+				margin: 20px auto;
+				padding:0px 20px;
+			}
+			#div1 span{
+				float: left;
+			}
+			
+			#div1 button{
+				float: right;
+			}
+			
+			#div2{
+				width: 80%;
+				border: 1px solid gray;
+				margin: 10px auto;
+				padding: 10px;
+			}
+			/*设置评论的div的样式*/
+			#div2 .objDiv{
+				padding: 5px;
+				overflow: hidden;
+				border-bottom: 1px dotted gray;
+			}
+			#div2 .objDiv:hover{
+				background-color: gainsboro;
+			}
+			
+			#div2 .objDiv button{
+				float: right;
+				border-radius: 5px;
+				padding: 2px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			fieldset标签，字段集。通常用于将form表单中的元素进行分组显示。
+			
+				legend标签，用于给filedset标签设置标题
+				
+				placeholder,输入框中的提示信息
+				required，提交前要求文本框中有数据
+		-->
+		<!--表单-->
+		<fieldset>
+			<legend>发表评论</legend>
+			<form action="#" method="post" id="myform">
+				<input type="text" id="username" placeholder="请输入账号" required>
+				<br />
+				<textarea id="content" placeholder="请输入评论内容" required></textarea>
+				<br />
+				<input type="submit" value="提交" />
+			</form>
+		</fieldset>
+		<!--评论的头部-->
+		<div id="div1">
+			<span>评论</span>
+			<button id="btn1">清空信息</button>
+		</div>
+		<!--动态添加评论信息-->
+		<div id="div2"></div>
+		
+		<script type="text/javascript">
+			/*
+			 * step1：获取输入框对象，按钮对象
+			 * 
+			 * step2：给form表单添加监听：onsubmit，提交事件的监听
+			 * 
+			 * step3：当表单被提交 时，根据输入框的内容，动态的创建div，并添加到大的div2上。
+			 * 
+			 * step4：将数据存储到localStorage中
+			 * 	思路：	1.创建一个数组，存储每一条的obj对象，将数组转为json的字符串，存localStorage中
+			 * 			2.当页面加载的时候，从存localStorage中，读取json字符串
+			 * 			3.解析：数组的数据，遍历这个数组，获取里面的每一个obj，
+			 */
+			
+			//step1：获取dom对象
+			var input1 = document.getElementById('username');//输入框
+			var text1 = document.getElementById('content');//文本域
+			var myform = document.getElementById('myform');//表单
+			var div2 = document.getElementById('div2');//放评论的大的div
+			
+			
+			var arrObj = [];//创建一个数组，存储每次评论的obj对象
+			
+			
+			
+			
+			//step2：给表单添加提交事件
+			myform.addEventListener('submit',function(evt){
+				//清除默认事件
+				var e = evt || window.event;
+				e.preventDefault();//去除默认事件
+				//发布评论
+				addComment();
+			});
+			
+			//加载页面，先从localStorage中读取数据，显示页面
+			showLocalStorage();
+			
+			
+			
+			//获取发布的内容，创建节点对象，添加到div上
+			function addComment(){
+				//1.获取输入框中的文本数据
+				var obj = new Object();
+				obj.username = input1.value;
+				obj.content = text1.value;
+				var now = new Date();
+				obj.time = now.getMonth()+1+"月"+now.getDate()+"日 "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+				
+				//2.根据获取到的内容，创建节点对象
+				var objDiv = document.createElement('div');//创建一条评论的div
+				objDiv.setAttribute('class','objDiv');
+				/*
+				 * <div class='objDiv'></div>
+				 */
+				//思路一：创建标签节点，创建文本节点，不停的appendChild()
+				//思路二：innerHTML，后面 自动识别标签
+				var str = "";
+				str += "<h2>"+obj.username+"</h2>";
+				str += "<p>"+obj.content+"</p>";
+				str += "<p>"+obj.time+"</p>";
+				str += "<button>删除</button>";
+				console.log(str);
+				objDiv.innerHTML = str;
+				//3.动态的创建节点对象，添加到div2上
+				div2.insertBefore(objDiv,div2.firstElementChild);//将新发布评论的div，插入到div2的最前面
+				//4.输入框清空
+				input1.value ="";
+				text1.value= "";
+				
+				//5.将obj保存到数组中，将数组转为json字符串，存入到localStorage中
+				arrObj.unshift(obj);//obj存入到数组中
+				
+				var jsonStr = JSON.stringify(arrObj);//将数组转为json字符串
+				console.log(jsonStr);
+				localStorage.setItem('data',jsonStr);
+			}
+			
+			//从本地localStorage中读取json数据，解析后，获取数据，动态的创建div
+			function showLocalStorage(){
+				var jsonStr = localStorage.getItem('data');
+				console.log(jsonStr);
+				if(jsonStr){//jsonStr != null
+					//解析从localStorage中读取的json字符串，解析后是个数组
+					arrObj = JSON.parse(jsonStr);
+					console.log(arrObj.length);
+					//遍历数组：获取每个obj
+					for(var i=0;i<arrObj.length;i++){
+						//动态的创建每一个评论
+						var objDiv = document.createElement('div');//创建一条评论的div
+						objDiv.setAttribute('class','objDiv');
+						var str = "";
+						str += "<h2>"+arrObj[i].username+"</h2>";
+						str += "<p>"+arrObj[i].content+"</p>";
+						str += "<p>"+arrObj[i].time+"</p>";
+						str += "<button>删除</button>";
+						objDiv.innerHTML = str;
+						//div2上添加objDiv
+						div2.appendChild(objDiv);
+					}
+				}else{
+					console.log('localStorage中还没有数据。。')
+				}
+			}
+		</script>
+	</body>
+</html>

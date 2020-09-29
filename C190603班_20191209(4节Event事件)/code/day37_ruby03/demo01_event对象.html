@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>event对象</title>
+		<style type="text/css">
+			#div1{
+				width: 4000px;
+				height: 3000px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<button id="btn1">按钮</button>
+		</div>
+		
+		<script type="text/javascript">
+			/*
+			 * event对象：event对象代表事件的状态，也可以理解为event对象是事件的细节操作对象。
+			 * 	随着事件的发生，而创建。
+			 * 
+			 * X轴的信息，Y轴的信息
+			 * 
+			 * 1.screenX,screenY
+			 * 		距离电脑屏幕的x和y轴的值
+			 * 
+			 * 2.clientX，clientY	
+			 * 		距离当前body的可视区域的x和y轴的值
+			 * 
+			 * 3.pageX,pageY,页面
+			 * 		对于整个页面来讲，如果太大，浏览器一屏无法显示完全，会自动出现滚动条。
+			 * 		部分页面会滚出去。
+			 * 		
+			 * 		距离整个页面边缘的x和y轴的值，包含了滚出去的页面。
+			 * 
+			 * 4.offsetX，offsetY
+			 * 		距离具有定位了的父容器的x和y轴的值。
+			 * 		
+			 */
+			//添加点击事件
+			var btn = document.getElementById('btn1');
+			
+			//文档添加点击事件
+			document.onclick  = function(evt){//本次事件发生后所创建出来的event对象
+				//兼容ie浏览器，window.event是专门给ie提供
+				console.log('被点了。。')
+				var e = evt || window.event;//event
+				console.log(e);
+				console.log('screenX:'+e.screenX+",screenY:"+e.screenY);
+				console.log('clientX:'+e.clientX+",clentY:"+e.clientY);
+				console.log('pageX:'+e.pageX+",pageY:"+e.pageY);
+			}
+			
+			/*
+			 * 练习1：代码演示，或者画图
+			 * 练习2：键盘事件的event。。
+			 */
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跟随鼠标移动的小球</title>
+		<style type="text/css">
+			#div1{
+				width: 50px;
+				height: 50px;
+				background-color: red;
+				border-radius: 25px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			/*
+			 * 小球跟随鼠标移动
+			 * 
+			 * 事件：鼠标移动，onmousemove
+			 * 元素：document
+			 * 函数：获取鼠标的位置，设置div小球
+			 * 
+			 * 	clientX
+			 * 	clientY
+			 */
+			var div1 = document.getElementById('div1');
+			
+			document.addEventListener('mousemove',function(evt){
+				//获取鼠标的位置，设置给小球
+				var e = evt || window.event;
+				console.log(e.clientX+","+e.clientY);
+				div1.style.left = e.clientX+'px';//将鼠标的x轴值，设置给小球的left
+				div1.style.top = e.clientY+'px';
+			})
+		</script>
+	</body>
+</html>

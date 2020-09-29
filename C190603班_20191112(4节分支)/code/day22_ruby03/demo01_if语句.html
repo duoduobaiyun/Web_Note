@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if语句</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 选择结构：
+		 * if语句：
+		 * 1.最简单的if语句：
+		 * 	if(条件){
+		 * 		语句1
+		 * }
+		 * if里的条件满足，才会执行此处的语句1
+		 */
+		
+		//1.定义一个变量，如果大于0，就输出大于0.
+		var num = 5;
+		
+		
+		if(num > 0 ){
+			console.log(num,"大于0");
+			console.log(num,"大于0");
+			console.log(num,"大于0");
+			console.log(num,"大于0");
+//			语句1；//if里的条件满足，才会执行此处的语句1
+		}
+		
+		console.log("第一题结束了。。")
+		/*
+		 * 练习1：给定一个年龄，如果大于22岁，输出可以娶媳妇啦
+		 * 练习2：给定一个数值，输出它的绝对值
+		 * 练习3：给定一个成绩，如果大于等于60，输出及格
+		 */
+		
+		//练习1：给定一个年龄，如果大于22岁，输出可以娶媳妇啦
+		var age = 14;
+		if(age > 22){
+			console.log("可以娶媳妇啦");
+		}
+		
+		
+		//练习2：给定一个数值，输出它的绝对值
+		var num2 = -5;
+		if(num2 < 0){
+			num2 = -num2; // 5
+		}
+		console.log(num2);
+		
+
+//		if (num2 <0 ){
+//			console.log(-num2);
+//		}
+//		if(num2 >= 0){
+//			console.log(num2);
+//		}
+		
+		//练习3：
+		var score = 38;
+		if(score >= 60){
+			console.log(score + ",成绩及格");
+		}
+	</script>
+</html>

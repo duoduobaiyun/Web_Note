@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>div容器</title>
+	</head>
+	<body >
+		<!--
+			div标签：词义div全称为division，“分割、分区”之意
+			<div>标签用来划分一个区域，相当于一块区域容器，可以容纳段落、标题、表格、图像等各种网页元素。
+			
+			div作为一个空的容器，往往实现页面的布局。
+			
+			span：存储文本内容
+			
+			bgcolor：标签的一种属性，表示背景色
+			background-color：一种css样式，也表示背景色
+			CSS全称为“Cascading Style Sheet”，中文解释为“层叠样式表”，它是以HTML为基础，设置网页的外观显示样式，
+				标签上style添加样式
+					样式名:样式值;样式名:样式值;
+					
+					
+			标签分类：
+				1.块级元素：独占一行，页面上垂直排列。
+					h1-h6标签，p标签，ul，ol，li，dl，dt，dd，tr。。。。
+					div
+					
+					默认的宽度是和上一级标签相同，高度要取决于内容物的高度
+					
+				2.行内元素：会显示在一行内，页面上水平排列
+					td，a，img，input，strong，b，em，i，font。。。。
+					span
+					
+					
+					
+					默认的宽度和高度都取决于内容物，而且通过css的width，height没效果
+					
+		-->
+		<div style="width: 200px; height: 100px; background-color: pink; ">
+			这是一个div,作为容器
+		</div>
+		<div style="width: 300px; height: 200px; background-color: yellow;">
+			我也是一个div
+			<div style="width: 150px; height: 100px; background-color: palegreen;">
+				我是div里的div
+			</div>
+		</div>
+		<span style="background-color: gold;">我是个span标签</span>
+		<span style="background-color: cornflowerblue;">我也是一个span</span>
+		
+		<br />
+		<div style="background-color: red;">div1</div>
+		
+		<!--
+			课堂练习1：
+			div里放img，div设置宽度和高度，以及背景色
+			课堂练习2：
+			span标签，里面存文本？尝试在span上设置width和height样式,是否好用?
+		-->
+	</body>
+</html>

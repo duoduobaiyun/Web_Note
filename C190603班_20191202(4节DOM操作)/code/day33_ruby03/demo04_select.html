@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下拉列表</title>
+	</head>
+	<body>
+		<select id="sel" onchange="test1()">
+			<option value="val1">选项1</option>
+			<option value="val2">选项2</option>
+			<option value="val3">选项3</option>
+			<option value="val4">选项4</option>
+		</select>
+		
+		
+		<script type="text/javascript">
+			/*
+			 * 下拉列表：
+			 * 	select标签
+			 * 		option：选项
+			 * 
+			 * 	属性：
+			 * 		1.options，获取该下拉列表的所有的option选项，得到一组option
+			 * 		2.length，option的个数
+			 * 		3.selectedIndex，获取被选中的option的下标
+			 * 
+			 * step1：根据id获取select列表对象
+			 * 
+			 * step2：属性
+			 * 		A：获取下拉选项的个数
+			 * 			sel.length，
+			 * 		B：获取所有的option选项
+			 * 			sel.options-->[option,option,option,option]
+			 * 		C：获取被选中的下拉选项的下标
+			 * 			sel.selectedIndex--->0,1,2,3
+			 * 		D：获取被选中的option
+			 * 			sel.options[被选中的下标]
+			 * 		E：获取被选中的下拉option的value值
+			 * 			sel.options[被选中的下标].value
+			 * 		F：获取被选中的下拉option的文本内容
+			 * 			sel.options[被选中的下标].text
+			 */
+		
+			function test1(){
+				var sel = document.getElementById("sel");
+				console.log(sel);
+				var options = sel.options;
+//				console.log(options);
+//				console.log(options.length);
+//				
+//				console.log(options[0]);//0,1,2,3
+//				
+//				console.log(sel.length);
+//				
+//				console.log(sel.selectedIndex);//3
+//				
+//				console.log(options[sel.selectedIndex]);//options[3];
+				
+				console.log(options[sel.selectedIndex].text);//被选中的option的文本
+				console.log(options[sel.selectedIndex].value);//被选中的option的value值
+			}
+		
+			
+		</script>
+	</body>
+</html>

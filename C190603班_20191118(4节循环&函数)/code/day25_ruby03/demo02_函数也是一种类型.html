@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数也是一种类型</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//定义一个函数：函数表达式的方式
+		//类型:function
+		//函数表达式
+		var test1 = function(){
+			console.log("我是一个函数。。")
+		}
+		//调用
+		test1();//加括号表示调用
+		var test2 = test1;//将test1赋值给test2
+		test2(); //调用test2函数就是调用test1函数
+		
+		console.log(typeof test2) ;//function
+		
+		//声明
+		function test3(){
+			console.log("我是另一个函数。。")
+		}
+		var test4 = test3;//将test3函数本身，赋值给test4，test4和test3是同一个函数
+		var test5 = test3();//加()，表示函数调用,将函数的执行结果，赋值给test5.
+		console.log(test5); //undefined
+		
+	</script>
+</html>

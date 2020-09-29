@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组的遍历</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 数组的遍历：依次访问数组中的每一个元素
+		 * 方式一：普通的for循环
+		 * 
+		 * 方式二：for in循环
+		 * 	for(var i in 数组名){
+		 * 		数组名[i]；
+		 * }
+		 * 	
+		 * 方法三：forEach()，ES5新增
+		 */
+		var ages = [17,18,19,18,17,20];
+		console.log(ages[0]);
+		console.log(ages[1]);
+		console.log(ages[2]);
+		console.log(ages[3]);
+		console.log(ages[4]);
+		console.log(ages[5]);
+		
+		//方式一：普通的for循环
+		for(var i = 0;i < ages.length;i++){
+			console.log(ages[i]);
+		}
+		console.log("==============")
+		//方式二：for in的方式
+		for(var i in ages ){
+			console.log(ages[i]);
+		}
+		
+		//方法三：ES5新增的forEach()函数，用于遍历数组。低版本的IE浏览器不支持。
+		/*
+		 * JS的内容：
+		 * 	A：ECMAScript，js的基本语法
+		 * 		数据类型，分支语句，循环语句，运算符，对象，String，Array，Math，Date。。内置函数。。
+		 * 		ES3，
+		 * 		ES5，
+		 * 		ES6：最新版本
+		 * 
+		 * 	B：DOM：文档对象模型
+		 * 		document.getElmentById("id值")-->页面上的元素
+		 * 	C：BOM：浏览器对象模型
+		 * 		browser，
+		 */
+		
+		var arr= ["a","b","c","d"];
+		/*
+		 * 一个函数A，可以接收另一个函数B作为参数。
+		 * 		函数B，就叫做回调函数。
+		 * 		函数A，高阶函数
+		 * 
+		 * 
+		 * 一个函数C，可以作为函数A的返回值。
+		 * 	函数C和函数A中的局部变量，可以形成闭包结构。
+		 * 	
+		 * 
+		 * 
+		 * 数组名.forEach(回调函数)
+		 * 数组名.forEach(function(value,index,array){
+		 * 	
+		 * })
+		 */
+		arr.forEach(function(value,index,array){
+			console.log(value);//数值
+			console.log(index);//下标
+//			console.log(array);
+		})
+		
+		arr.forEach(function(val){
+			console.log(val);
+		})
+	</script>
+</html>

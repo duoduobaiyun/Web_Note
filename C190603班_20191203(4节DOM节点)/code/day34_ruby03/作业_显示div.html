@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+	</head>
+	<body>
+		<button onclick="start()">开始</button>
+		<button onclick="stop()">停止</button>
+		<div id="div1" style="width: 100px;border: 1px solid black;"></div>
+		
+		<script type="text/javascript">
+			
+			var t1;
+			function start(){
+				t1 = setInterval(getCount,500);
+			}
+			
+			var count = 0;
+			function getCount(){
+				count++;
+				var div1 = document.getElementById("div1");
+				//获取div1的内容
+				div1.innerHTML = div1.innerHTML + count+"<br>";
+				
+			}
+			
+			function stop(){
+				clearInterval(t1);
+			}
+		</script>
+	</body>
+</html>

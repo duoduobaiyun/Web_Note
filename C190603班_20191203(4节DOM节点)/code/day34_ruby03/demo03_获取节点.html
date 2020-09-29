@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取节点</title>
+	</head>
+	<body>
+		<ul id="myul">
+			<li id="li1">英雄联盟</li>
+			<li>穿越火线</li>
+			<li>绝地求生</li>
+			<li>王者荣耀</li>
+			<li>连连看</li>
+		</ul>
+		
+		<script type="text/javascript">
+			/*
+			 * 获取节点：
+			 * 
+			 * 分析结构：关系
+			 * 		ul是li的爸爸
+			 * 		li是li的兄弟
+			 * 		li是ul的儿子
+			 * 		li是body的孙子
+			 * 		。。
+			 * 
+			 * 1.子节点：
+			 * 		childNodes：返回的节点包含了文本节点和标签节点
+			 * 		children：返回的节点包含标签节点，但是不包含文本节点
+			 * 
+			 * 		firstChild：获取第一个子节点，包含文本节点
+			 * 		firstElementChild,获取第一个子节点，不包含文本节点
+			 * 
+			 * 		lastChild，获取最后一个节点，包含文本
+			 * 		lastElementChild,
+			 * 
+			 * 2.父节点
+			 * 		parentNode
+			 * 
+			 * 3.兄弟节点
+			 * 		nextSibling，下一个兄弟，包含文本节点
+			 * 		nextElementSibling,下一个兄弟，不包含文本节点
+			 * 
+			 * 		
+			 */	
+			
+			//1.根据父节点，查找子节点
+			var ul = document.getElementById("myul");
+			//childNodes属性返回NodeList集合，成员包括当前节点的所有子节点。注意：除HTML元素节点外，该属性还可以文本节点等
+			var children1 = ul.childNodes;
+			console.log(children1.length);//11
+			
+			//Children属性同样返回一个NodeList集合，但子节点只会返回元素节点，过滤掉文本节点。
+			var children2 = ul.children;
+			console.log(children2);
+			var li1 = children2[0];
+			console.log(li1);
+			var li5 = children2[4];
+			console.log(li5)
+			
+			var son1 = ul.firstChild;
+			console.log(son1);
+			
+			console.log(ul.firstElementChild);
+			
+			console.log("======================")
+			//2.根据子节点，找父节点
+			var li1 = document.getElementById("li1");
+			var ul2 = li1.parentNode;
+			console.log(ul2);
+			
+			//3.兄弟节点
+			var a = li1.nextSibling;//获取下一个相邻的兄弟节点，包含文本
+			console.log(a);
+			var b = li1.nextElementSibling;//下一个相邻的兄弟节点，不包含文本
+			console.log(b);
+			
+			var c = li1.previousSibling;//前一个兄弟
+			console.log(c);
+			var d = li1.previousElementSibling;//前一个兄弟，不包含文本
+			console.log(d); //null
+		</script>
+	</body>
+</html>

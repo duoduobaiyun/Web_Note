@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单的属性</title>
+	</head>
+	<body>
+		<!--
+			size:设置文本框的大小长度
+			maxlength：设置最多的字符数量
+			disabled：不可用，不可输入，不可点击，灰色的
+			readonly：只读
+			hidden：隐藏的输入框
+		-->
+		<form>
+			用户名：
+			<input type="text"  size="18" maxlength="10"/>
+			<br />
+			密码：
+			<input type="password" /><br />
+			文本框
+			<input type="text" disabled="disabled"/>
+			<br />
+			文本框
+			<input type="text" readonly="readonly" value="123456"/>
+			<br />
+			文本框
+			<input type="text" hidden="hidden" />
+		</form>
+	</body>
+</html>

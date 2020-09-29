@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>比较运算符</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 比较运算符：比较两个数值，结果的是boolean
+		 * 	比较大小：
+		 * 		>,<,>=,<=
+		 * 	注意点：
+		 * 		如果是两个number对比，直接比较数值即可
+		 * 		如果是两个string对比，比较对应位置的字符编码
+		 * 		如果是一个number和一个string对比，先将string转为number，比较数值
+		 * 	==,!=,===,!==
+		 * 
+		 * 		==，相等，
+		 * 			表示比较数值是否相等。
+		 * 		===,全等，
+		 * 			不仅比较数值，还要比较类型。
+		 * 
+		 * 		!=，不等
+		 * 			两个数值不相等
+		 * 
+		 * 		!==，不全等
+		 * 			数值或者类型不同
+		 */
+		var a = 3; //number
+		var b = 4; //number
+		var res = a > b;
+		console.log(typeof res); //boolean
+		console.log(res); //false
+		
+		console.log(a <= b); //true
+		console.log(a >= b); //false
+		console.log(a < b); //true
+		console.log('a' < 'b');//true
+		/*
+		 * 如果是两个字符串相比，那么比较的是对应位置的字符编码值
+		 * 如果一个是字符串，一个是number，那么会把字符串先转为number类型，再比较数值
+		 */
+		console.log(5 <'12');//number,string-->number  5 < 12
+		//'12'-->12   5 < 12--->true
+		console.log('5'<'12');//string,string--->字符编码,false
+		// '5'-->53
+		// '1'-->49
+		console.log('ab' < 'ac'); //true
+		/*
+		 * 'a','a'
+		 * 'b','c'
+		 */
+		
+		var c = '0';//string,字符0，对应的数值编码是48
+		var d = 0;//number,数值就是0
+		
+		a = 4; //number
+		b = 4; //number
+		c = 3; //number
+		d = '4'; //string
+		console.log(a == b); //true
+		console.log(a == c); //false
+		console.log(a == d); //true
+		
+		console.log(a === b);//true,
+		console.log(a === d); // false
+		console.log(a === c);// false
+		
+		console.log(a != c);// 4, 3  true
+		console.log(a != b); //4, 4  false
+		
+		console.log(a !== b);//不全等，false
+		console.log(a !== d); //true
+		/*
+		 * 练习1：定义两个整数，两个字符串：分别比较：
+		 * 	>,<,>=,<=,==,===,!=,!===
+		 */
+		
+		console.log(NaN == NaN);//false
+		console.log(undefined == null);//true
+		
+	</script>
+</html>

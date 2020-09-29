@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>键盘控制小球</title>
+		<style type="text/css">
+			#div1{
+				width: 50px;
+				height: 50px;
+				background-color: cornflowerblue;
+				position: absolute;
+				left: 200px;
+				top: 100px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			/*
+			 * offsetLeft，获取元素自身的左外边框，到已经定位的父容器的左内边框的距离
+			 * offsetTop，获取元素自身的上外边框，到已经定位的父容器的上内边距的距离
+			 * 
+			 * 键盘控制小球：
+			 * 	小球：位置
+			 * 		left，top
+			 * 
+			 * 箭头向上，下，左，右个按键
+			 * 	箭头向上，下的按键被按的
+			 * 	箭头向左，右的按键被按的
+			 * 
+			 *  
+			 * 分支语句：判断被按下的按键的值：37,38,39,40
+			 */
+			
+			var div1 = document.getElementById('div1');
+			
+			document.addEventListener('keydown',function(evt){
+				//控制按键，调整小球的left和top的值
+				var e = evt || window.event;
+				console.log(div1.offsetLeft+','+div1.offsetTop);
+				
+				switch(e.keyCode){
+					case 37://左
+						div1.style.left = div1.offsetLeft - 10 +'px';
+						break;
+						
+					case 38://上
+						div1.style.top = div1.offsetTop - 10 + 'px';
+						break;
+					case 39://右
+						div1.style.left = div1.offsetLeft + 10 +'px';
+						break;
+					case 40://下
+						div1.style.top = div1.offsetTop + 10 +'px';
+				}
+			})
+			
+
+			
+		</script>
+	</body>
+</html>

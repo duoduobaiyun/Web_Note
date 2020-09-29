@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js的使用</title>
+		<style type="text/css">
+			#box1{
+				width: 200px; height: 100px; background: pink;
+			}
+		</style>
+
+		<script type="text/javascript" src="js/test1.js"></script>
+		<!--
+			注意点：如果一个script标签是用于引入外部的js文件的，里面就不要再写js代码了
+		-->
+	</head>
+	<body>
+		<!--
+			CSS的使用方式：
+				A：行内样式：直接写在标签上，style
+				B：内部样式：写在head标签里，style标签，写样式
+				C：外部样式：写在外部的css文件种，引入到当前的html文件
+					<link rel="stylesheet" type="text/css" href="css的路径">
+						
+			js的使用方式：
+				A：行内引入，直接写在标签上的js代码
+				B：内部引入：直接在<script>标签中写js的代码
+				C：外部引入：先写一个外部的js文件，然后通过<scipt>标签来引入
+					<script src="js的路径"></script>
+				
+				
+			事件驱动：
+				onclick：点击事件
+					按钮
+				alert：弹框的动作
+				
+			注释：
+				HTML：
+					注释
+				CSS：
+					注释：/*..*/
+				js：
+					注释：
+						单行：//
+						多行：/*..*/
+		-->
+		<button onclick="alert('我是一个按钮，你点我啊')">按钮</button>
+		<script>
+		
+			//弹出警告框
+			alert("Hello World");
+			
+		</script>
+		<div id="box1">
+			
+		</div>
+		<button onclick="test1()">按钮2</button>
+	</body>
+</html>

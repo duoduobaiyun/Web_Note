@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算姻缘</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function aa()
+			{
+				//获取文本框中姓名
+				var name1=document.getElementById("name1").value;
+				var name2=document.getElementById("name2").value;
+				if(name1.length<=0||name1==null||name2.length<0||name2==null)
+                {
+                	alert("请正确输入姓名");
+                	return;
+                }
+                var sum = 0;
+                for(var i=0;i<name1.length;i++){
+                	sum += name1.charCodeAt(i);
+                }
+                for(var i=0;i<name2.length;i++){
+                	sum += name2.charCodeAt(i);
+                }
+                if(sum>100){
+                	//alert(sum)
+                	sum %= 100;
+                }
+                alert(name1+","+name2+",你们的姻缘指数是"+sum)
+               
+			}
+		</script>
+		请输入男方姓名：
+		<input type="text" id="name1" /> <br />
+		请输入女方姓名：
+		<input type="text" id="name2" /><br />
+		<button onclick="aa()">测算姻缘 </button>
+	</body>
+</html>

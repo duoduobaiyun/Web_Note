@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动态向div中添加内容</title>
+	</head>
+	<body>
+		<input type="button" value="开始" onclick="start()"/>
+		<input type="button" value="停止" onclick="stop()"/>
+		<div id="div1" style="width:100px;border:1px solid black"></div>
+		<script type="text/javascript">
+		/*
+		 setInerval:每隔200毫秒执行一次start   反复
+		 setTimeout:200毫秒之后执行start方法一次   
+		  如果想让setTimeout实现与setinterval一样的效果，要将setTimeout放到方法中（递归）
+		 * */
+		    var count=0;
+		    //用来标识当前定时器setTimeout
+		    var flag;
+			function start()
+			{
+				var div1=document.getElementById("div1");
+				div1.innerHTML=div1.innerHTML+count+++"<br/>";
+				//1000毫秒之后做start动作
+				flag=setTimeout("start()",200);
+			}
+//			flag=setInterval("start()",200);
+            function stop()
+            {
+            	clearTimeout(flag);
+            }
+		</script>
+	</body>
+</html>

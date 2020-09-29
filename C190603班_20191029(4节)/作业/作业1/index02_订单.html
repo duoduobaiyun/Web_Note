@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标经过显示和隐藏</title>
+		<style type="text/css">
+			li{
+				list-style: none;
+				font-size: 18px;
+				color: red;
+				float: left;
+				margin-right: 20px;
+				position: relative;
+			}
+			#order div{
+				width: 200px;
+				height: 100px;
+				background-color: yellow;
+				display: none;
+				position: absolute;
+			}
+			#customer div{
+				width: 200px;
+				height: 100px;
+				background-color: blueviolet;
+				display: none;
+				position: absolute;
+			}
+			#order:hover div{
+				display: block;
+			}
+			#customer:hover div{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="order">
+				我的订单
+				<div></div>
+			</li>
+			<li id="customer">
+				我的客户
+				<div></div>
+			</li>
+		</ul>
+	</body>
+</html>

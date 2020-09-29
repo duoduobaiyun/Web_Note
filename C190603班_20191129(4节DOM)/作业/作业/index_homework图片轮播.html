@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>图片轮播</title>
+		<style>
+			div{
+				width: 700px;
+				height: 500px;
+				background-color: pink;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#myimg{
+				width: 700px;
+				height: 500px;
+			}
+			ul{
+				padding: 0px;
+				margin: 0px;
+				width: 120px;
+				position: absolute;
+				left: 450px;
+				top: 450px;
+			}
+			
+			li{
+				float: left;
+				list-style: none;
+				background-color: pink;
+				width: 25%;
+				text-align: center;
+			}
+			
+			a{
+				text-decoration: none;
+				font-size: 20px;
+				color: black;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/img1.jpg" id="myimg"/>
+			
+			<ul>
+				<li style="background-color: red;"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+			</ul>
+		</div>
+		
+		<script>
+			//step1:先将图片存入书中
+			//index:0,1,2,3
+			var imgArr=["img1.jpg","img2.jpg","img3.jpg","img4.jpg"];
+			//step2：获取li对象，添加点击事件
+			var liArr=document.getElementsByTagName("li");
+			
+			var index = 0;//用户不点击，默认的情况：1
+			for(var i=0;i<liArr.length;i++){
+				//调试js程序：alert(),debug,consloe.log()，
+				//console.log(liArr[i]);
+				//为li数组中的每一个li标签对象，添加点击事件：使用匿名函数。
+				//liArr[i]-->li对象
+				//A：给当前的元素，设置一个属性，该属性tag，用于记录当前的i
+				liArr[i].tag=i;//将i的数值，记录在对应的li的tag属性里
+				//B：给当前的元素，每一个li，添加了一个点击事件
+				//step3：点击事件中，更换图片
+				liArr[i].onclick = function(){
+					//this-->当前对象,被点击的li对象
+					var val=this.innerText;
+					
+					//换图
+					var img = document.getElementById("myimg");
+					index=this.tag;
+					//console.log("index-->"+index)
+					img.src="img/"+imgArr[index];
+					
+					//step4：改变li对应的背影颜色
+					changeColor()
+					
+				}
+			}
+			
+			function changeColor(){
+				//A：将所有的li的颜色改为原始背景色
+				for(var j=0;j<liArr.length;j++){
+						liArr[j].style.backgroundColor="pink";
+					}
+				//B:改变当前的li的为红色
+				liArr[index].style.backgroundColor="red";
+			}
+			
+			var t = setInterval("autoChange()",2000);
+			
+			//自动轮播
+			function autoChange(){
+				
+				index++;
+				if(index==imgArr.length){
+					index=0;
+				}
+				document.getElementById("myimg").src="img/"+imgArr[index];
+				changeColor();
+				
+			}
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+	</head>
+	<body>
+		<form action="index.html" method="get" target="_self" >
+			用户名：
+			<input type="text" name="username" /><br />
+			密&nbsp;码：
+			<input type="password" name="pwd"  /><br />
+			性&nbsp;别：
+			<input type="radio" name="sex" value="male" checked/>男
+			<input type="radio" name="sex" value="female"/>女
+			<input type="radio" name="sex" value="other"/>其他<br />
+			爱&nbsp;好：
+			<input type="checkbox" name="hobby" value="game" checked="checked"/>游戏
+			<input type="checkbox" name="hobby" value="woman"/>女人
+			<input type="checkbox" name="hobby" value="money" checked/>金钱
+			<input type="checkbox" name="hobby" value="power"/>权力
+			<br />
+			学&nbsp;历：
+			<select name="xueli">
+				<option>--请选择--</option>
+				<option value="1">幼儿园</option>
+				<option value="2">小学</option>
+				<option value="3">初中</option>
+				<option value="4">高中</option>
+				<option value="5" selected="selected">大专</option>
+				<option value="6">本科</option>
+				<option value="7">硕士</option>
+				<option value="8">博士</option>
+				<option value="9">烈士</option>
+			</select>
+			<br />
+			头&nbsp;像：
+			<input type="file" name="myfile" />
+			<br />
+			个人简介：<br />
+			<textarea rows="8" cols="70"></textarea>
+			<br />
+			
+			<input type="reset" value="重置" />
+			<input type="submit" value="提交" />
+			
+			
+			<!--
+				表单提交：
+				收集用户的信息，提交给服务器端。
+				使用submit按钮，触发action后的路径
+				
+				form表单的属性：
+					action:要提交的服务器的url地址
+					method：
+					
+				如何提交：
+				
+				url：www.baidu.com
+				两种表单的提交方式：get，post
+				
+				get：从服务器端获取数据
+					词义：获取，得到
+					传递少量的数据：因为靠地址栏传递数据
+					数据不安全
+					
+					url：服务器的地址url?name1=value1&name2=value2......
+						？用于分割url和要传递数据
+						& 用于分割名值对
+						= name对应value
+					
+					
+				
+				http://www.baidu.com/?username=wangergou&pwd=123456&sex=female&hobby=game&hobby=money&xueli=3&myfile=
+
+				
+				
+				post：向服务器传递数据
+					词义：邮政，邮局
+					传递大量的数据：将数据打包，传递给服务器
+					数据是安全的
+					
+					
+				
+			-->
+			
+		</form>
+	</body>
+</html>

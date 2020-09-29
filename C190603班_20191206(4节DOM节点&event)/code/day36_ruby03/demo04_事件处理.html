@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件</title>
+	</head>
+	<body>
+		<!--
+			事件：就是用户或者浏览器执行的某一个动作
+			事件处理程序：就是响应事件的函数，以'on'开头
+		-->
+		
+		<!--
+			1.直接在html标签上给事件添加对应的js代码
+			onclick=JavaScript
+		-->
+		<button id="btn1" onclick="console.log('事件处理1.。')">按钮1</button>
+		
+		<!--
+			2.可以通过对应的函数执行js代码
+		-->
+		<button id="btn2" onclick="test2(this)">按钮2</button>
+		
+		
+		
+		
+		<!--
+			3.DOM操作，添加事件对应的js代码。。
+			早期写法：js和html分离开
+		-->
+		
+		<button id="btn3">按钮3</button>
+		
+		<!--
+			4.添加监听事件：监视
+		-->
+		<button id="btn4">按钮4</button>
+		
+		<script type="text/javascript">
+			//2.函数
+			function test2(obj){//obj = this
+				//因为obj接收的是this对象，this在标签中指代的是btn2按钮，所以obj也是btn2这个按钮
+				console.log('事件处理2.。');
+				console.log('obj:'+obj);//button
+				console.log('this:'+this);//window
+			}
+			
+			
+			
+			//3.找对象btn-->添加点击
+			var btn3 = document.getElementById('btn3');
+			btn3.onclick = test3;//给按钮添加一个事件函数
+			
+			
+			function test3(){
+				console.log('事件处理3.。。')
+				console.log('this:'+this);
+			}
+			
+			var a = test3;
+			btn3.onclick = test3;
+			
+			//移出按钮的点击事件后动作
+			btn3.onclick = null;
+			
+			//4.给btn4添加监听事件,流行的
+			var btn4 = document.getElementById('btn4');
+			/*
+			 * addEventListener()，给元素添加事件监听
+			 * 
+			 * element.addEventListener(event, function, useCapture);
+			 * 	监听哪类事件，
+			 * 第一个参数：type，事件的类型，click，mouseover，mouseout，mousemove。。。。
+			 * 			不要写on
+			 * 第二个参数：监听到事件发生后的执行的js动作
+			 * 
+			 * 第三个参数：boolean
+			 */
+			btn4.addEventListener('click',test4,false);
+			
+			function test4(){
+				console.log('事件处理4.。。');
+			}
+			
+			
+			//移出事件
+			btn4.removeEventListener('click',test4);
+			/*
+			 * this关键字：词义"这个"
+			 * 1.在标签中，就指代这个标签本身
+			 * 
+			 * 2.如果在函数中，直接使用this，那么这个this是window
+			 * 
+			 * 3.在事件函数中，this指代标签对象
+			 */
+			
+			
+			//事件清除：
+			/*
+			 * 1.标签上直接写事件属性：
+			 * 	<button onclick='js代码'>
+			 * 
+			 * 	无法移出
+			 * 
+			 * 2.标签上直接写事件函数
+			 *  <button onclick='函数调用'>
+			 * 	无法移出
+			 * 
+			 * 3.给标签对象，添加事件函数
+			 * 	var btn = 按钮对象
+			 * 	btn.onclick = 函数;
+			 * 	btn.onclick = null;
+			 * 
+			 * 4.给标签对象，添加事件监听
+			 * 	var btn = 按钮对象
+			 * 	btn.addEventListener('事件类型'，function，)
+			 * 	btn.removeEventListener('事件类型',function，)
+			 */
+		</script>
+	</body>
+</html>

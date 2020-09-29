@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取样式</title>
+		<style type="text/css">
+			#div2{
+				width: 300px;
+				height: 100px;
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width: 300px;height: 100px; background-color: pink;">
+			我是div1
+		</div>
+		<div id="div2">
+			
+		</div>
+		<button onclick="getCssStyle1()">获取div1样式</button>
+		<button onclick="getCssStyle2()">获取div2样式</button>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 获取CSS样式：
+		 * 	行内样式：
+		 * 		element.style.样式名
+		 * 
+		 * 
+		 * 	行外样式：内部css样式，和外部css样式
+		 * 		window.getComputedStyle(element).样式名
+		 */
+		//获取行内样式
+		function getCssStyle1(){
+			//step1；获取页面的元素
+			var div1 = document.getElementById("div1");
+			//step2：获取样式
+			console.log(div1.style.width);//获取宽度样式
+			console.log(div1.style.height);//高度
+			console.log(div1.style.backgroundColor);//获取背景颜色
+			//....
+			//element.style,表示获取所有的css样式：如果当前的元素没有设置该样式，纳秒默认是空""
+			console.log(div1.style);//获取所有的样式
+		}
+		
+		
+		function getCssStyle2(){
+			var div2 = document.getElementById("div2");
+			//以下的不好用
+//			console.log(div2.style.width);
+//			console.log(div2.style.height);
+//			console.log(div2.style.backgroundColor);
+			
+			//应该的操作：使用getComputedStyle()获取非行内样式
+			console.log(getComputedStyle(div2).width);
+			console.log(getComputedStyle(div2).height);
+			console.log(getComputedStyle(div2).backgroundColor);
+		}
+	</script>
+</html>

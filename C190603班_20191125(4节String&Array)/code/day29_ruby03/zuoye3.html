@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业3</title>
+	</head>
+	<body>
+		<h3>请输入一个p[1,50]之间的整数：</h3>
+		<input type="text" name="num" id="num" value="" />
+		<button onclick="guessNumber()">猜数</button>
+	</body>
+	<script type="text/javascript">
+	
+		//1.生成随机数
+			/*
+			 * [1,50]
+			 * [0,49]+1
+			 */
+		var ranNum = parseInt(Math.random()*50)+1;
+		
+//		console.log(ranNum);
+			
+		function guessNumber(){
+			
+			
+			//2.读取输入
+			var input1 = document.getElementById("num");
+			var inputNum = input1.value;
+			
+			//3.判断大小
+			if(inputNum > ranNum){
+				alert("太大了，下次小点。。")
+			}else if(inputNum < ranNum){
+				alert("太小了，下次大点。。")
+			}else{
+				alert("猜对啦。。。")
+			}
+		}
+	</script>
+</html>

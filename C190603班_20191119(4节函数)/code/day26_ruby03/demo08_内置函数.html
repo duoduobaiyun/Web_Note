@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内置函数</title>
+	</head>
+	<body>
+		<button onclick="test1()">按钮</button>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 内置函数，内置对象。。。
+		 * 	内置：js事先提供好的，我们可以直接使用。
+		 */
+		/*
+		 * 1.弹窗
+		 * 	A：警告框:alert()
+		 * 	B：确认框：confirm()
+		 * 	C：对话框：prompt()
+		 */
+		
+		function test1(){
+			//弹出警告框
+//			alert("你点我啊，使劲儿点。。")
+	
+		
+			//确认框
+//			var flag = confirm("你是个大美女吗？");
+//			console.log(flag);
+//			console.log(typeof flag);
+
+			//对话框，提示框
+//			var age = prompt("请输入您的年龄",20);
+//			console.log(age);
+//			console.log(typeof age); //string
+		}
+		
+		/*
+		 * 2.数据类型转换
+		 * 	parseInt()
+		 * 	parseFloat()
+		 */
+		
+		/*
+		 * 3.eval()函数，将参数识别为js脚本代码
+		 * 
+		 * 	慎用
+		 */
+		var str = "alert('haha')";
+		console.log(str);
+		
+		eval(str); //将str解析为js的代码，并执行
+		
+		var str2 = "function foo(){console.log('王二狗')}";
+		eval(str2);
+		foo();
+		
+		
+		/*
+		 * 4.isNaN()
+		 * 	not a number
+		 * is not a number
+		 */
+		console.log(isNaN(123)); //false
+		console.log(isNaN("abc"));//true
+		
+		/*
+		 * 扩展:
+		 * 	编码：form表单：get，post
+		 */
+		
+		var str3 = "王二狗 like 李小花 100 % ...。。";
+		var str4 = encodeURI(str3);
+		console.log(str4);
+		
+		var str5 = decodeURI(str4);
+		console.log(str5);
+		
+	</script>
+</html>

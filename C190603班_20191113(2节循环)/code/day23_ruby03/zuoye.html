@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 4.求给定的年份，是否是闰年。
+
+	满足以下两点中任意一点就是闰年
+
+	A：能被4整除，但是不能被100整出。
+
+	B：能被400整除。
+
+
+		 */
+		var year = 2000;
+		if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+			console.log('是闰年')
+		}else{
+			console.log("是平年。。")
+		}
+		
+		/*
+		 * 5.模拟登录，定义用户名和密码，如果用户名是admin密码是123，或者用户名是zhangsan密码是zhangsan123，都表示可以登录。
+否则打印登录失败
+		 */
+		var username = 'admin';
+		var pwd = '123';
+		if(username == 'admin' && pwd == '123' || username == 'zhangsan' && pwd=='zhangsan123'){
+			/*
+			 * 先算关系运算符，再算逻辑运算符：&& 高于 ||
+			 * 	true && false || false && false
+			 * 	false || false
+			 * 	false
+			 */
+			console.log('可以登录')
+		}else{
+			console.log('登录失败')
+		}
+		/*
+		 * 8.var sex = ...; //boolean类型
+
+如果是true
+
+就输出“是男人就。。。。。。”
+
+		 */
+		var sex = false;//true:表示男，false表示女
+		if(sex ){ //sex == true--》true
+			console.log('是男人就下100层。。')
+		}else{
+			console.log("姑娘。。")
+		}
+		
+		/*
+		 * 9.var  age = ...;
+
+var sex = ...; //boolean类型
+
+如果age>18，并且 sex为false，
+
+输出“女大十八变。。。。。”
+		 */
+		sex = false;//男
+		var age = 19;
+//		if(sex == false && age > 18){
+		if(!sex && age > 18){
+			console.log('女大十八变。。')
+		}else{
+			console.log('要么不是女的，要么比18岁小。。')
+		}
+		/*
+		 * 11.用if语句完成：从键盘输入考试分数(整数)，
+		 * 如果成绩大于等于90，输出学霸实在牛，
+		 * 如果大于等于80，输出学神要加油，
+		 * 如果大于等于70，输出学民好害羞，
+		 * 如果大于等于60输出学弱打酱油，
+		 * 如果小于60，输出学渣泪在流。
+
+		 */
+		var score = 88;
+		if(score < 60){ //[0,59]
+			console.log('学渣泪在流')
+		}else if(score < 70 ){ //&& score >= 60
+			console.log('学弱打酱油')
+		}else if(score < 80 ){ // && score >= 70
+			console.log('学民好害羞')
+		}else if(score < 90){
+			console.log('学神要加油')
+		}else if(score <= 100){
+			console.log('学霸实在牛')
+		}
+	</script>
+</html>

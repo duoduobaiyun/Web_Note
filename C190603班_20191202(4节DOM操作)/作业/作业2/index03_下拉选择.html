@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下拉选择</title>
+	</head>
+	<body>
+		请选择一张图片：
+		<!--
+			传递参数：js中也有this。代表当前对象。
+			设计了一个函数，传入this关键字。作用在select标签上，this指代select对象
+		-->
+		<select id="sel1" onchange="choose(this)">
+			<option value="0">-请选择-</option>
+			<option value="0002.jpg">皇冠梨</option>
+			<option value="0003.jpg">咬了一口的苹果</option>
+			<option value="0004.jpg">一箱桃</option>
+			<option value="0005.jpg">青芒</option>
+			<option value="0006.jpg">蛇果</option>
+			<option value="0007.jpg">核桃</option>
+		</select>
+		<div style="width: 100px; height: 100px; margin: 10px;">
+			<img src="" id="img1" />
+		</div>
+		
+		<button id="btn1">浏览记录</button>
+		<div id="jilu"></div>
+	</body>
+	<script>
+		/*
+		 * 思路：
+		 * 1.select：onchange事件
+		 * 
+		 * 2.获取被选中option的value
+		 * 
+		 * 3.设置给img的src属性
+		 * 
+		 */
+		
+		var arr = new Array();//创建一个数组，用于保存浏览记录
+		function choose(obj){
+			//obj,就是select元素
+//			var e1=document.getElementById("sel1");
+			var index = obj.selectedIndex;//获取被选择的option的下标位置
+			var val =obj.value;//获取select下拉列表的值：其实是被选择option的value属性值
+			var text =obj.options[index].text;//获取被选择的option的文本内容
+			
+			//获取img对象
+			var img1 = document.getElementById("img1");
+			img1.src="img/"+val;
+			
+			//将选择图片，存入数组中，做浏览记录
+			if(val!=0){
+				arr.push(text);
+			}
+		}
+		
+		var btn=document.getElementById("btn1");
+		btn.onclick = function(){
+			//1.获取div元素
+			//2.将arr中的数据显示到div上
+			var div1 = document.getElementById("jilu");
+			div1.innerHTML=arr;
+		}
+	</script>
+</html>

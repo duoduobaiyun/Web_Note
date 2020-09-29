@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件驱动函数</title>
+	</head>
+	<body>
+		<button   id="btn">按钮</button>
+	</body>
+	<script type="text/javascript">
+//		function test1(){
+//			console.log("按钮被点了。。")
+//		}
+		
+		var btn = document.getElementById("btn");
+		console.log(btn);
+//		alert(btn);
+
+		/*
+		 * 事件驱动函数执行:
+		 * 2种写法:
+		 * 	第一种:在标签上直接添加事件：
+		 * 		<button onclick="函数">
+		 * 
+		 * 	第二种:元素.事件 = 函数
+		 */
+		btn.onclick = function (){
+			console.log("我也被点了。。。")
+		}
+	</script>
+</html>

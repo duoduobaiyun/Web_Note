@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数的作用域</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 作用域：作用的范围
+		 */
+		//外层函数
+		function foo(){
+			//里层函数
+			function bar(){
+				console.log("我是在函数foo里定义的bar中打印的。。")
+			}
+			bar();
+			bar();
+		}
+		
+		foo();
+//		bar(); //bar在函数foo里定义的，就只能在foo函数中使用
+		
+		
+	</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>条件运算符</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 条件运算符：也叫三目运算符或者三元运算符。操作数有3个
+		 * 	语法：条件 ? 语句1 : 语句2;
+		 * 		条件成立：true-->语句1
+		 * 		条件不成立：false-->语句2
+		 * 
+		 * 二者选其一：
+		 * 
+		 */
+		var num = 0;
+		var res = num > 0 ? "正数" :"负数"; // 正数，负数，零
+		console.log(res);
+		
+		//给定一个成绩，判断是否及格
+		var score = 48;
+		var res2 = score >= 60 ? "及格":"不及格";
+		console.log(res2);
+		
+		var res3 = score < 60 ? "不及格":"及格";
+		console.log(res3);
+	</script>
+</html>

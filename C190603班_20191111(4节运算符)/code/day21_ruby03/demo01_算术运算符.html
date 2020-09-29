@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>算术运算符</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		/*
+		 * 算术运算符：
+		 * 加减乘除：+，-，*,/,%
+		 * 	/：相除
+		 * 	%:取模，取余
+		 * 
+		 * 正负数:+,-
+		 * 
+		 * 自增和自减：
+		 * 	++，自增1
+		 * 	--，自减1
+		 */
+		var a = 10; //number
+		var b = 3; //number
+		var add = a + b;//加法运算
+		console.log(add);
+		
+		var sub = a - b;//减法运算
+		console.log(sub);
+		
+		var mul = a * b;//乘法
+		console.log(mul);
+		
+		var div = a / b; //number
+		console.log(div);
+		var mod = a % b;
+		console.log(mod);
+		
+		console.log(+a);//正数a
+		console.log(-a);//负数a
+		
+		a = 3;
+		console.log(a);//3
+		
+		a++;//给a自增1，相当于a = a + 1
+		console.log(a);//4
+		
+		a--;//给a减1，相当于a = a - 1
+		console.log(a);//3
+		
+		
+		++a;//自增1
+		console.log(a);
+		--a;//自减1
+		
+		/*
+		 * 练习1：运算 3 / 4，3 % 4，5/2，5%2， 2/1，2%1
+		 * 练习2：a++和++a的区别？
+		 * 	提示：打印输出：a++，++a
+		 */
+		
+		console.log(3/4);
+		console.log(3%4);
+		console.log(2%1);//0
+		
+		
+		a = 2;
+		console.log(a);//2
+//		a++;
+//		++a;
+//		console.log(a);//3
+		console.log(a++);//2
+		console.log(a); //3
+		
+		a = 2;
+		console.log(++a);//3
+		console.log(a);
+		
+		a = 2;
+		var res = a++ + ++a;
+		console.log(a);
+		console.log(res);
+		
+		a = 2;
+		b = 3;
+		
+		var res2 = a++ + ++b - --a + --b;
+		/*
+		 * 			2	+ 4	-  2  +  3
+		 * 			a:3	  b:4	a:2  b:3
+		 */
+		//a:2,b:3,res2:7
+		console.log(a);
+		console.log(b);
+		console.log(res2);
+		
+		a = 2;
+		b = 3;
+		var res3 = --a + --b + a-- + ++b;
+		/*
+		 * 			1	+ 2 +  1 +  3
+		 * 			a:1  b:2  a:0  b:3
+		 */
+		console.log(a);
+		console.log(b);
+		console.log(res3);
+		a = 2;
+		var res4 = a + a++ + a + ++a;
+		/*
+		 * 			2 + 2  + 3 +  4
+		 * 				a:3		a:4
+		 */
+		console.log(a);
+		console.log(res4);
+		
+		
+	</script>
+</html>

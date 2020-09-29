@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>表格的基本结构</title>
+	</head>
+
+	<body>
+
+		<!--
+			1.先写table标签，做表格
+			2.写caption，做标题
+			3.写tr，做行
+			4.写th或td，做列
+				th：表头，加粗的效果
+				td：普通的单元格
+				
+			5.写单元格里的内容
+				文本
+				图片
+				链接
+				。。
+		-->
+
+		<table border="1">
+			<caption>天气预报</caption>
+			<thead>
+
+				<tr>
+					<th colspan="2">日期</th>
+					<th>天气状况</th>
+					<th>出行情况</th>
+				</tr>
+
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2">22日星期五</td>
+					<td>白天</td>
+						
+					<td><img src="img/tianqi_1.png"></td>
+					<td>今天的天气晴朗，温度适宜，适合出行。</td>
+				</tr>
+				<tr>
+
+					<td>夜间</td>
+					<td><img src="img/tianqi_2.png"></td>
+					<td>
+						<p>今天有雨，出门记得带伞</p>
+					</td>
+				</tr>
+
+			</tbody>
+			<tfoot></tfoot>
+		</table>
+	</body>
+
+</html>

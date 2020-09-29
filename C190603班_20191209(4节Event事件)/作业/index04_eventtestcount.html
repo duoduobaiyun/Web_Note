@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>统计个数</title>
+	</head>
+
+	<body>
+		<h2>您可以输入10个字符：</h2>
+		<textarea rows="7" cols="70" id="text1"></textarea>
+		<br />
+		<span id="span1"></span>
+
+	</body>
+	<script>
+		/*
+		 * 练习3：对于textarea，文本域：提示可以输入10个字符。剩余多少可以输入
+		 * 	onkeyup()
+		 */
+
+		var text1 = document.getElementById('text1');
+		text1.addEventListener('keyup', function() {
+			var val = text1.value;
+			console.log(val);
+			console.log(val.length)
+			var count = 10 - val.length;
+			var span1 = document.getElementById("span1");
+			if(count > 0) {
+				span1.innerHTML = "您还可以输入" + count + "个字符";
+			} else {
+				span1.innerHTML = "您还可以输入0个字符";
+				//对于文本框：
+				//				text1.disabled=true;//禁用
+				//				text1.readOnly=true;//只读
+				text1.value = val.substring(0, 10); //截取
+
+			}
+		})
+	</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>最大和最小</title>
+		<style type="text/css">
+			#box1{
+				width: 200px;
+				background: pink;
+				border: 1px solid red;
+				float: left;
+				/*min-height: 100px;*/
+			}
+			#box2{
+				width: 200px;
+				background: pink;
+				border: 1px solid red;
+				float:  left;
+				margin-left: 50px;
+				max-height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			width,
+			height,
+			
+			min-height,元素没有设置高度，高度要看内容。
+				设置最小的高度
+					如果内容的高度低于最小高，元素的高度就是最小高
+					如果内哦让那个的高度大于最小高，元素的高度就是实际的高度。
+			
+			max-height,元素的高度醉倒不会超过最大高。
+			
+		-->
+		<div id="box1">
+			鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			
+		</div>
+		<div id="box2">
+			鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			
+		</div>
+	</body>
+</html>

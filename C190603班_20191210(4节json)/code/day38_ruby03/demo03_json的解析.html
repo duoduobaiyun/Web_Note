@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>json的解析</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * A电脑：服务器端
+			 * step1：json对象，存储要发送的信息
+			 * step2：json对象---->json的字符串(文本)
+			 * 
+			 *传递的就是一个文本字符串：长的是json的格式：name:value
+			 * 
+			 * B电脑：客户端
+			 * 接收到json的字符串文本：string
+			 * 
+			 */
+			//A电脑：发送文本
+			var obj1 = {"name":"王二狗","age":30,"address":"南昌市"};
+			console.log(typeof obj1);//object
+			//将对象转为string的文本，再进行传递
+			var str1 = JSON.stringify(obj1);
+			console.log(typeof str1); //string
+			console.log(obj1);
+			console.log(str1);//"{"name":"王二狗","age":30,"address":"南昌市"}"
+			
+			
+			
+			//B电脑：
+			//接收到了传来的数据：str1
+			/*
+			 * charAt(),charCodeAt()
+			 * indexOf(),lastIndexOf()
+			 * concat(),split(),
+			 * substring(start,end),substr(start,count),slice(start,end)
+			 * ....
+			 */
+			//将string类型的数据，转为json对象：json的解析
+			var newObj = JSON.parse(str1);
+			console.log(typeof newObj);
+			console.log(newObj.name);
+			console.log(newObj.age);
+			console.log(newObj.address);
+			
+			
+			/*
+			 * 对象转字符串：JSON.stringify(obj)->str
+			 * 
+			 * 字符串解析成对象：JSON.parse(str)-->obj
+			 */
+			
+			
+			
+		</script>
+	</body>
+</html>

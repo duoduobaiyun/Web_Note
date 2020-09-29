@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM节点</title>
+	</head>
+	<body>
+		hello
+		<div id="div1">
+			我是一个div
+		</div>
+		<input type="text" value="" />
+		<script type="text/javascript">
+			/*
+			 * 节点：
+			 * 	节点类型：nodetype
+			 * 		标签节点：1
+			 * 		文本节点：3
+			 * 		document：9
+			 * 
+			 * 	节点名称：nodename
+			 * 	节点的值：nodevalue
+			 */
+			console.log(document.nodeType); //9
+			console.log(document.doctype.nodeType);//10
+			
+			var div1 = document.getElementById("div1");
+			console.log(div1.nodeType);//1
+			console.log(div1.nodeName); //DIV
+			console.log(div1.nodeValue); //null
+			
+			var input1 = document.getElementsByTagName('input')[0];
+			console.log(input1.nodeType);//1
+			console.log(input1.nodeName);//INPUT
+			console.log(input1.nodeValue);//null
+			
+			console.log(document.body.childNodes[0].nodeType);//3,文本节点
+			console.log(document.body.childNodes[0].nodeName);//#text
+			console.log(document.body.childNodes[0].nodeValue);//#text
+			
+		</script>
+	</body>
+</html>

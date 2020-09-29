@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作属性</title>
+		<style type="text/css">
+			
+			.myclass{
+				width: 200px;
+				height: 100px;
+				background-color: pink;
+				border: 1px solid red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<input type="text" name="username" id="username" value="lixiaohua" />
+		<button onclick="test1()">按钮</button>
+		
+		<div id="div1" class="myclass"></div>
+		
+		
+		<script type="text/javascript">
+			/*
+			 * 操作属性：
+			 * 	step1：获取对象
+			 * 
+			 * 	step2：操作属性
+			 * 		元素.属性名--->获取
+			 * 		元素.属性 = 新的值
+			 * 
+			 * 还可以通过其他的方法来获取：
+			 * 		getAttribute(属性名)-->属性值
+			 * 		setAttribute(属性名，属性值)
+			 * 		removeAttribute()，删除属性
+			 */
+			function test1(){
+				//1.找标签对象
+				var input1 = document.getElementById("username");
+				//获取属性
+				console.log(input1.value);//获取value属性值，
+				console.log(input1.type);//获取type属性值，text
+				
+				console.log(input1.getAttribute('type'));
+				console.log(input1.getAttribute('value'));//
+				
+				//设置属性
+//				input1.value = "李小花";
+				input1.setAttribute("value","肖睿哲");
+//				input1.setAttribute("type","radio");
+
+				//移出属性
+				input1.setAttribute("class","haha");
+				console.log(input1.getAttribute("class"));
+				
+				input1.removeAttribute("class");
+				console.log(input1.getAttribute("class")); //null
+				
+				
+				var div1 = document.getElementById("div1");
+				div1.removeAttribute("class");
+				
+			}
+			/*
+			 * 练习1：页面上设置span标签，写个文本
+			 * 练习2：通过setAttribute()，添加class属性，添加样式
+			 * 练习3：移出class样式
+			 */
+		</script>
+	</body>
+</html>

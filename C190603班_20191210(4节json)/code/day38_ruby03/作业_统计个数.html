@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>统计剩余字数</title>
+	</head>
+	<body>
+		<h2>您可以输入10个字符：</h2>
+		<textarea rows='7' cols='70' id="text1"></textarea>
+		<br />
+		<span id="span1"></span>
+		
+		<script type="text/javascript">
+			/*
+			 * 统计文本域中的数字的个数：
+			 * 事件：onkeydown，onkkeyup，onkeypress
+			 * 元素：文本域
+			 * 函数：
+			 */
+			
+			var text1 = document.getElementById('text1');
+			var span1 = document.getElementById('span1');
+			
+			text1.addEventListener('keyup',function(){
+				//step1：获取文本域中的文本内容
+				var content = text1.value;
+				//step2：判断长度
+				var len = content.length;
+				console.log(len);
+				//step3：计算--->将结果显示到span上
+				var yu = 10 - len;
+				console.log(yu);
+				if(yu >= 0){
+					span1.innerText = '您还可以输入'+yu+'个字符';
+				}else{//<=
+//					span1.innerText = '您还可以输入'+yu+'个字符';
+//					text1.disabled = true;//禁用
+//					text1.readOnly = true;//只读
+					text1.value = content.substr(0,10);
+				}
+			
+				
+			})
+		</script>
+	</body>
+</html>

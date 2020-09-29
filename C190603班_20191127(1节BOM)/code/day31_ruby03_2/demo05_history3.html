@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body bgcolor="antiquewhite">
+		<center>
+			<font size="7">3</font>
+		</center>
+		<a href="demo05_history1.html">跳转到第一个页面</a>
+		<br />
+		<button onclick="test1()">后退</button>
+		<button onclick="test2()">前进</button>
+	</body>
+	<script type="text/javascript">
+		function getUrlCount(){
+			//弹出访问过的url的数量
+			var len = history.length;
+			alert(len);
+		}
+		
+		getUrlCount();
+		
+		function test1(){
+			history.back();//相当于history.go(-1)
+		}
+		
+		function test2(){
+			history.forward();//前进，相当于go(1)
+		}
+	</script>
+</html>

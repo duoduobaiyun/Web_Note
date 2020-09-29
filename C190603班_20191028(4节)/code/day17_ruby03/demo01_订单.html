@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>订单</title>
+		<style type="text/css">
+			li{
+				list-style: none;
+				color: red;
+				float: left;
+				margin-right: 20px;
+				position: relative;
+			}
+			#order div{
+				width: 200px;
+				height: 100px;
+				background: yellow;
+				display: none;
+				position: absolute;
+			}
+			#customer div{
+				width: 200px;
+				height: 100px;
+				background: yellowgreen;
+				display: none;
+				position: absolute;
+			}
+			#order:hover div{
+				display: block;
+			}
+			#customer:hover div{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="order">
+				我的订单
+				<div id="">
+					
+				</div>
+			</li>
+			<li id="customer">
+				我的客户
+				<div id="">
+					
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

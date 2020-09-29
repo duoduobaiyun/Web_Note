@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>return</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * return语句：词义:返回
+		 * 	1.将函数的结果，返回给调用处。
+		 * 	2.结束函数的执行。
+		 * 
+		 * 注意点：
+		 * 	A：在函数中，如果执行了return语句，那么无论是分支还是循环还是其他代码，都直接结束
+		 * 	B：一个函数只能由一个返回值。
+		 * 	C：return语句，一般位于一个函数的末尾。
+		 */
+		function test1(){
+			console.log("我是test1函数。。")
+			return 100; //将100给调用处，并结束函数的执行
+//			console.log("我返回值啦。。")
+		}
+		var res1 = test1();
+		console.log(res1);
+		
+		function test2(age){
+			console.log("我是test2函数。。")
+			if (age < 0){
+				return ;//结束函数的执行
+			}
+			console.log("您的年龄:"+age);
+		}
+		var res2 = test2(-30);
+		console.log(res2);
+		
+		
+		function test3(){
+			console.log("我是test3函数。。")
+			for(var i=1;i<=10;i++){
+				if(i == 5){
+//					break;//结束循环
+					return;//结束函数。。
+				}
+				console.log(i);
+			}
+			console.log("test3函数即将结束。。")
+		}
+		test3();
+		
+		
+		function test4(){
+			return 2;
+		}
+		var m= test4();
+		console.log(m);
+	</script>
+</html>

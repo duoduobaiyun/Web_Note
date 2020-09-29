@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+		 * 给循环贴标签：
+		 */
+			out1:for(var i =1;i<5;i++){
+				in1:for(var j =1;j<5;j++){
+					if( j == 2){
+						break out1; //
+						break; // 默认结束的是里层循环
+//						continue; //默认结束的是里层循环
+					}
+					console.log(i,j)
+				}
+				
+			}
+		</script>
+	</body>
+</html>

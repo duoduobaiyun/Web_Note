@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = ['a','b','c','d','e'];
+			console.log(a.push('haha'));
+			console.log(a);
+			
+			a.pop();
+			console.log(a);
+			
+			a.unshift('world');
+			console.log(a);
+			a.shift();
+			console.log(a);
+			/*
+			 * splice(index,howmany,add)
+			 * 第一个参数：从哪个位置开始
+			 * 第二个参数：删除多少个
+			 * 第三个参数：要添加的元素。。
+			 */
+			
+			a.splice(1,2);//从下标1开始删除，2个
+			console.log(a);
+			
+			a.splice(1,0,'王二狗','李小花','haha');//添加操作
+			console.log(a);
+			
+			a.splice(1,2,'肖睿哲');
+			console.log(a);
+		</script>
+	</body>
+</html>

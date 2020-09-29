@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复选框</title>
+		<style type="text/css">
+			a{
+				text-decoration: none;
+				border: 1px solid #333333;
+				padding: 5px 10px;
+				border-radius: 5px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		爱好：
+		<input type="checkbox" name="hobby" value="program" />编程
+		<input type="checkbox" name="hobby" value="food" checked/>美食
+		<input type="checkbox" name="hobby" value="game" />游戏
+		<input type="checkbox" name="hobby" value="girl" checked="checked"/>女人
+		<br />
+		<br />
+		<a href="#" onclick="chooseAll()">全选</a>
+		<a href="#" onclick="chooseNotAll()">全不选</a>
+		<a href="#" onclick="chooseReverse()">反选</a>
+		
+		<script type="text/javascript">
+			/*
+			 * 复选框的操作：
+			 * checked:
+			 * 		true，被选中了
+			 * 		false，没被选中
+			 * 全选,全不选，反选
+			 *	
+			 */
+			//全选
+			function chooseAll(){
+				var checkboxs = document.getElementsByName("hobby");
+				for(var i = 0;i<checkboxs.length;i++){
+					checkboxs[i].checked = true;
+				}
+			}
+			//全不选
+			function chooseNotAll(){
+				var checkboxs = document.getElementsByName("hobby");
+				for(var i=0;i<checkboxs.length;i++){
+					checkboxs[i].checked = false;
+				}
+			}
+			
+			//反选
+			function chooseReverse(){
+				var checkboxs = document.getElementsByName("hobby");
+				for(var i=0;i<checkboxs.length;i++){
+//					if(checkboxs[i].checked == true){
+//						//被选中
+//						checkboxs[i].checked = false;
+//					}else{
+//						//没被选中
+//						checkboxs[i].checked = true;
+//					}
+					checkboxs[i].checked = !checkboxs[i].checked;
+				}
+			}
+		</script>
+	</body>
+</html>

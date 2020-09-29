@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标事件</title>
+		<style type="text/css">
+			#div1{
+				width: 500px;
+				height: 400px;
+				background-color: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<button id="btn">移出事件</button>
+		<p id="p1"></p>
+		
+		<button id="btn2" >按钮</button>
+		<script type="text/javascript">
+			/*
+			 * 鼠标事件：
+			 * 	onclick，鼠标单击
+			 * 	ondbclick，鼠标双击
+			 * 	onmouseover，鼠标移入
+			 * 	onmouseout，鼠标移出
+			 * 	onmousemove，鼠标移动
+			 * 	onmouseup，鼠标弹起
+			 * 	。。
+			 */
+			
+			//题目：鼠标在div上移动的时候，生成随机数
+			var div1 = document.getElementById('div1');
+			var p1 = document.getElementById('p1');
+			var btn = document.getElementById('btn');
+			
+			div1.addEventListener('mousemove',showRandomNum)
+			
+			//生成随机数，并显示在p标签上
+			function showRandomNum(){
+				p1.innerText = parseInt(Math.random()*10000000);
+			}
+			
+			//点击按钮，移出事件
+			btn.addEventListener('click',function(){
+				div1.removeEventListener('mousemove',showRandomNum);
+			})
+			
+			//练习1：给一个按钮，添加双击事件。。
+			var btn2 = document.getElementById('btn2');
+			btn2.ondblclick = function(){
+				alert('被弹了。。')
+			}
+			
+//			btn2.addEventListener('dblclick',function(){
+//				
+//			})
+			
+			
+		</script>
+	</body>
+</html>

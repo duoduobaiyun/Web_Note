@@ -1,0 +1,420 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font: 14px/24px "微软雅黑";
+}
+
+body {
+	background: #1b2750 url(../images/bg.jpg) no-repeat center 47px;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+header,
+footer,
+#ads,
+nav,
+#news,
+#hero,
+#movie,
+#baike {
+	width: 960px;
+	margin: 0 auto;
+	/*border:solid 1px red;*/
+}
+
+
+/*header================================================*/
+
+header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 1440px;
+	height: 47px;
+	background-color: #f5f5f5;
+}
+
+header h1 {
+	width: 94px;
+	height: 47px;
+	margin-left: 220px;
+	background: url(../images/logo.png) no-repeat center;
+}
+
+header div.header_nav {
+	width: 600px;
+	height: 47px;
+	line-height: 47px;
+	text-align: center;
+}
+
+header div.header_nav a {
+	height: 47px;
+	line-height: 47px;
+	font-size: 12px;
+	color: #000;
+	text-align: center;
+	border-right: solid 1px #E7E7E7;
+	padding: 0 15px;
+}
+
+header div.header_nav a:first-child {
+	background: url(../images/three.png) no-repeat left center;
+}
+
+header div.header_nav a:nth-child(4) {
+	background: url(../images/h.png) no-repeat 90% top;
+}
+
+header div.header_login a {
+	font-size: 12px;
+	color: #000;
+	height: 47px;
+	line-height: 47px;
+}
+
+header div.header_login a:first-child {
+	float: left;
+	background: url(../images/game.png) no-repeat left center;
+	padding-left: 28px;
+	margin-right: 20px;
+}
+
+header div.header_login a:nth-child(2) {
+	float: left;
+	background: url(../images/login.png) no-repeat left center;
+	padding-left: 30px;
+	margin-right: 10px;
+}
+
+header div.header_login a:last-child {
+	border-left: solid 1px #e7e7e7;
+	padding-left: 10px;
+}
+
+
+/*ads部分==================================================*/
+
+section#ads {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 255px;
+	padding-left: 65px;
+}
+
+section#ads h3 {
+	font-size: 23px;
+	color: #FF9C00;
+	font-weight: 300;
+}
+
+section#ads h4 {
+	font-size: 18px;
+	color: #AD7B3A;
+}
+
+
+/*nav部分====================================================*/
+
+nav {
+	height: 66px;
+	margin-top: 25px;
+	background: url(../images/nbg.png) repeat-x;
+}
+
+nav ul li {
+	float: left;
+	width: 158px;
+	height: 66px;
+	line-height: 66px;
+	text-align: center;
+	background: url(../images/nline.png) no-repeat right;
+}
+
+nav ul li:last-child {
+	background: none;
+}
+
+nav ul li a {
+	color: #FFF;
+	font-size: 16px;
+}
+
+nav ul li a:hover {
+	color: #F00;
+	font-size: 14px;
+}
+
+
+/*news部分=======================================*/
+
+section#news {
+	height: 420px;
+	background-color: #FFF;
+}
+
+section#news article.news_left {
+	width: 425px;
+	height: 420px;
+}
+
+section#news article.news_left h3 {
+	height: 60px;
+	line-height: 60px;
+	font-size: 16px;
+	color: #FF7E00;
+	text-align: center;
+	font-weight: 500;
+	border-bottom: dashed 1px #CCC;
+}
+
+section#news article.news_left ul {
+	height: 170px;
+	margin: 10px;
+	margin-left: 30px;
+	border-bottom: dotted 1px #111;
+}
+
+section#news article.news_left ul:last-child {
+	border-bottom: 0;
+}
+
+section#news article.news_left ul li {
+	line-height: 26px;
+}
+
+section#news article.news_left ul li span {
+	float: right;
+	color: #999;
+	font-style: italic;
+	font-size: 12px;
+	margin-right: 10px;
+}
+
+section#news article.news_left ul li a {
+	color: #000;
+	font-weight: 300;
+}
+
+section#news article.news_left ul li a:hover {
+	color: #F00;
+}
+
+
+/*news部分右侧*/
+
+section#news aside.news_right img {
+	margin: 10px;
+}
+
+section#news aside.news_right ul {
+	background-color: #E7E7E7;
+	margin: 0 10px;
+}
+
+section#news aside.news_right ul li {
+	height: 33px;
+	line-height: 33px;
+	padding: 2px;
+}
+
+section#news aside.news_right ul li:nth-child(even) {
+	background-color: #cfcfcf;
+}
+
+section#news aside.news_right ul li a {
+	font-size: 12px;
+	color: #000;
+	padding: 0 10px;
+	border-right: solid 1px #333;
+}
+
+section#news aside.news_right ul li span {
+	font-size: 12px;
+	color: #FF5A00;
+	font-weight: 600;
+	padding-left: 10px;
+}
+
+
+/*hero部分============================================*/
+
+section#hero {
+	height: 470px;
+	background-color: #2b3a67;
+}
+
+section#hero h3 {
+	height: 46px;
+	line-height: 46px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #FFF;
+	padding-left: 30px;
+	background: url(../images/line.png) repeat-x;
+}
+
+section#hero ul {
+	width: 960px;
+	height: 54px;
+	line-height: 54px;
+	background: #2C4082 url(../images/hr.png) repeat-x bottom;
+}
+
+section#hero ul li a {
+	float: left;
+	width: 80px;
+	height: 54px;
+	line-height: 54px;
+	text-align: center;
+	color: #C9E4FF;
+}
+
+section#hero ul li a:hover {
+	background: url(../images/hhr.png) no-repeat bottom;
+}
+
+
+/*hero的角色部分*/
+
+section#hero figure {
+	float: left;
+	width: 80px;
+	height: 110px;
+	margin: 6px 8px;
+}
+
+section#hero figure img {
+	border-radius: 5px;
+	transition: all 500ms;
+}
+
+section#hero figure img:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 0px 30px blanchedalmond;
+}
+
+section#hero figure figcaption {
+	text-align: center;
+}
+
+section#hero figure figcaption a {
+	color: #FFF;
+}
+
+section#hero figure figcaption a:hover {
+	position: relative;
+	left: 2px;
+	top: 2px;
+	color: #F00;
+}
+
+
+/*movie部分==================================================*/
+
+section#movie {
+	height: 450px;
+	background-color: #FFF;
+}
+
+section#movie h3 {
+	height: 46px;
+	line-height: 46px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #FFF;
+	padding-left: 30px;
+	background: url(../images/line.png) repeat-x;
+}
+
+section#movie figure {
+	float: left;
+	width: 160px;
+	height: 182px;
+	margin: 8px 16px;
+}
+
+section#movie figure img {
+	border-radius: 10px;
+	transition: all 500ms;
+}
+
+section#movie figure img:hover {
+	transform: scale(1.02);
+	box-shadow: 0 0 30px #000;
+}
+
+/*百科===================================================*/
+section#baike h3 {
+	height: 46px;
+	line-height: 46px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #FFF;
+	padding-left: 30px;
+	background: url(../images/line.png) repeat-x;
+	border:solid 1px red;
+	 
+}
+
+
+/*footer部分=============================================*/
+
+footer {
+	height: 140px;
+	margin-top: 20px;
+}
+
+footer div:first-child {
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+	background-color: #0F1731;
+}
+
+footer div:first-child span {
+	color: #999;
+}
+
+footer div:first-child a {
+	font-size: 12px;
+	color: #FFF;
+	margin: 0 10px;
+}
+
+footer div:first-child a:hover {
+	color: #F00;
+}
+
+footer div:last-child {
+	text-align: center;
+}
+
+footer div:last-child a {
+	font-size: 12px;
+	color: #999;
+	padding:0 15px;
+	border-right:solid 1px #999;
+}
+
+footer div:last-child p {
+	color:#999;
+	margin:10px 0 ;
+}

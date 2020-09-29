@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课堂练习</title>
+		<style type="text/css">
+			#div1{
+				width: 300px;
+				height: 300px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" >
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		//step1：找到这个div，添加点击事件
+		var div1 = document.getElementById("div1");
+		div1.onmouseover = function (){
+			div1.style.backgroundColor = randomColor();
+		}
+		
+		//获取随机颜色
+		function randomColor(){
+			var red = parseInt(Math.random()*256);//[0,255];	77
+			var green = parseInt(Math.random()*256);//[0,255];	88
+			var blue = parseInt(Math.random()*256);//[0,255];	99
+			
+			var color = "rgb("+red+","+green+","+blue+")";//"rgb(77,88,99)"
+			return color;
+			
+		}
+	</script>
+</html>

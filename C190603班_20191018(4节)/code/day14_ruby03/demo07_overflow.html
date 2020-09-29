@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>溢出</title>
+		<style type="text/css">
+			#box1{
+				width: 300px;
+				height: 200px;
+				border: 1px solid red;
+				overflow:auto;
+			}
+			#box2{
+				width: 300px;
+				height: 100px;
+				margin-top: 40px;
+				border: 1px solid red;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			溢出：理解为装不下了
+			CSS样式中通过overflow属性来设置溢出隐藏，溢出隐藏指的是当内容溢出元素框时发生的操作。
+			常用的设置值有visible、hidden、scroll和auto四种。
+			
+			visible:可见的，默认值
+			hidden：隐藏，裁切，
+				值可以对溢出的内容进行修剪，且修剪的内容不会被显示。
+			scroll：滚动，
+				添加滚动条
+			auto：自动，自适应
+				当内容没有溢出时不添加滚动条，当内容有溢出时再添加滚动条。
+
+		-->
+		<div id="box1">
+			1.helloworld.
+			2.鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			3.上联 no zuo no die why you cry，下联 you try you die don't ask why ,横批，just do it.
+			4.女生说：大海啊，母亲！男生说：大海啊，丈母娘！
+			5.大海啊都是水，骏马啊四条腿。
+			1.helloworld.
+			2.鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			3.上联 no zuo no die why you cry，下联 you try you die don't ask why ,横批，just do it.
+			4.女生说：大海啊，母亲！男生说：大海啊，丈母娘！
+			5.大海啊都是水，骏马啊四条腿。
+			1.helloworld.
+			2.鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			3.上联 no zuo no die why you cry，下联 you try you die don't ask why ,横批，just do it.
+			4.女生说：大海啊，母亲！男生说：大海啊，丈母娘！
+			5.大海啊都是水，骏马啊四条腿。
+			1.helloworld.
+			2.鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			3.上联 no zuo no die why you cry，下联 you try you die don't ask why ,横批，just do it.
+			4.女生说：大海啊，母亲！男生说：大海啊，丈母娘！
+			5.大海啊都是水，骏马啊四条腿。
+		</div>
+		<div id="box2">
+			1.helloworld.
+			2.鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			3.上联 no zuo no die why you cry，下联 you try you die don't ask why ,横批，just do it.
+			4.女生说：大海啊，母亲！男生说：大海啊，丈母娘！
+			5.大海啊都是水，骏马啊四条腿。
+			1.helloworld.
+			2.鹅鹅鹅，曲项向天歌，拔毛加飘水，点火盖上锅。
+			3.上联 no zuo no die why you cry，下联 you try you die don't ask why ,横批，just do it.
+			4.女生说：大海啊，母亲！男生说：大海啊，丈母娘！
+			5.大海啊都是水，骏马啊四条腿。
+		</div>
+		
+
+	</body>
+	
+</html>

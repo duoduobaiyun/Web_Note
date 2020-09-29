@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下拉列表</title>
+	</head>
+	<body>
+		<button onclick="createOption()">创建下拉列表</button>
+		<button onclick="deleteOption()">删除一个</button>
+		<button onclick="clearOption()">清空下拉列表</button>
+		
+		<select id="sel">
+			<option value="0">请选择</option>
+		</select>
+		
+		<script type="text/javascript">
+			/*
+			 * 创建下拉列表：
+			 * 
+			 * 方式一：
+			 * 		document.createElement('option')
+			 * 		document.createTextNode()
+			 * 		appendChild()
+			 * 
+			 * 方式二：通过构造函数的方式，创建optipn
+			 * 	var op = new Option(text,value)
+			 * 	var op = new Option('苹果','apple');//<option value='apple'>苹果</option>
+			 * 
+			 * 
+			 * 	sel.options.add(op)
+			 * 	sel.options.remove(index);
+			 */
+			var arr = ['苹果','橘子','香蕉','皇冠梨','桃子','葡萄','火龙果']
+			//创建
+			function createOption(){
+				//step1:找select对象
+				var sel = document.querySelector('#sel');
+				/*
+				//step2：创建option
+				var op = new Option('苹果',1);
+				//step3：添加到select上
+				sel.options.add(op);
+				*/
+				for(var i =0;i<arr.length;i++){
+					var op = new Option(arr[i],i+1);
+					sel.options.add(op);
+				}
+			}
+			
+			//删除一个下拉列表：
+			function deleteOption(){
+				var sel = document.querySelector('#sel');
+				sel.options.remove(0);//根据下标索引删除option
+			}
+			//清空
+			function clearOption(){
+				var sel = document.querySelector('#sel');
+				sel.options.length = 1;//通过设置下拉列表的option的数量，来清空下拉列表
+			}
+			
+			/*
+			 * 数组：存储一组数据
+			 * 
+			 * 省份：['江西省','浙江省','广东省','江苏省','云南省','山东省']
+			 * 城市：
+			 * 		[
+			 * 			['南昌市','赣州市','上饶市','井冈山','九江','景德镇'],
+			 * 			['杭州市','义乌','金华','绍兴'],
+			 * 			['东莞','广州市','深圳','珠海'],
+			 * 			['苏州市','南京市','徐州','连云港','无锡'],
+			 * 			['大理','丽江','昆明'],
+			 * 			['济南','烟台','青岛']
+			 * 		]
+			 * 
+			 * 一维数组：数组中存储的元素，就是数据
+			 * 		[数值1，数值2， 数值3.。。]
+			 * 		[1,2,3,4,5]
+			 * 二维数组：数组中存储的元素，又是一个数组
+			 * 		[数组1，数组2，数组3,。。]
+			 * var a = [[1,2,3],[4,5,6],[],[],[],[]]
+			 * a[0] ，第一个一维数组
+			 * 		a[0]-->[1,2,3]
+			 * 		a[0][0] --->1
+			 * 		a[0][1]---->2
+			 * 		a[0][2]---->3
+			 * a[1]， 第二个一维数组
+			 */
+		</script>
+	</body>
+</html>

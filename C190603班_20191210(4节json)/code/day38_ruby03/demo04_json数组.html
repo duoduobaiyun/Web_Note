@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>json数组</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * json的数组
+			 * 一条json：{name:value,name:value,name:value....}
+			 * 一组json：
+			 * 		[value,value,value]
+			 * 		[{},{},{}]
+			 */
+			//1.简单的json数组：对象
+			var jsonArray1 = ["王二狗","李小花","肖睿哲"];
+			console.log(typeof jsonArray1); //object
+			
+			console.log(jsonArray1[0]);
+			console.log(jsonArray1[1]);
+			console.log(jsonArray1[2]);
+			
+			//2.复杂点的
+			//var obj1 = {"name":"王二狗","age":30,"address":"南昌市"};
+			var jsonArray2 = [
+				{"name":"王二狗","age":37,"address":"南昌市"},
+				{"name":"李小花","age":17,"address":"北京市"},
+				{"name":"肖睿哲","age":19,"address":"新加坡"}
+			];
+			console.log(typeof jsonArray2);
+			console.log(jsonArray2[0]);
+			console.log(jsonArray2[0].name);
+			console.log(jsonArray2[0].age);
+			console.log(jsonArray2[0].address);
+			
+			//3.嵌套
+			var obj = {
+				"name":"肖睿哲",
+				"age":19,
+				"address":"新加坡",
+				"friends":["王二狗","李小花","王万红","余鑫洋"]
+			}
+			
+			
+			//A电脑：obj--->string
+			var str = JSON.stringify(obj);
+			console.log(str);
+			
+			//B电脑：string-->obj,获取数据
+			var newObj = JSON.parse(str);
+			console.log(newObj);
+			console.log(newObj.name);
+			console.log(newObj.age);
+			console.log(newObj.address);
+			console.log(newObj.friends[2]);
+		</script>
+	</body>
+</html>

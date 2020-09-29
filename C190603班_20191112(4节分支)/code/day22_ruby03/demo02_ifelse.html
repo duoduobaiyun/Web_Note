@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ifelse语句</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * if(条件语句){
+		 * 	语句1；
+		 * }else{
+		 * 	语句2；
+		 * }
+		 * 说明:
+		 * if里的条件如果满足，就执行语句1，否则执行语句2
+		 * 
+		 */
+		//给定成绩，如果大于等于60，输出及格，否则打印不及格
+		var score = 48;
+		if(score >= 60){
+		 	console.log(score,"及格");
+		}else{
+			console.log(score,"不及格");
+		}
+		/*
+		 * 练习1：给定一个年龄，如果大于18岁，输出你已经不是小孩子了，否则输出未成年
+		 * 练习2：给定一个性别，如果是男，就打印去男厕所，否则去女厕所
+		 * 练习3：给定一个数字，如果能被2整除，就打印是偶数
+		 */
+		
+		var age = 19;
+		if(age > 18){
+			console.log("你已经不是小孩子了。。")
+		}else{
+			console.log("未成年。")
+		}
+		
+		var sex = '泰';
+		if(sex == '男'){
+			console.log("是男厕所。。")
+		}else{
+			console.log("去女厕所。。")
+		}
+		
+		var num = 18;
+		if(num % 2 == 0){
+			console.log("是偶数")
+		}else{
+			console.log("奇数")
+		}
+		
+		
+	</script>
+</html>

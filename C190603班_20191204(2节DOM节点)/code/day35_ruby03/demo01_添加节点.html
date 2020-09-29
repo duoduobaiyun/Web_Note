@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>添加节点</title>
+		<style type="text/css">
+			#div1{
+				width: 500px;
+				height: 400px;
+				background-color: pink;
+			}
+			p{
+				background-color: yellowgreen;
+			}
+			
+			span{
+				background-color: red;
+				display: inline-block;
+				width: 200px;
+				height: 20px;
+			}
+			#div2{
+				width: 500px;
+				height: 200px;
+				background-color: palegoldenrod;
+			}
+			#div3{
+				width: 500px;
+				height: 200px;
+				background-color: cadetblue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<button onclick="test1()">添加文本节点</button>
+		<button onclick="test2()">添加标签节点</button>
+		
+		<div id="div2">
+			<ul id="ul1">
+				<li>鸣人</li>
+				<li>佐助</li>
+				<li>小樱</li>
+			</ul>
+		</div>
+		<div id="div3">
+			
+		</div>
+		<button onclick="test3()">剪切</button>
+		<button onclick="test4()">复制</button>
+		
+		<ul id="ul2">
+			<li>鸣人</li>
+			<li>佐助</li>
+			<li>小樱</li>
+		</ul>
+		<button onclick="test5()">插入list</button>
+		<script type="text/javascript">
+			/*
+			 * 创建节点操作：
+			 * 		1.document.createTextNode(文本内容)-->textnode节点
+			 * 		2.document.createElement(标签名)-->标签节点
+			 * 添加节点操作：
+			 * 		appendChild(子节点)
+			 * 
+			 * 	还可以操作已有的节点对象，实现的是剪切效果
+			 * 
+			 * 		cloneNode()-->复制一个节点
+			 * 
+			 */
+			//1.添加文本节点
+			function test1(){
+				//innerHTML,innerText
+				var div1 = document.getElementById("div1");
+				//创建一个文本节点：
+				var textNode1 = document.createTextNode("我是一个文本节点");
+				//添加到div1上
+				div1.appendChild(textNode1);
+			}
+			//2.添加标签节点
+			function test2(){
+				//创建p标签，添加到div上
+				var div1 = document.getElementById("div1");
+				//step1：创建标签节点
+				var pNode = document.createElement('p');
+				//step2：创建文本节点
+				var textNode = document.createTextNode('我是p标签中的文本内容');
+				
+				//step3：将文本节点，挂在p标签上
+				pNode.appendChild(textNode);
+				//step4：将p标签，挂在div上
+				div1.appendChild(pNode);
+				
+				//另外的操作
+				var spanNode = document.createElement('span');
+				pNode.appendChild(spanNode);
+				
+			}
+			
+			
+			//3.通过appendChild()，剪切的效果
+			function test3(){
+				var ul1 = document.getElementById('ul1');
+				var div3 = document.getElementById('div3');
+				div3.appendChild(ul1);
+			}
+			
+			//4.复制节点
+			function test4(){
+				var ul1 = document.getElementById("ul1");
+				var ul1copy = ul1.cloneNode(true);
+				var div3 = document.getElementById('div3');
+				div3.appendChild(ul1copy);
+			}
+			
+			/*
+			 * 练习1：点击按钮，添加节点：标签节点和文本节点
+			 */
+			function test5(){
+				//step1：找到ul对象
+				var ul2 = document.getElementById("ul2");
+				//step2：创建list节点
+				var liNode = document.createElement('li');
+				//step3：创建文本节点
+				var textNode = document.createTextNode('犬夜叉');
+				//step4：添加
+				liNode.appendChild(textNode);
+				ul2.appendChild(liNode);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>赋值运算符</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 赋值运算符：
+		 * 	简单赋值运算符：=，
+		 * 		将=右侧的数值，赋值给=左侧的变量
+		 * 	复合赋值运算符：
+		 * 		+=, a += b--->a = a+b
+		 * 		-=, a-= b -->a = a-b
+		 * 		*=,
+		 * 		/=
+		 * 		%=
+		 */
+		//定义变量：变量名num，数值3，=表示赋值
+		var num = 3;
+		num = 10;
+		
+		var a = 3;
+		a += 2;//相当于a = a + 2;
+		
+		console.log(a);//5
+		
+		var b = 2;
+		a -= b; // a = a - b;
+		//a?,b?
+		console.log(a);//3
+		console.log(b); // 2
+		
+		
+		a *= b; //a = a * b;
+		console.log(a);//6
+		console.log(b); // 2
+		
+		a /= b; //a = a / b;
+		console.log(a);//3
+		console.log(b); // 2
+		
+		a %= b; // a = a % b;
+		console.log(a);
+		
+		a = 3;
+		a += b++;
+		/*
+		 * a += b++
+		 * a = a + b++;
+		 * 		3 + 2
+		 */
+		console.log(a);//5
+		console.log(b);//3
+		
+		a = 3;
+		a += a++;
+		/*
+		 * a = a + a++;
+		 * 		3 + 3
+		 */
+		console.log(a);
+	</script>
+</html>

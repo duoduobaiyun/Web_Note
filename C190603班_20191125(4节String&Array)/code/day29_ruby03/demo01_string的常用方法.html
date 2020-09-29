@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>string对象的常用方法</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * string对象的常用方法：
+		 * 1.搜索类
+		 * 	charAt(index)-->char,
+		 * 	charCodeAt(index)-->编码值
+		 * 		String.fromCharCode(编码值)-->字符,根据编码值获取字符
+		 * 	indexOf(子串)-->index
+		 * 	lastIndexOf()-->index
+		 * 
+		 * 2.截取类
+		 * 	substring(start,end)-->string
+		 * 	slice(start,end)-->string
+		 * 	substr(start,count)-->string
+		 * 
+		 * 3.大小写转换
+		 * 	toUpperCase()
+		 * 	toLowerCase()
+		 * 
+		 * 4.切割split()
+		 * 	根据指定的字符，切割一个字符串，得到一个字符数组
+		 * 
+		 * 5.替换：replace(old,new)-->使用新的字符，替换原来的字符，
+		 * 		默认替换1个。
+		 * 
+		 * 6.拼接：concat()
+		 * 	字符串的拼接，同+效果相同。
+		 * 
+		 * 扩展：面向对象
+		 * 
+		 * 	类：类别，同一类事物的统称
+		 * 		人类，猫类，狗类，Math类，Date类。。。
+		 * 
+		 * 	对象：类中的一个具体的实例。
+		 * 		张三，王二狗。。。
+		 * 
+		 * 	类：统称
+		 * 	对象：真正的存在的个体实例。
+		 * 
+		 * 
+		 * 	new 构造函数()-->新建对象：new关键字，调用构造函数
+		 * 
+		 * 		new String("hello")
+		 * 
+		 */
+		var str = "helloworld";//字符串对象
+		var s4 = str.substring(0,5);
+		console.log(s4);//hello
+		
+		var s1 = "HelloWorld123***";
+		console.log(s1);
+		//1.大写，小写：字母
+		var s2 = s1.toUpperCase();//转为大写
+		console.log(s2); //HELLOWORLD123***
+		
+		var s3 = s1.toLowerCase();//转小写
+		console.log(s3); //helloworld123***
+		
+		
+		//2.根据字符的编码值，获取对应的字符
+		//0-65535
+		var char1 = String.fromCharCode(20013);
+		console.log(char1);
+		var num1 = "中".charCodeAt(0);
+		console.log(num1);
+		
+		//3.split(),按照指定的字符进行切割，得到一组的数据：数组
+		var s5 = "123,456,777,89";
+		var arr = s5.split(",");
+		console.log(arr);
+		console.log(arr[1]);
+		
+		var arr2 = s5.split(",",2);//限定个切割的个数。
+		console.log(arr2);
+		
+		
+		var arr3  = s5.split();
+		console.log(arr3);
+		
+		//4.replace(old,new)替换,默认只替换第一个。
+		var s6 = s5.replace(",","*");
+		console.log(s5);
+		console.log(s6);
+		
+		//使用正则表达式：模式，g
+		var s7 = s5.replace(/,/gi,"*");
+		console.log(s7);
+		
+		
+		//5.concat
+		var s8 = "hello";
+		var s9 = "world";
+		var s10 = s8.concat(s9);
+		console.log(s10)
+		var s11 = s8+s9;
+		console.log(s11)
+		/*
+		 * 练习1：
+		 */
+		
+	</script>
+</html>

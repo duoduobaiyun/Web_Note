@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>页面内的跳转</title>
+	</head>
+	<body>
+		
+		<!--
+			页面内的跳转
+				step1：先创建链接：点谁
+					<a href="#xxx">内容</a>
+				step2：要跳转的位置
+					使用a标签包裹要跳转的内容
+						<a name="xxx"><p><font><img>....
+					并在a上设置name属性，通过对应name属性的值，实现页面内的跳转
+		-->
+		<a href="#jiuwei">九尾</a>
+		<a>明天我依然爱你</a>
+		<a href="#文字">一大坨文字</a>
+		<a href="#cat">猫咪</a>
+		<a href="#woailuo">我爱罗</a>
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		
+		
+		<a name="jiuwei"><img src="img/jiulama.jpg" /></a>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<img src="img/love.jpg" />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<a name="文字"><p>
+			前两周：基本语法，数组
+一。搭建环境
+	1.java的发展史
+		jdk1.8
+	2.java的特性
+		跨平台：跨操作系统
+			JVM：java虚拟机。
+		健壮性
+		强壮性
+		多线程
+		垃圾自动回收：
+			GC：程序员无法干涉。Runtime类.gc()
+		强制类型检查
+		。。。
+	3.操作步骤
+		step1：编写源代码
+			HelloWorld.java
+
+		step2：编译器进行编译：产生同名的字节码文件
+			HelloWorld.class
+
+				javac.exe
+
+			javac HelloWorld.java
+
+		step3：解释执行
+				java.exe
+
+			java HelloWorld
+
+
+	4.安装jdk，默认安装：
+		C：\\Program Files\\Java(jdk,jre)
+	5.配置环境变量：
+		配置path路径：
+			用于查找命令
+
+			cd 路径
+			cd\
+			cd..
+
+			dir
+			del
+
+		系统的环境变量：
+			变量名：path
+			变量值：路径;路径
+			C:\\Program Files\\Java\\jdk1.8..\\bin;
+
+		JAVA_HOME:C:\\Program Files\\Java\\jdk1.8..
+		PATH:%JAVA_HOME%\bin;
+
+		classpath:.;tools.jar;dt.jar
+
+
+	6.编写第一个程序：Editplus。纯文本编辑器。eclipse。继承的开发工具
+		public class HelloWorld{
+			public class Inner{}
+			public static void main(String[] args){
+				System.out.println("HelloWorld");
+			}
+		}
+public
+class
+HellWorld
+static
+void
+String[]
+System
+out
+println()
+
+	7.标识符：在java中对于包名，类名，变量名，常量名，方法名，参数名命名时使用的字符序列。
+		语法要求：
+			A：数字，字母，_,$组成
+			B：数字不能开头
+			C：区分大小写
+			D：长度无限制
+			E：不能是保留字，关键字。
+public,default,protected,private,int,byte,short,long,float,double,boolean,char,class,interface,abstract,final,static,void,synchronized,return,break,contnue,if,else,for,while,switch,case.....
+		goto,const
+
+		编码习惯：
+			A：见名知意：英文单词
+			B：驼峰式命名：schoolName,studentAgeTable
+			C：长度不超过15个字符
+			D：特殊要求
+				类名：首字母大写
+				常量名：所有字母都大写
+					PI，PATH、
+				包名：所有字母都小写
+				变量名，方法名，参数名：首字母小写
+
+
+		#,&, ,........
+
+	8.基本数据类型：
+		数据类型：基本(8个)，引用(其他类，接口，数组。。。)
+
+		整数型：byte，short，int，long
+			int默认类型
+			long：加L
+		浮点型：float，double
+			近似值：
+			单精度，双精度
+			double：默认类型，加d或D，不加。
+			float：加f或F
+			
+		字符型：char
+			2个字节：0-65535
+			字符编码：unicode
+		布尔型：boolean
+			1个字节：true，false
+
+
+		基本数据类型的转换：
+			A：boolean类型不参加转换
+			B：7种：强制转换，自动转换。
+		byte b= 10;
+		int i = b;
+		byte b2 = (byte)i;
+			强制：也叫显式转换。取值范围大-->取值范围小
+			自动：也叫隐式转换。取值范围小-->取值范围大	
+
+
+byte--short -- int --long--float--double
+char
+		byte,short,char,做运算的时候-->int。结果是int类型。
+
+
+	9.进制：
+		2进制：逢2进一
+			0,1
+		8进制：逢8进一
+			0,1,2,3,4,5,6,7
+		10进制：逢10进一
+			0,1,2,3,4,5,6,7,8,9
+
+		16进制：逢16进一
+			0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+
+int i = 10;//默认10进制
+int i = 010;//8进制
+
+
+
+		转换：
+二进制-->十进制
+八进制-->十进制
+十六进制-->十进制
+	乘以相应的权重
+		123-->十进制
+			1*10^2+2*10^1+3*10^0
+			100+20+3=123
+
+
+		123-->八进制
+			1*8^2+2*8^1+3*8^0
+			64+16+3=83
+
+		1010-->二进制
+			1*2^3+0*2^2+1*2^1+0*2^0
+			10
+
+		123--->十六进制
+			1*16^2+2*16^1+3*16^0
+			256+32+3=291
+
+个：10^0
+十：10^1
+百：10^2
+千：10^3
+万：10^4
+...
+
+
+十进制-->二进制
+十进制-->八进制
+十进制-->十六进制
+
+	除以权重，取余数，倒过来。直到商为0.
+	187-->二进制
+		10111011
+	187-->八进制
+		273
+	187-->十六进制
+		BB
+
+
+0
+1-1
+2-10
+3-11
+4-100
+5-101
+6-110
+7-111
+8-1000
+。。。。
+
+
+
+计算机表示的数值：
+	该数值的补码：
+
+
+数值-->二进制：原码
+二进制：取反：反码
+
+
+正数的补码，就是原码
+	6-->110
+	-6-->二进制
+
+负数的补码：原码-->反码-->1
+	6的二进制：
+byte：-6
+6的原码：
+0000 0110
+1111 1001
+1111 1010
+
+
+单位：
+	计算机的本质：01码二进制。
+bit：位。1个01码
+byte：字节。8个01码
+
+	10.变量，常量
+		概念：实际上就是一小块内存。在程序运行中用于数据的存储。
+		语法：
+			数据类型 变量名[=初始值];
+			通过变量名访问：存储数值，获取数值
+
+		类型：
+			基本类型：存储是数值本身
+			引用类型：存储是地址
+
+		位置：
+			局部变量：方法里或代码块里声明的变量。
+				必须先初始化才能使用。随着作用域的结束而销毁。
+
+			成员变量：也叫全局变量。类里，方法外声明的变量。
+				作用域是整个类。可以先不初始化使用默认值。
+
+8个基本类型：
+7个数值型：0
+boolean：false
+引用类型：null
+		
+
+	11.运算符：运算符两边的操作数类型一致。
+		算术运算符：+，-,*,/,%,++,--
+			/,%		
+			i++，++i
+		赋值运算符：=,+=,-=,*=,/=,%=
+			a+=b;
+		关系运算符：>,<,>=,<=,!=,==
+		逻辑运算符：&,|,!,&&,||,^
+		位运算符：二进制按位操作
+			&,|,~^
+		位移运算符：a<<b,a>>b,a>>>b
+			<<,
+			>>,
+			>>>,
+
+		三目运算符：分支结构
+			X？Y：Z
+			x是boolean表达式
+				Y，Z
+
+		+起连接符的作用：+遇到字符串""
+
+		表达式：类型和值。
+		优先级：
+
+	12.程序的流程结构
+		A：顺序结构
+			默认：一行一行执行
+		B：选择结构
+			条件满足才执行，执行1次。
+		C：循环结构
+			条件满足，反复的执行。
+
+		if语句：
+			if(boolean){A...}
+			if(boolean){A...}else{B...}
+			if(boolean){A...}else if(boolean){B...}....
+
+
+		switch语句：
+			switch(int){
+
+			case 数值1：分支；break；
+			case 数值2：分支；break；
+			。。
+			default：最后一个分支
+			}
+			注意事项
+			1)作用在int(byte,short,char)类型上。jdk1.7以上可以作用在String类型。枚举类型上
+			2)case无顺序。case后的数值必须唯一。
+			3)break用于防止switch穿透。
+			4)default是可选的操作。
+
+		if：boolean。
+		switch：int/String
+
+
+		for(表达式1；表达式2；表达式3){
+			循环体；
+		}
+
+		while(表达式){
+			循环体；
+		}
+		do{
+			循环体；
+		}while(表达式)；
+
+		break，continue：结束循环
+			break：彻底结束。
+			continue：只结束某一次，下次继续。
+
+		如果多层循环嵌套，结束最里层的循环。如果想结束外层：贴标签
+out:for(){
+	in:for(){
+		break out;
+	}
+}
+		
+	13.方法的使用
+		概念：就是一段具有特殊含义的代码。相当于其他语言中函数。
+		作用：避免重复代码。扩展功能
+
+		使用：
+			step1：声明
+				修饰符1修饰符2..返回值类型 方法名(参数列表){方法体；}
+				public void test1(){}
+				public void test2(String str){}
+				public int test3(){}
+				int test4(){}
+				final int test5(){}
+				abstract int test6();
+				synchronized int test7(){}
+				static void test8(){}
+
+			step2：调用
+				静态方法：
+					类名.方法名(实参列表)
+				非静态方法：			
+					构建对象
+					对象.方法名(实参列表)
+
+
+原则：
+	A：方法名称必须一致
+	B：实参必须严格匹配形参：顺序，个数，类型。
+
+方法的返回值类型：该方法结束后，返回给调用处的结果。
+	返回值类型：仅支持一个
+	如果没有返回值：void
+
+
+	如果一个方法有返回值，必须使用return语句。将结果返回，并结束方法的实行。
+
+return的注意事项：
+	1)方法声明有返回值类型，必须使用return返回结果
+	2)return返回的数据类型，必须和声明的一致。
+		自动转型：
+		多态：
+		public int test1(){
+			return int
+		}
+		public double test2(){
+			return 1;
+		}
+		public Object getInstance(){
+			return 任意对象;
+		}
+
+	3)如果方法中没有声明返回值类型，void，也可以使用return，用于结束方法。
+	4)方法声明又返回值，如果方法中有分支语句，循环语句，保证无论哪个分支都有return可以执行。
+
+
+参数列表：方法中不确定的数据，由调用处来确定。
+	public void test(int i,int j,String s)
+	形参
+	实参
+
+	递归算法：方法中调用方法本身。
+		fibonacci：
+		遍历文件夹：
+		
+		出口，逐渐向出口靠近
+
+
+	14.数组的使用
+		数组本身是引用类型的数据，但是数组中可以存储任意类型的数据。
+		存储一组相同数据类型的数据结构。
+
+
+		使用：
+			声明，创建
+			数据类型[] 数组名 = new 数据类型[length];
+				int [] arr  = new int[3];
+			访问：
+			数组名[index]
+				arr[0] = 1;
+				arr[1] = 2;
+				arr[2] = 3;
+				下标，也叫索引，取值范围：[0,长度减1]IndexOutOfBoundsException
+
+		使用循环来操作数组
+		普通for循环
+			for(int i = 0;i <arr.length;i++){
+				arr[i];
+			}
+
+		增强for循环：for-each
+			for(变量声明：数组名/集合){
+				变量名
+			}
+
+
+		静态初始化：
+				int[] a ={1,2,3,4,5};
+				int[] a = new int[5]{1,2,3,4,5}
+		动态初识化：
+				int[] a = new int[3];
+				a[0] = 1;
+				a[1] = 2;
+				a[2] =3;
+
+		数组的排序：
+			冒泡排序：比较相邻的两个数，大的放右边，小的放左边。
+			int[] arr = {15,10,8,23,7};
+				for(int i=0;i<arr.length-1;i++){
+					for(int j =0;j<arr.length-1-i;j++){
+						if(arr[j] > arr[j+1]){交换}
+					}
+				}
+
+			选择排序：每次找个最小值。
+
+
+		数组的搜索：给定数组，给定数值。
+			顺序搜索：
+			二分搜索：前提先有序。也叫折半查找
+			int low = 0;
+			int high =arr.length-1;
+			int mid =0;
+			while(low <= high){
+				mid = (low+high)/2;
+				if(arr[mid] > key){
+					high = mid-1;
+				}else if(arr[mid] < key){
+					low = mid+1;
+				}else{
+					return mid;
+				}
+			}
+
+		数组的拷贝：
+			Arrays类：copyOf()-->新数组
+
+			System类：arraycopy(5个参数)
+
+			int[] arr2 = arr1;//将arr1数组的地址给arr2。
+
+
+		工具类：
+			java.util.Arrays类：
+			copyOf(),sort(),fill(),toString(),equals(),binarySearch()
+
+
+		二维数组：一维的一维。表示矩阵
+			int[][] arr = new int[3][4];//3个一维，每个一维长度4
+
+			int[][] arr2 = new int[3][];
+			arr2[0] = new int[3];
+			arr2[1] = new int[5];
+			arr2[2] = new int[6];
+
+			双层for循环 遍历
+			 
+					
+
+
+第三周：面向对象(重点，难点)
+	是一种编程思想。
+		A：问题域中涉及到的对象有哪些
+		B：何为这些对象：描述类：属性，方法
+		C：对象和对象之间的关系
+
+
+量大核心概念：
+类：
+	同一类事物的抽象描述。(实际上是根据该类的对象，抽取共同的特征)
+对象：
+	类中的一个具体的实例。
+
+
+将类进行实例化，得到了对象
+对象，抽取共同特征：描述类
+
+	静态属性：成员变量
+	动态属性：成员方法
+
+class Person{
+	String name;
+	int age;
+
+	public void eat(){}
+	public void sleep(){}
+
+	public Person(){}
+
+	public Person(String name,int age){
+		this();
+		this.name=name;
+		this.age=age;
+	}
+}
+
+类的对象：
+
+
+
+
+构建对象：
+	构造函数
+	Person p1 = new Person();
+	对象.属性；对象.方法();
+
+
+构造函数：
+	理解为一个特殊的方法。
+	声明：
+		修饰符：访问权限
+		返回值类型：必须没有，也没有void
+		方法名：必须和类名一致
+	调用：
+		由new关键字调用
+	用途：
+		创建对象，并初始化
+
+
+如果一个类中没有显示的构造函数，那么由编译器自动添加一个无参的构造函数。
+
+
+
+this关键字：
+	指代本类的对象。访问本类的属性和方法。如果本类没有，访问父类的。
+		this.属性，this.方法
+
+		作为参数传递
+
+	指代本类的构造函数。this(),必须位于首行。
+
+
+super关键字：
+	访问父类的属性和方法。
+	指代父类的构造函数。super(),必须位于首行。
+
+static关键字：表示静态的。随着类的加载而加载。
+	属性：
+		静态属性：属于类，由类调用，内存中仅1份。对象也可以共享这一份数据
+		非静态属性：属于对象，对象创建，才会有属性。而且每个对象有独立的属性值。
+	方法：
+		静态方法：属于类，由类调用。
+			静态属性，静态方法。不能有非静态的内容，以及this，super
+		非静态方法：属于对象，对象调用。
+			没有限制
+	代码块：
+		普通代码块：
+		构造代码块：类里，方法外。随着构造函数的调用而执行，优先于构造函数执行。
+		静态代码块：static修饰的代码块。优先于主函数。仅1次。
+		同步代码块：
+	内部类：类(外部类)里的类(内部类)
+		成员内部类：类比于非静态属性，属于对象的。持有外部类的引用，使用this关键字访问外部类的私有属性。
+		静态内部类：类比于静态属性，属于类的。没有外部类的引用，不能操作外部类的this关键字。
+
+		局部内部类：方法里的内部类，访问外部类的局部变量，加final。
+		匿名内部类：以接口，抽象类为前提
+
+
+		外部类$内部类.class
+
+
+三大特征：
+A：封装性
+	"打包"
+	属性的封装：
+		step1：private属性，限于本类中访问
+		step2：提供get和set方法用于取值和赋值
+B：继承性
+	类和类的关系：is - a
+	子类是一个特殊的父类。
+	
+	子类扩展父类的功能。
+	子类避免重复的代码。
+
+	子类可以使用父类的非私有化的属性和方法
+	子类可以新增自己的属性和方法
+	子类可以重写父类已有的方法
+
+
+关键字：extends
+
+class SubClass extends SuperClass{
+	
+
+}
+overload：重载
+	一个方法的多种形式。参数不同，执行的具体方法也不同。
+	同一个类中
+	方法名必须一致
+	参数列表必须不同
+
+override：重写
+	继承关系中，子类将父类已有的方法重新实现。
+	方法声明必须相同：返回值，方法名，参数列表
+	访问权限不能比父类的更加严格
+	不能抛出比父类更大的异常。
+
+
+
+访问权限：就是4个修饰符。用于限制属性，方法，类的可见度。
+private：私有的，本类中
+default：默认的，本类中，同包
+protected：受保护的，本类，同包，不同包(继承)
+public：公共的，没有限制
+
+
+default，public可以修饰类
+
+
+
+子类的对象的创建过程：
+	子类的构造函数中，第一行都是super(),表示父类的构造函数。
+
+
+继承的局限：类只允许单继承，不允许多继承。但是允许多层继承。
+
+所有的类都是以继承结构存在的。没有父类的默认继承Object类
+
+getClass()-->Class
+hashCode()-->int
+toString()-->String
+equals()-->boolean
+	两个对象
+		this==obj,
+		子类重写比较属性值
+
+C：多态性
+	多种形态
+	静态多态：发生在编译时期，方法的重载。
+	动态多态：发生在运行时期，方法的重写，配合对象的多态性。
+
+向上转型，向下转型
+Cat-->Animal-->Cat
+	向上转型：会失去子类新增
+	
+
+Animal a1 = new Animal();//父类中的方法
+Animal a2 = new Cat()//父类中声明的方法，包含子类重写
+Cat c1 = new Cat();//父类的方法，子类重写，子类新增
+
+
+
+instanceof：对象是否属于一个类
+
+
+
+
+抽象类：类的再抽象。
+	不能够被实例化的类，可能包含抽象方法。等待子类继承并实现抽象方法。如果子类没有全部实现，那么还是抽象的，再等子类继承并实现。
+
+抽象方法：只有方法的声明，没有具体的实现。
+
+关键字：abstract
+
+抽象类，对比于普通类，可能多了一个抽象方法。
+	构造函数，静态方法，非静态方法，属性，静态属性，抽象方法。
+
+
+父类想强制子类重写某个方法：abstract
+父类不行子类重写方法：final
+
+
+	final关键字：最终的最后一次
+		变量--->常量
+		方法--->不允许子类重写
+		类-->不允许继承
+
+
+接口：抽象方法和静态常量的集合。
+interface
+
+子类改叫实现类
+关系改叫实现
+
+class AImpl implements A{
+
+}
+
+抽象类可以实现接口，但是接口不能继承抽象类。
+
+接口可以多继承接口。
+
+
+设计模式：
+	单例：
+		懒汉式，饿汉式
+
+	工厂模式：
+		
+
+			
+		
+
+第四周：异常，常用类，集合
+	一.异常：程序运行过程中发生的不正常的事件，导致程序无法正常执行。
+
+		分类：Error，Exception
+		-->throwable
+
+
+	2.分类：
+		受检异常：编译器编译过程中检查出来的异常。外部因素导致
+			FileNotFoundException
+			IOExceptionException
+			SQLException
+			ClassNotFoundException
+			。。。
+		非受检异常：编译器不检查，运行时可能产生。也叫运行时异常：RuntimeException
+			NullPointerException
+			IndexOutOfBoundsException：Array，String
+			ClassCaseException
+			NumberFormatException
+			ArithmeticException
+			NoSuchElementException		
+			。。。
+
+	3.处理：
+		A：捕获：try，catch，finally
+		try{
+			可能产生异常的代码
+		}catch(异常类型 e){
+
+		}catch...
+		finally{
+			一定会被执行的：关闭资源，删除临时文件。。。
+		}
+
+		B：抛出：throws
+			方法的声明上抛出异常。表示该方法中如果产生异常，方法不处理，交给调用处处理。
+
+	4.throw，throws关键字
+		throws：处理异常
+		throw：抛出一个异常对象
+
+	5.自定义异常：
+		自定义类继承Exception或其子类，就具有异常的功能。
+
+
+	二。常用类
+	1.包装类
+		8种基本数据类型，对应的类类型。
+		拆箱，装箱。jdk1.5之后自动
+		java.lang.Integer
+		java.lang.Byte
+		java.lang.Short
+		java.lang.Long
+		java.lang.Float
+		java.lang.Double
+		java.lang.Boolean
+		java.lang.Character
+
+
+
+	2.字符串
+		理解为一串字符：0到多个
+		"","a","abc",null
+	
+		String：字符串内容不能改变
+			charAt()
+			length()
+			indexOf(),4个
+			lastIndexOf(),4个
+
+			replace()
+			replaceAll()
+
+			split()
+			contains()
+			concat()
+			subString()，2个
+			toLowerCase()
+			toUpperCase()
+			
+			getBytes()
+			toCharArray()
+
+			startsWith()
+			endsWith()
+
+			trim()
+			equals()
+			equalsIgnoreCase()
+	
+			compareTo()
+			isEmpty()
+
+
+
+		StringBuffer：可以改变。线程安全效率低
+		StringBuilder：可以改变。线程不安全效率高
+			append()
+			insert()
+			delete()
+			deleteCharAt()
+			setLength()
+			setCharAt()
+			indexOf()
+			lastIndexOf()
+			reverse()
+			subString()
+			toString()
+
+	3.常见类
+		Math类：数学方法
+			ceil(),abs(),floor(),random(),round(),sqrt(),pow(a,b)
+
+		Random类：随机数
+			随机数都是根据种子数算来的，也叫伪随机数。
+			Random ran = new Random(long)
+			ran.nextBoolean()
+			ran.nextDouble()
+			ran.nextInt()
+			ran.nextInt(n)-->[0,n)
+
+		Runtime类：JVM运行时的一个对象
+			Runtime.getRuntime()-->Runtime
+
+			gc(),exit(),exec()...
+
+		System类：
+			System.currenTimeMills()-->long
+			getProperties()-->Properties
+
+		java.util.Date日期
+			Date date = new Date();//
+		SimpleDateFormat：日期格式化
+			pattern：模板yyyy-MM-dd,yyyy/MM/dd
+			日期-->String
+				format()
+
+			String-->日期
+				parse()
+		Calendar类：日历
+			抽象的：
+			cal.get(字段);
+
+			Calendar cal = Calendar.getInstance();
+			Calendar cal = new GregorianCalendar();
+			cal.get(Calendar.YEAR)+cal.get(Calendar.MONTH)+1
+			cal.get(Calendar.DAYOFMONTH)
+
+		枚举：enum
+			限定一个类的对象的取值范围
+			enum Color{
+				RED,GREEN,BLUE;
+			}
+
+			带属性的枚举类型
+			enum Color{
+				String msg;
+
+				RED("红色"),GREEN("绿色");
+			}
+
+
+			代抽象方法的枚举类型
+
+			enum Color{
+				
+				public abstract void test();
+			}
+
+		正则表达式：用于验证文本字符串
+			Pattern：确定规则
+			Matcher：验证
+
+[abc]:
+[0-9],\d
+[a-zA-Z]
+\w:[a-zA-Z_0-9]
+
+
+?,0,1
++,1-多次
+*，0-多次
+{n}：刚好n次
+{n,}
+{n,m}
+
+|
+
+		String 类
+			replaceAll()
+			matchers()
+			split()
+
+
+	4.集合：动态存储多个对象。容器类
+		动态：容器大小可变
+		对象：所有的引用类型，基本类型-->包装类
+
+		集合使用：集合的结构
+
+Collection接口：
+	容器的常规操作：add(),addAll(),size(),iterator(),remove(),removeAll()...
+	List：子接口
+		存储特点：有序，可以重复
+		新增功能：add(index,E),indexOf(),lastIndexOf(),get(),set(),subList(),remove(index),listIterator()...
+		ArrayList：
+			底层采用数组结构实现。遍历较快，修改结构较慢
+		LinkedList：
+			底层采用双向链表结构实现。遍历较慢，修改结构较快
+
+			同时还实现了Deque接口
+			push(),pop(),offer(),poll()
+			模拟栈：后进先出：LIFO
+			模拟队列：先进先出：FIFO
+		Vector：线程安全效率低
+			Stack
+
+	Set：子接口
+		存储特点：无序，不可以重复
+		HashSet：散列存储，底层是哈希表
+			去重原理：
+				哈希码不同直接存储
+				哈希码相同，equals()
+
+
+			同时重写hashCode，equals方法。
+				重写规则：
+					hashCode：
+						对象相同，码必须一致。对象不同，码尽量不同。
+					equals：
+						对象相同，true。对象不同，false。
+		TreeSet：有序存储，底层实现红黑树
+			SortedSet接口的实现类
+			
+			对象的比较顺序。对象具有可比性
+			java.lang.Comparable
+			java.util.Comparator
+
+compareTo(o)-->int
+compare(o1,o2)-->int
+	正数：存后边
+	负数：存前边
+	零：不存储
+		LinkedHashSet：
+
+
+遍历：
+	方法一：迭代器Iterator
+		hasNext(),next()
+	方法二：for-each
+	
+
+
+Map接口：存储键值对
+	key，value键值对。key不能重复，key，value一一对应。
+		put(),putAll(),size(),containsKey(),containsValue(),get(),keySet(),entrySet()...
+	HashMap
+	TreeMap：SortedMap接口的实现类
+	HashTable
+		Properties：
+			getProperties(),setProperties()
+
+
+	map的遍历：
+		方法一：
+			key-->Set<key>-->每一个key，map.get(key)-->value
+		方法二：
+			key，value--->Entry
+			entrySet()-->Set<Entry>  getKey(),getValue(0
+
+		方法三：
+			for()
+
+
+Collections工具类
+	addAll(),sort(list),binarySearch(list),fill(),swap(list,i,j),synchronizedSet/List/Map()...
+
+
+第五周：IO流
+	1.File类
+		描述文件和目录
+		
+		createNewFile()
+		length()
+
+		mkdir()
+		mkdirs()
+		list()
+		listFiles()
+
+		delete()
+		getParent()
+		getParentFile()
+		getAbsolutePath()
+		getPath()
+		getName()
+		
+		isFile()
+		isDirectory()
+		isAbsolute()
+		lastModified()
+
+		exists()
+
+
+	2.IO流的操作,输入输出流
+		用于传输数据，传递是数据。也叫DataStream,
+
+		分类：
+			流向：输入流，输出流
+			单位：字节流，字符流
+			功能：节点流，处理流
+
+
+		IO操作步骤：
+		step1：确定数据从哪到哪
+		step2：创建流：
+			流向，单位，
+		step3：操作流，读，写
+		step4：关闭资源
+
+读写编码：
+
+read()
+	读取一个字节，返回值是读到的数据。文件末尾返回-1
+read(byte[])
+	读取多个字节，最多数组长度个，数据存入数组中。返回值是实际读入的数量，文件末尾返回-1
+read(byte[] off len)
+	读取多个字节，最多len个，存入数组中从off下标开始，返回值是实际读入的数量，文件末尾返回-1
+
+write(int)
+	写出一个字节
+write(byte[])
+	写出一个字节数组
+write(byte[] off len)
+	写出一个字节数组的部分
+
+
+write(String)
+write(String off len)
+
+	具体的流类
+	4大基类流：
+		InputStream		
+		OutputStream
+		Reader
+		Writer
+
+	文件流：节点流
+		FileInputStream
+		FileOutputStream
+		FileReader
+		FileWriter
+
+	转换流：转换单位，设置编码
+		InputStreamReader
+		OutputStreamWriter
+
+	缓存流：
+		BufferedInputStream
+		BufferedOutputStream
+
+		BufferedReader
+			readLine()
+		BufferedWriter
+			newLine()
+
+	打印流：
+		PrintStream
+		PrintWriter
+			print(),println()
+
+	数据流：读写基本数据类型，读和写严格对应。
+		DataInputStream
+		DataOutputStream
+
+	对象流：读写对象
+		ObjectInputStream
+
+		ObjectOutputStream
+
+		将对象--->一系列的二进制编码，存入文件中。叫对象的序列化
+		将二进制编码-->对象，叫反序列化。
+
+类实现java.io.Serializable ,来启动对象的序列化功能。标记接口。
+	添加：SerialVersionUID：
+	
+		静态的属性无法序列化。只能够序列化对象的内容。transient
+
+	内存流：读写内存，本质就是一个可变长度的数组
+		ByteArrayOutputStream
+		ByteArrayInputStream
+
+		toByteArray()-->byte[]
+		toString()-->String
+
+
+	随机访问文件类：RandomAccessFile
+		getFilePointer()-->
+		skitBytes()
+		seek()
+
+	断线续传
+
+	装饰者模式：
+
+
+
+
+第六周：多线程，网络编程，反射
+	一。多线程：并发执行
+		进程：正在执行的程序。
+		线程：进程中的一条执行路径。
+
+
+	java.lang.Thread类。
+		run()-->线程体
+
+	JVM创建主线程，调用main函数。。
+
+		方法一：子类继承Thread类
+			重写run()
+			start()
+
+		方法二：实现类实现Runnable接口
+			实现run()
+			根据实现类对象创建Thread类的对象，start()
+
+
+	常用方法：
+	A：Thread.currentThread(),获取正在执行的线程对象
+	B：ID：线程的唯一标识：long。由系统自动分配。
+		getId()
+	C：Name，线程的名称
+		主线程main
+		子线程Thread-0,1,2.....
+
+		setName(),getName()
+		构造函数
+			Thread(String name)
+
+	D：优先级：priority：1-10
+		级别高执行机会多，级别低执行机会少
+		默认：5
+
+	E：睡眠：Thread.sleep(time)
+		线程进入睡眠状态
+
+	F：合并：join()
+
+	G：中断
+		interrupt()-->void
+			flag-->boolean,是否被中断
+		interrupted()-->boolean
+
+
+	线程的生命周期：一个线程对象只能被启动一次。
+	创建：new出来
+	就绪：start后可以随时被执行，进入Runnable
+	执行：running
+	阻塞：
+	死亡：结束
+
+多线程之间共享数据的安全问题
+	使用同步：让代码原子性操作。一次性执行完毕，中间不能被其他线程插入。
+
+	关键字：synchronized
+
+	语法：
+		同步代码块
+		synchronized(对象){
+
+		}
+		同步方法
+		synchronized修饰符方法
+			静态方法：类名.class
+			非静态方法：this
+
+	同步的原理：利用对象的互斥锁。
+
+	死锁：多个线程互相持有资源，僵死。
+		扩大锁的粒度。
+
+	生产者消费者模型：
+		线程间通信：wait(),notify(),notifyAll()
+
+		用在同步中：由同步的锁对象调用。
+
+	wait，sleep
+
+	二。网络编程
+		网络中的主机之间数据传递。
+		
+		OSI7层网络模型：
+		TCP/IP4层模型：
+
+		TCP/UDP
+	TCP：面向连接。效率低，三次握手机制。
+		服务端，客户端
+		ServerSocket，Socket
+	UDP：面向无连接。效率高。
+		发送方，接收方
+		DatagramSocket，DatagramPackage(2,4)
+			send(),receive()
+
+step1：创建Socket
+	ServerSocket(port);
+	Socket(ip,port);
+
+step2：接收请求连接
+	accept()-->Socket
+
+step3：从Socket中获取IO流
+	getInputStream()
+	getOutputStream()
+	
+step4：关闭资源
+
+
+客户端-服务端聊
+客户端-客户端聊
+客户端群聊
+客户端@谁聊
+
+文件上传
+文件下载，多客户端
+
+	三。反射
+		
+		</p></a>
+		
+		<br />
+		<br />
+		<br />
+		<a name="cat"><img src="img/WechatIMG550.jpeg" /></a>
+		
+		<br />
+		<br />
+		<br />
+		
+		<a name="woailuo"><img src="img/woailuo1.jpg" /></a>
+		
+	</body>
+</html>

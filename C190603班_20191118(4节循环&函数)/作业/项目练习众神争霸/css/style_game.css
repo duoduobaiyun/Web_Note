@@ -1,0 +1,608 @@
+/*公共样式*/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font: 12px/24px "黑体";
+	background: #1b2750 url("../images/bg.jpg") no-repeat center 47px;
+	background-attachment: scroll;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: #F00;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clearfix {
+	overflow: hidden;
+}
+
+header,
+#ads,
+nav,
+#main,
+#hero,
+#baike,
+#movie,
+footer {
+	width:960px;
+	margin: 0 auto;
+	/*border: solid 1px red;*/
+}
+
+
+/*header======================================*/
+
+header {
+	position:fixed;
+	left:0;
+	top:0;
+	width: 1440px;
+	height: 47px;
+	background: #f5f5f5;
+}
+
+header  h1 {
+	float:left;
+	width: 94px;
+	height: 47px;
+	margin-left: 220px;
+	background: url("../images/logo.png") no-repeat center;
+}
+
+header div.header_nav {
+	width: 600px;
+	height: 47px;
+	line-height: 47px;
+	text-align: center;
+}
+
+header div.header_nav a {
+	height: 47px;
+	line-height: 47px;
+	border-right: solid 1px #e7e7e7;
+	padding: 0 15px;
+}
+
+header div.header_nav a:first-child {
+	height: 47px;
+	line-height: 47px;
+	background: url("../images/three.png") no-repeat left center;
+}
+
+header div.header_nav a:nth-child(4) {
+	background: url("../images/h.png") no-repeat 75px top;
+}
+
+header div.header_login {
+	height: 47px;
+	line-height: 47px;
+}
+
+header div.header_login a:first-child {
+	float: left;
+	background: url("../images/game.png") no-repeat left center;
+	padding-left: 28px;
+	margin-right: 20px;
+}
+
+header div.header_login a:nth-child(2) {
+	float: left;
+	height: 47px;
+	background: url("../images/login.png") no-repeat left center;
+	padding-left: 30px;
+	margin-right: 10px;
+}
+
+header div.header_login a:last-child {
+	border-left: solid 1px #E7E7E7;
+	padding-left: 10px;
+}
+
+
+/*ads======================================*/
+
+#ads {
+	height: 50px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 255px;
+	padding-left: 70px;
+}
+
+#ads h3 {
+	font-size: 23px;
+	font-weight: 300;
+	color: #ff9c00;
+}
+
+#ads h4 {
+	font-size: 18px;
+	color: #ad7b3a;
+}
+
+
+/*nav======================================*/
+
+nav {
+	height: 66px;
+	background: url("../images/nbg.png") repeat-x;
+	margin-top: 25px;
+}
+
+nav ul {
+	list-style: none;
+	/*margin-left: 30px;*/
+}
+
+nav ul li {
+	float: left;
+	width: 158px;
+	height: 66px;
+	line-height: 66px;
+	text-align: center;
+	background: url("../images/nline.png") no-repeat right;
+}
+
+nav ul li:last-child {
+	background: none;
+}
+
+nav ul li a {
+	color: #FFF;
+	font-size: 16px;
+	/*transition: all 0.5s;*/
+}
+
+/*main======================================*/
+
+#main {
+	height: 420px;
+	background: #FFF;
+}
+
+#main .main_left {
+	width: 425px;
+	height: 420px;
+	/*border:solid 1px red;*/
+}
+
+#main .main_left h3 {
+	width: 405px;
+	height: 63px;
+	line-height: 63px;
+	text-align: center;
+	font-size: 16px;
+	color: #FF7E00;
+	font-weight: 500;
+	border-bottom: dashed 1px #CCC;
+}
+
+#main .main_left ul {
+	width: 395px;
+	height: 170px;
+	border-bottom: dotted 1px #111;
+	margin: 10px 10px 10px 30px;
+	list-style-position: inside;
+}
+
+#main .main_left ul.ul_bottom {
+	border: 0;
+}
+
+#main .main_left ul li {
+	height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight: 200;
+}
+
+#main .main_left ul li span {
+	float: right;
+	padding-right: 10px;
+	color: #999;
+	font-size: 7px;
+}
+
+#main .main_right {
+	width: 525px;
+	height: 420px;
+}
+
+#main .main_right img {
+	margin: 10px;
+}
+
+#main .main_right div {
+	background: #e7e7e7;
+	width: 513px;
+	height: 33px;
+	line-height: 33px;
+	margin: 0 10px;
+	margin-bottom: 0;
+}
+
+#main .main_right div span {
+	color: #FF5A00;
+	font-weight: 600;
+	padding-left: 10px;
+}
+
+#main .main_right div a {
+	padding: 0 10px 0 10px;
+	border-right: #333 1px solid;
+}
+
+#main .main_right .bg_dark {
+	background: #cfcfcf;
+}
+
+#main .main_right .links1 a {
+	padding: 0 11px;
+	border-right: 1px #ccc solid;
+}
+
+
+/*hero======================================*/
+
+#hero {
+	height: 470px;
+	margin-top: 10px;
+	background: #2b3a67;
+}
+
+#hero h3 {
+	height: 46px;
+	line-height: 46px;
+	padding-left: 30px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #FFF;
+	background: url("../images/line.png") repeat-x;
+}
+
+#hero ul {
+	width: 960px;
+	height: 54px;
+	list-style: none;
+	background: #2c4082 url("../images/hr.png") repeat-x bottom;
+}
+
+#hero ul li a {
+	float: left;
+	width: 80px;
+	height: 54px;
+	line-height: 54px;
+	color: #c9e4ff;
+	text-align: center;
+}
+
+#hero ul li a:hover {
+	background: url("../images/hhr.png") no-repeat bottom;
+}
+
+#hero ul li:first-child a {
+	background: url("../images/hhr.png") no-repeat bottom;
+}
+
+
+/*hero的角色部分=========*/
+
+#hero #hero_roles {
+	width: 960px;
+	height: 370px;
+	/*border: solid 1px red;*/
+}
+
+#hero #hero_roles figure {
+	float: left;
+	width: 80px;
+	height: 110px;
+	margin: 6px 8px;
+}
+
+#hero #hero_roles figure img {
+	border-radius: 5px;
+	/*transition: all 500ms;*/
+}
+
+#hero #hero_roles figure img:hover {
+	/*transform: scale(1.1);*/
+	box-shadow: 0px 0px 30px blanchedalmond;
+}
+
+#hero #hero_roles figure figcaption {
+	text-align: center;
+}
+
+#hero #hero_roles figure figcaption a {
+	color: #FFF;
+}
+
+#hero #hero_roles figure figcaption a:hover {
+	position: relative;
+	color: #F00;
+	left: 2px;
+	top: 2px;
+}
+
+
+/*精彩视频================================================*/
+
+#movie {
+	height: 429px;
+	margin-top: 10px;
+	background: #FFF;
+}
+
+#movie h3 {
+	height: 46px;
+	line-height: 46px;
+	padding-left: 30px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #FFF;
+	background: url("../images/line.png") repeat-x;
+}
+
+#movie figure {
+	float: left;
+	width: 160px;
+	height: 182px;
+	margin: 8px 16px;
+}
+
+#movie figure img {
+	border: solid 1px #CCC;
+	border-radius: 10px;
+}
+
+#movie figure img:hover {
+	box-shadow: 0px 0px 30px darkgreen;
+}
+
+
+#movie figure figcaption {
+	height: 40px;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+
+/*游戏百科==================================================*/
+
+#baike {
+	height: 300px;
+	margin-top: 10px;
+	/*border: solid 1px red;*/
+}
+
+#baike .baike_left {
+	width: 705px;
+	height: 300px;
+	/*margin-top: 10px;*/
+	background: #0B1A1C;
+}
+
+#baike h3 {
+	height: 45px;
+	line-height: 45px;
+	background: url("../images/pline.png") repeat-x top;
+	padding-left: 15px;
+	font-size: 14px;
+	font-weight: 200;
+	color: #FFF;
+}
+
+#baike .baike_left .div_baike {
+	width: 625px;
+	height: 245px;
+	margin: 0 0 10px 10px;
+	background: #FFF;
+	/*border: solid 1px blue;*/
+}
+
+#baike .baike_left .div_baike .baike_search {
+	width: 400px;
+	height: 245px;
+	border-right: solid 1px #D3D3D3;
+}
+
+
+/*search 表单*/
+
+#baike .baike_left .search_form {
+	height: 35px;
+	line-height: 35px;
+	border-bottom: solid 1px #d4d4d4;
+	height: 36px;
+	background: #f7f7f9;
+}
+
+#baike .baike_left .div_baike h4 {
+	background: url("../images/q.jpg") no-repeat left center;
+	padding-left: 20px;
+	font-size: 14px;
+	font-weight: 200;
+	color: #000;
+	margin-left: 8px;
+	float: left;
+}
+
+#baike .baike_left form .search_key {
+	width: 200px;
+	margin-left: 2px;
+}
+
+#baike .baike_left form input[type="button"] {
+	height: 21px;
+	width: 41px;
+	border: 0;
+}
+
+#baike .baike_left form .btn1 {
+	background: url("../images/tw.jpg") no-repeat;
+}
+
+#baike .baike_left form .btn2 {
+	background: url("../images/ss.jpg") no-repeat;
+}
+
+
+/*搜索选项卡的样式*/
+
+#baike .baike_left ul.search_card {
+	height: 30px;
+	margin-top: 7px;
+	list-style: none;
+	border-bottom: 0.2px solid #D3D3D3;
+}
+
+#baike .baike_left ul.search_card li {
+	float: left;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#baike .baike_left ul.search_card li a {
+	display: block;
+	color: #747474;
+	text-align: center;
+	background: url("../images/left.png") no-repeat left 3px, url("../images/right.png") no-repeat right 3px;
+	/*background-origin: border-box;*/
+}
+
+#baike .baike_left ul.search_card li a:hover {
+	color: #F00;
+	background: url("../images/vleft.png") no-repeat left 3px, url("../images/vright.png") no-repeat right 3px;
+	/*background-origin: border-box;*/
+}
+
+#baike .baike_left .search_result {
+	text-align: center;
+}
+
+
+/*右侧三个图片的样式*/
+
+#baike .baike_left .baike_pic {
+	width: 220px;
+	height: 220px;
+	text-align: center;
+	padding-top: 20px;
+	/*border: solid 1px black;*/
+}
+
+#baike .baike_left .baike_pic img {
+	transition: transform 5s;
+}
+
+#baike .baike_left .baike_pic img:hover {
+	transform: rotateY(360deg);
+}
+
+#baike .baike_right {
+	width: 254px;
+	height: 300px;
+	background: #0F1731;
+}
+
+#baike .baike_right .info {
+	padding: 20px 0 0 15px;
+}
+
+#baike .baike_right .info li {
+	list-style: none;
+	height: 24px;
+	line-height: 24px;
+	color: #ccc;
+}
+
+#baike .baike_right .info span {
+	color: #CC3333;
+}
+
+#baike .baike_right .info .li_01 {
+	padding-bottom: 10px;
+	height: 24px;
+	border-bottom: 1px dashed #336986;
+}
+
+#baike .baike_right .info .li_02 {
+	padding-top: 10px;
+}
+
+#baike .baike_right a img {
+	padding: 15px;
+}
+
+
+/*footer=========================================*/
+
+footer {
+	height: 140px;
+	margin-top: 20px;
+}
+
+footer div.friendlinks {
+	height: 50px;
+	line-height: 50px;
+	background: #0F1731;
+	padding-left: 20px;
+}
+
+footer div.friendlinks span {
+	color: #999;
+}
+
+footer div.friendlinks a {
+	color: #fff;
+	margin-left: 20px;
+}
+
+footer div.copy {
+	text-align: center;
+	margin: 20px auto;
+}
+
+footer div.copy p {
+	text-align: center;
+	color: #999;
+	margin:10px;
+}
+
+footer div.copy a {
+	color: #999;
+	padding: 0 15px;
+	border-right: 1px solid #999;
+}
+
+footer div.copy p :last-child {
+	border: 0;
+}
+
+footer div a:hover {
+	color: #F00;
+}

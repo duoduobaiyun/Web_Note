@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>透明度</title>
+		<style type="text/css">
+		
+			#box1{
+				width: 800px;
+				height: 600px;
+				background: pink;
+				opacity:0.8;
+			}
+			#box2{
+				width: 300px;
+				height: 200px;
+				background: green;
+				opacity: 0.5;
+			}
+			#box3{
+				width: 300px;
+				height: 200px;
+				background: #80C080;
+
+			}
+			#box4{
+				width: 300px;
+				height: 200px;
+				background: rgba(0,127,0,0.5);
+
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			opacity：透明度
+				取值：0-1
+				1：完全不透明
+				0：完全透明
+				0.5：半透明
+				
+			颜色值:
+				1.单词
+				2.#16进制数值
+					#00FF00
+				3.rgb(0-255)
+					#rgb(0,255,0)
+				4.rgba(0-255,0-1)
+					alpha,透明度
+				
+				
+				##008000
+				##00ff00
+				rgb(0,122,0)
+		-->
+		<div id="box1">
+			<img src="img/kakaxi.jpg" />
+		</div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<div id="box4"></div>
+	</body>
+</html>

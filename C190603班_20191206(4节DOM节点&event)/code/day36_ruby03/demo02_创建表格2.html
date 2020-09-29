@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建表格</title>
+		<style type="text/css">
+			td{
+				width: 80px;
+				height: 30px;
+				border: 1px solid pink;
+				text-align: center;
+			}
+			table{
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		请输入行数：
+		<input type="text" id="input1"/><br />
+		请输入列数：
+		<input type="text" id="input2" /><br />
+		<button onclick="createTable2()">创建表格</button>
+		<button onclick="deleteTable2()">删除表格</button>
+		<table id="tab2" ></table>
+		
+		<script type="text/javascript">
+			/*
+			 * 创建表格的方式二：
+			 * 
+			 * tr =  table.insertRow(index)，创建行
+			 * td = tr.insertCell(index)，创建列
+			 * 
+			 * 
+			 * table.deleteRow(index),删除行
+			 * 
+			 */
+			//点击按钮，创建表格
+			function createTable2(){
+				//获取行
+				var row = document.getElementById('input1').value;
+				//获取列
+				var col = document.getElementById('input2').value;
+				
+				if(row<=0 ||isNaN(row)){
+					alert("输入的行数有误");
+					return;
+				}
+				if(col <= 0||isNaN(col)){
+					alert('输入的列数有误');
+					return;
+				}
+				
+				
+				//获取table对象
+				var tab2 = document.getElementById('tab2');
+				//在table上添加行，在行上添加列
+				//循环创建行
+				for(var i=0;i<row;i++){
+					var tr = tab2.insertRow(i);
+					//循环创建列
+					for(var j=0;j<col;j++){
+						var td = tr.insertCell(j);
+						td.innerHTML = i+'-'+j;
+					}
+				}
+				
+			}
+			//删除表格
+			function deleteTable2(){
+				var tab2 = document.getElementById('tab2');
+				tab2.deleteRow(2);//删除第一行
+			}
+		</script>
+	</body>
+</html>

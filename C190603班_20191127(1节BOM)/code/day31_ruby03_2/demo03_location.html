@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>location</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		/*
+		 * window
+		 * 		location对象，描述url信息。
+		 * 
+		 * url：在网络中，统一资源定位符。理解为网络地址
+		 * 
+		 * 	组成：
+		 * 	scheme：通信协议：比如http，https，fpt。。。
+		 * 	hostname：ip地址，主机名
+		 * 	port：端口
+		 * 	path：路径
+		 * 
+		 * url示例：
+		 * http://www.taobao.com/kdfjfkgkglgl.jpg
+		 * http://127.0.0.1:8020/day31_ruby03_2/demo03_location.html
+		 */
+		document.write("完整的URL路径："+window.location.href+"<br />");
+		document.write("主机名：："+window.location.hostname+"<br />");
+		document.write("协议：："+window.location.protocol+"<br />");
+		document.write("端口：："+window.location.port+"<br />");
+		document.write("路径：："+window.location.pathname+"<br />");
+		
+	</script>
+</html>

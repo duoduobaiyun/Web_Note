@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下拉选择</title>
+	</head>
+	<body>
+		请选择一张图片：
+		<select id="fruit" onchange="chooseFruit(this)">
+			<option value="0">-请选择-</option>
+			<option value="0002.jpg">皇冠梨</option>
+			<option value="0003.jpg">苹果</option>
+			<option value="0004.jpg">寿桃</option>
+			<option value="0005.jpg">芒果</option>
+			<option value="0006.jpg">蛇果</option>
+			<option value="0007.jpg">核桃</option>
+		</select>
+		<div style="width: 130px; height: 100px;  margin: 10px; ">
+			<img id="img1" src="" />
+		</div>
+		
+		<button  id="btn">浏览记录</button>
+		<div id="names"></div>
+		<script type="text/javascript">
+			/*
+			 * 问题的分析：
+			 * select标签元素：
+			 *		options，获取所有的option--->数组
+			 * 		length：option的个数
+			 * 		selectedIndex
+			 * 		value：被选中的option对应的value值
+			 */ 
+			 //定义数组，用于存储下拉选中的水果的名字
+			var arr = [];
+			function chooseFruit(obj){//obj = this
+				//1.获取下拉列表
+//				var sel = document.getElementById("fruit");
+				var sel = obj;
+				//2.获取下拉列表的value值
+				console.log(sel.value);
+				//3.显示到img上
+				var img1 = document.getElementById("img1");
+				img1.src = "img/"+sel.value;
+				
+				//4.获取被选中的下拉项的文本，存入数组中
+				var option = sel.options[sel.selectedIndex];
+				var fruitName = option.text;
+				
+				if(sel.value != 0){
+					arr.push(fruitName);
+//					arr.unshift(fruitName);
+				}
+
+				
+			}
+			
+			document.getElementById("btn").onclick  = function(){
+				var div2 = document.getElementById("names");
+				div2.innerHTML = arr;
+			}
+			
+		</script>
+	</body>
+</html>

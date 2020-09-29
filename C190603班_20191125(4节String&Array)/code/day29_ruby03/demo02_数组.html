@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 数组：一种特殊的类型，能够存储多个数据。
+		 * 
+		 * 	容器：存储多个数据。
+		 * 
+		 * 
+		 * 数组的定义：创建
+		 * 	最简单的方式：
+		 * 	var 数组名= [数值1，数值2，数值3...];
+		 * 
+		 * 
+		 * 	通过new关键字，调用构造函数
+		 * 	var 数组名 = new Array(数值1，数值2，数值3.。。。);
+		 * 
+		 * 
+		 * 数据类型：
+		 * 	简单类型：number，string，boolean
+		 * 	复杂类型：object
+		 * 		用法：对象.属性和对象.方法
+		 * 		Math对象，String对象，Array对象，Date对象
+		 * 	特殊类型：null，undefined
+		 * 
+		 */
+		//1.存储一个人的年龄
+		var age1 = 18;
+		console.log(age1);
+		var age2 = 19;
+		var age3 = 17;
+		var age4 = 18;
+		var age5 = 19;
+		var age6 = 20;
+		
+		//2.姓名：
+		var names = ["王二狗","李小花","肖睿哲"];
+		
+		console.log(typeof age1); //number
+		console.log(typeof names); //ojbect
+		
+		
+		//3.数组的其他创建方式
+		var names2 = new Array("王二狗","李小花","肖睿哲");
+		console.log(typeof names2);//object
+		
+		
+		//4.
+		var names3 = new Array(5);//创建数组，默认存储5个数值
+		 
+		//数组的长度：
+		/*
+		 * String对象：length
+		 * Arugments对象：实参对象，length
+		 * Array对象：数组的长度，
+		 * 	该数组中，存储的数据的个数
+		 */
+		
+		console.log(names.length);//3
+		console.log(names2.length);//3
+		console.log(names3.length);//5
+		
+		/*
+		 * 数组中的单个元素：数组名[index]
+		 * 	index：下标，就是索引，也就是每个数值在数组中的编号。
+		 * 		从0开始，到长度减1。
+		 */
+		console.log(names[0]);//王二狗
+		console.log(names[1]); //李小花
+		console.log(names[2]);//肖睿哲
+		
+		/*
+		 * 练习1：创建一个数组，存储你们的年龄。
+		 * 练习2：获取数组的长度
+		 * 练习3：打印数组中的每一个数值。
+		 */
+	</script>
+</html>

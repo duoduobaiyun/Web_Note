@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>样式的优先级</title>
+		<style>
+			div{
+				color: red;
+			}
+			p{
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			tag选择符与默认继承优先级比较，tag选择符的优先级高于默认继承
+			
+			标签选择器和继承来的样式比较：
+				标签选择器的优先级高于继承来的样式
+		-->
+		<div>
+			<p>还是一个段落</p>
+		</div>
+		
+	</body>
+</html>

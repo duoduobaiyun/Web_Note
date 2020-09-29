@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>键盘事件</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 键盘事件：
+			 * 
+			 * onkeydown，按键被按下
+			 * onkeyup，按键被抬起
+			 * onkeypress，按下并抬起
+			 * 
+			 * 
+			 * key，哪个键被按下了
+			 * keycode：被按下的键的码值
+			 * 
+			 * a：65，b：66
+			 * 箭头向左按键：37
+			 * 箭头向上按键：38
+			 * 箭头向右按键：39
+			 * 箭头向下按键：40
+			 * 
+			 * 空格：32
+			 */
+			//键盘按下
+			document.addEventListener('keydown',function(evt){
+				var e = evt || window.event;
+				console.log('按键被按下了。。')
+				console.log(e);
+				console.log('altKey:'+e.altKey+",ctrlkey："+e.ctrlKey+",shiftKey:"+e.shiftKey+',key:'+e.key+",keycode:"+e.keyCode);
+			})
+			
+			//键盘弹起
+			document.addEventListener('keyup',function(){
+				console.log('按键抬起。。')
+			})
+			
+			//按下并抬起
+			document.addEventListener('keypress',function(){
+				console.log('按下并抬起。。。')
+			})
+			
+			/*
+			 * 练习1：熟悉按键的编码值，
+			 * 练习2：
+			 */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>document</title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			
+		</form>
+		<form>
+			
+		</form>
+		<div>
+			我是div里的内容
+		</div>
+		<button onclick="test1()">按钮</button>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * DOM：文档对象模型，document object model
+		 * 
+		 * 	将html文档看成document对象。
+		 * 
+		 * 	属性：
+		 * 		获取：
+		 * 			document.属性
+		 * 		设置：
+		 * 			document.属性 = 新值;
+		 * 			
+		 * 	
+		 * 	方法：
+		 * 		document.write();//向文档上写出内容
+		 */
+		//文档的类型
+		console.log(document.doctype);//<!doctype html>
+		//文档的页面元素
+		console.log(document.documentElement);//页面内容
+		//head
+		console.log(document.head);
+		//body
+		console.log(document.body);
+		
+		//title
+		console.log(document.title);//文档的标题
+		
+		//获取表单
+		console.log(document.forms)
+		
+		//设置：
+		document.title = "今日头条";//设置文档的title
+		
+		//方法：
+		document.write("王二狗和李小花和肖睿哲");
+		
+		
+		function test1(){
+			document.write("加载页面后，再写出内容，会覆盖原来的内容。")
+		}
+	</script>
+</html>

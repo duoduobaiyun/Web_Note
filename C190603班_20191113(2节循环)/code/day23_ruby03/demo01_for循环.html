@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>for循环</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * for循环，while，do-while
+		 * 	有些代码，要反复的执行多次。就要使用循环语句。
+		 * 	条件满足，就多次执行，直到条件不满足。
+		 * 
+		 * for语句：
+		 * for(表达式1；表达式2；表达式3){
+		 * 	循环体；	 //多次循环执行的代码
+		 * }
+		 * 表达式1：只执行1次。习惯用于变量的定义，变量的初始化。
+		 * 表达式2：循环的条件，boolean类型的表达式
+		 * 表达式3：循环体执行之后执行的代码， 习惯用于变量的变化。
+		 * 
+		 * 执行过程：
+		 * step1：先执行表达式1.
+		 * step2：执行表达式2，
+		 * step3：如果表达式2的值为true，条件成立，那么执行循环体的代码
+		 * step4：执行循环体后，执行表达式3；
+		 * 
+		 * step5：再执行表达式2，判断条件是否成立，如果不成立，循环就结束了
+		 */
+//		console.log('hello world...');
+//		console.log('hello world...');
+//		console.log('hello world...');
+//		console.log('hello world...');
+//		console.log('hello world...');
+
+		for(var i = 0;i < 5; i++){
+			console.log('hello world'); //i:0,1,2,3,4
+		}
+		console.log(i);
+		console.log('循环结束啦。。')
+		/*
+		 * 练习1：使用for循环，打印1-5的数字：1，2，3，4，5
+		 * 练习2：使用for循环，打印7-3的数字：7，6，5，4，3
+		 * 练习3：使用for循环，求1-10的和
+		 * 	+1+2+3+4+5+6+7+8+9+10
+		 */
+		for(var i = 1;i<= 5;i++){
+			console.log(i);//1,2,3,4,5
+		}
+		
+		for(var i = 7;i > 2;i--){
+			console.log(i);//7,6,5,4,3
+		}
+
+		var sum = 0;//表示1-10的和结果
+//		sum += 1; // +1 
+//		sum += 2; // 1 + 2 = 3
+//		sum += 3; // 1 + 2 + 3 = 6
+//		sum += 4; // 1 + 2 + 3 + 4 = 10
+//		sum += 5; // 1 + 2 + 3 + 4 + 5 = 15
+//		sum += 6; //  1 + 2 + 3 + 4 + 5 + 6 = 21
+//		sum += 7; //..
+//		sum += 8;
+//		sum += 9;
+//		sum += 10; // 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 +9 + 10 =55
+//		console.log(sum);
+		
+		for(var i = 1;i <= 10;i++){
+			sum += i; // 1,2,....10
+		}
+		console.log(sum);
+		
+		
+	</script>
+</html>

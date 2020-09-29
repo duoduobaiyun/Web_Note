@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS样式</title>
+	</head>
+	<body>
+		<!--
+			1.CSS：层叠样式表，Cascading style sheet
+			
+			浏览器上运行html页面：
+				html：控制页面的结构：标签。
+				css：控制元素的样式，负责美观。
+				js：动态页面
+			
+			2.css的语法
+				行内样式：<标签 style="样式名:样式值;样式名:样式值;">
+				内部样式
+				外部样式
+			
+			3.常用样式：
+				宽度：
+					样式名：width
+					样式值：数值+单位
+						像素：px：pixel，[ˈpɪksl] 
+						
+				高度：
+					样式名：height
+					样式值：
+					
+				背景颜色：
+					样式名：background-color
+					样式值：
+						A：单词：red，green，blue，yellow，pink。。。
+						B：#16进制的颜色值：RGB
+							#RRGGBB：0-F
+								#ff0000，红色
+								#00ff00,绿色
+								#0000ff，蓝色
+								#000000，黑色
+								#ffffff，白色
+								
+						C：rgb(),rgba()
+							参数：0-255
+								r，g，b
+								
+							alpha：透明度，取值[0,1]
+								0全透明
+								1全不透明
+								
+								
+							rgb(255,0,0)
+							rgba(255,0,0,0.5)
+							
+							
+						D：opacity：透明度
+							[0,1]
+		-->
+		<div style="width: 500px; height: 200px; background-color: pink;">
+			<div style="width: 50%; height: 50% ;background-color: yellowgreen;"></div>
+		</div>
+	</body>
+</html>

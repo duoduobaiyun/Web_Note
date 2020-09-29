@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>课堂练习</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num1 = 100;
+			var str = 'hello';
+			var b1 = true; // 看成数值：1
+			var b2 = false; //看成数值：0
+			
+			
+			console.log(num1 + str);  // number+string --->string   
+			// 100hello
+			var res = num1 + str;//其他类型 和字符串，加在一起，就是拼接成一个新的字符串
+			
+			console.log(typeof res);  //string
+			
+			var res2 = num1 + b1; //number + boolean
+			console.log(res2); // 101
+			console.log(typeof res2); //number
+			
+			var res3 = num1 + b2; // number + boolean
+			console.log(res3); // 100
+			console.log(typeof res3); //number
+			
+			var c1 = undefined;
+			var res4 = num1 + c1; //number + undefined
+			console.log(res4); //NaN :not a number
+			console.log(typeof res4); //number
+			
+			var c2 = null; //计算的时候，当0算。
+			var res5 = num1 + c2;
+			console.log(res5); // 100
+			console.log(typeof res5); //number
+			
+		</script>
+	</body>
+</html>

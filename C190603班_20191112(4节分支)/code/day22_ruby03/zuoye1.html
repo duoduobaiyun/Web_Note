@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//4.已知班级HTML的考试平均成绩是95分，JavaScript课程的考试平均成绩比HTML多2.5分,求JavaScript的考试平均成绩
+		var HTMLScore = 95;
+		var JavaScriptScore = HTMLScore + 2.5;
+		console.log("js成绩："+JavaScriptScore);
+		
+		//9.定义一个四位数的整数，分别打印各个位数的值。
+		//比如1234，就分别打印千位数值1，百位数值2十位数值3，和个位数值4
+		//比如6498，就分别打印千位数值6，百位数值4十位数值9，和个位数值8
+		var num = 1234;
+		var qian = parseInt(num / 1000);
+		var ge = num % 10;
+		var bai = parseInt(num / 100) % 10;
+		var shi = parseInt(num % 100 / 10);
+		console.log("千位："+qian);
+		console.log("百位："+bai);
+		console.log("十位："+shi);
+		console.log("个位："+ge);
+		
+//		11.使用三目运算符来做：给定一个数字：正数，负数，零。
+		//条件？语句1：语句2
+		var a = 0;
+		var res = a > 0 ?"正数": a < 0 ?"负数":"零";
+		console.log(res);
+
+/*
+ * 附加题：
+ * 给一个成绩：
+0-59：不及格
+60-69：及格
+70-79：中等
+80-89：良好
+90-100：优秀
+
+五选一：条件运算符实现。
+ */
+	
+	</script>
+</html>

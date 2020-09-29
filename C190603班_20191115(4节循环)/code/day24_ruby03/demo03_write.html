@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多层循环</title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="box">
+		</div>
+		<button onclick="test1()">按钮</button>
+	</body>
+	<script type="text/javascript">
+		//打印内容：
+		console.log('haha')
+		//向页面显示内容：文档：document
+		document.write('哈哈哈') 
+		
+		var i = 100;//定义变量，var关键字用于定义变量。
+		//定义变量，存储数据，通过变量的名字来进行访问变量。
+		/*
+		 * 再button按钮上添加了onclick事件：
+		 * 	点击事件：表示按钮被点击后，执行test1函数
+		 * 
+		 * 	函数就是一个独立功能的代码块
+		 */
+		function test1(){// 定义函数，function关键字用于定义函数。
+//			alert('点我啊') //弹出警告框
+			document.write('向页面写内容。。。')//向文档中显示内容，覆盖文档上原来的内容。
+		}
+	</script>
+</html>

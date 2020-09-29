@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>string对象的常用方法</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 字符串对象的常用方法
+		 * 	1.获取指定的内容
+		 * 		charAt(index)-->string
+		 * 		charCodeAt(index)-->number
+		 * 
+		 * 	2.字符串的截取
+		 * 		subString(start,end)-->string
+		 * 		slice(start,end)-->string
+		 * 		substr(start,length)-->string
+		 * 
+		 * 	3.查找类
+		 * 
+		 */
+		var s1 = "helloworld";
+		
+		//1.属性：length
+		console.log(s1.length);//10
+		
+		//2.获取对应下标的字符,charAt(index)-->char，index的值：0-长度减1
+		var c1 = s1.charAt(0);//获取下标为0，对应的字符，s1[0]
+		console.log(c1);
+		
+		console.log(s1.charAt(5));//w
+		
+		//3.charCodeAt(index)-->number，获取该字符串中指定下标，对应的字符的unicode编码值。ASCII编码，gbk，gb2312。。
+		//a:97,b:98,c:99,d:100,e:101
+		//A:65,B:66,C:67.....
+		
+		//0-65535之间
+		var code1 = s1.charCodeAt(1);// e-->101
+		console.log(code1)
+		
+		var s2 = "王二狗";
+		console.log(s2.charCodeAt(0));
+		
+		//4.字符串的截取：substring(startIndex,endIndex)-->string
+		//截取的字符串：[startIndex,endIndex)
+		var s3 = s1.substring(5,10);
+		console.log(s3);
+		console.log(s1.substring(2,7));//helloworld-->llowo
+		
+		console.log(s1.substring(4));//从4开始，到末尾结束，oworld
+		
+		//5.substr(start,length),从指定位置开始截取，个数
+		
+		var s4 = s1.substr(4,4);//helloworld
+		console.log(s4);//owor
+		
+		//6slice(start,end)-->string[start,end)
+		var s5 = s1.slice(5,10);
+		console.log(s5);
+		
+		var s6 = s1.slice(-4,-1);
+		console.log(s6);
+		
+		// 6.查找字符串,indexOf()，在字符串中查找指定的字符，返回该字符的下标,如果没有就返回-1
+		//该字符串第一次出现的位置
+		var s7 = "abcdabde";
+		var index1 = s7.indexOf("a");
+		console.log(index1); //0
+		var index2 = s7.indexOf("abd");
+		console.log(index2);//4
+		var index3 = s7.indexOf("haha");
+		console.log(index3);//-1
+		
+		
+		//7.lastIndexOf()-->index，最后一次出现的位置，相当于从后往前找
+		var index4 = s7.lastIndexOf("d");// 最后一次出现的位置：6
+		console.log(index4);
+		var index5 = s7.indexOf("d");//第一次出现的，3
+		console.log(index5);
+		
+		
+
+		
+		
+		
+	</script>
+</html>

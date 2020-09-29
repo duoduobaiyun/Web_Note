@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取元素的其他方式</title>
+		<style>
+			#div1{
+				background: red;
+			}
+			.myclass{
+				background-color: pink;
+			}
+			div{
+				width: 100px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			div1
+		</div>
+		<div class="myclass">div2</div>
+		<div class="myclass">div3</div>
+		<div class="myclass">div4</div>
+		<div class="myclass">div5</div>
+		
+		<input type="radio" name="sex" value="male" class="mysex"/>男
+		<input type="radio" name="sex" value="female" class="mysex"/>女
+		<br />
+		<input type="checkbox" name="hobby" value="sport"/>运动
+		<input type="checkbox" name="hobby" value="eat"/>吃饭
+		<input type="checkbox" name="hobby" value="sleep"/>睡觉
+		<input type="checkbox" name="hobby" value="study"/>学习
+		<br />
+		<button onclick="test1()">根据id获取元素</button><br />
+		<button onclick="test2()">根据TagName获取元素</button><br />
+		<button onclick="test3()">根据ClassName获取元素</button><br />
+		<button onclick="test4()">根据Name属性获取元素</button><br />
+		<button onclick="test5()">根据querySelector()获取元素</button><br />
+		<button onclick="test6()">根据querySelectorAll()获取元素</button><br />
+		
+		<script type="text/javascript">
+			/*
+			 * 获取元素的方法：
+			 * 	1.方式一：根据id获取
+			 * 			getElementById()-->一个
+			 * 
+			 * 	2.方式二：根据标签名，获取一组元素
+			 * 			getElementsByTagName()-->一组
+			 * 
+			 * 	3.方式三：根据class获取，获取一组
+			 * 			getElementsByClassName()-->一组
+			 * 
+			 * 	4.方法四：根据name属性，获取一组
+			 * 			getElementsByName()-->一组
+			 * 
+			 * 	CSS选择器的获取：
+			 * 		querySelector()-->一个
+			 * 		querySelectorAll()-->一组
+			 */
+			function test1(){
+				var div1 = document.getElementById("div1");
+				console.log(div1);
+			}
+			
+			function test2(){
+				//根据标签来获取元素：一个集合，数组
+				var divs = document.getElementsByTagName('div');	
+				console.log(divs);
+				console.log(divs.length);//5个
+				
+				var div1 = divs[0];//获取这组div中的第一个div
+				console.log(div1);
+				var div4 = divs[3];
+				console.log(div4);
+			}
+			
+			function test3(){
+				var divs=document.getElementsByClassName("myclass");
+				console.log(divs);
+				console.log(divs.length)
+				
+				var div2 = document.getElementsByClassName("myclass")[0];
+				console.log(div2);
+			}
+			
+			function test4(){
+				var checkboxs = document.getElementsByName("hobby");
+				console.log(checkboxs);
+				console.log(checkboxs.length);
+				console.log(checkboxs[3]);//第4个复选框
+				
+			}
+			
+			function test5(){
+				var div1 = document.querySelector("#div1");
+				console.log(div1);
+			}
+			
+			function test6(){
+				var radios = document.querySelectorAll(".mysex");
+				console.log(radios);
+				console.log(radios.length);
+			}
+		</script>
+	</body>
+</html>

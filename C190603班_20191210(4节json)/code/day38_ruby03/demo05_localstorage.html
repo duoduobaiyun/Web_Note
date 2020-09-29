@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>localstorage</title>
+	</head>
+	<body>
+		<a href="demo06_localstorage2.html" target="_blank">跳转</a>
+		<button id="btn1">删除name</button>
+		<button id="btn2">清除</button>
+		<br />
+		<br />
+		<br />
+		<br />
+		<script type="text/javascript">
+			/*
+			 * localStorage，没有时间限制的一种存储方式。客户端
+			 * 
+			 * 特点：没有时间限制，关闭浏览器，数据还在
+			 * 如何存储：key-value
+			 * 
+			 * sessionStorage，也是可以存储数据。真对一次浏览器的会话。-->浏览器关闭，数据就删除。
+			 * 
+			 * window.localStorage
+			 * 
+			 * 	存储数据：setItem(key,value)
+			 * 	获取数据：getItem(key)-->value
+			 * 	删除数据：removeItem(key)
+			 * 
+			 * 	清除：clear()
+			 * 
+			 * 简便写法：
+			 * 	localStorage.key = value
+			 * 	localStorage.key--->获取
+			 */
+			//向本客户端存储数据
+			localStorage.setItem('name','王二狗');
+			localStorage.setItem('age','30');
+			//获取数据
+			document.write(localStorage.getItem('name')+"<br />")
+			document.write(localStorage.getItem('age')+"<br />")
+			
+			
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			btn1.onclick = function(){
+				//删除name这组数据
+				localStorage.removeItem('name');
+			}
+			
+			btn2.onclick = function(){
+				//清除
+				localStorage.clear();
+				
+			}
+			
+			//直接存储到sessionStorage
+			sessionStorage.setItem('classNumber','C190603班');
+			document.write(sessionStorage.getItem('classNumber'));
+			
+			
+			
+		</script>
+	</body>
+</html>

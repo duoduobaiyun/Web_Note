@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>dowhile</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * do{
+		 * 	循环体；
+		 * }while（条件）；
+		 * 
+	*/
+		var i = 1;
+		do{
+			console.log('helloworld');
+			i++;
+		}while(i <= 5);
+		
+		/*
+		 * 练习1：使用dowhile循环，打印1-100内的奇数
+		 * 练习2：使用dowhile循环，求1-10的和
+		 */
+		i = 1;
+		do{
+			if(i % 2 != 0){
+				console.log(i);
+			}
+//			i+=2;
+			i++;
+		}while(i <= 100);
+		
+		i = 1;
+		var sum= 0;
+		do{
+			sum += i;
+			i++;
+		}while(i<=10);
+		console.log(sum);
+		
+	</script>
+	
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播图</title>
+		<style type="text/css">
+			#container{
+				width: 440px;
+				height: 586px;
+				margin: 0 auto;
+				position: relative;
+			}
+			#container img{
+				width: 440px;
+				height: 586px;
+			}
+			#container ul{
+				list-style: none;
+				height: 10px;
+				text-align: center;
+				/*margin: 0 auto;*/
+				/*background-color: pink;*/
+				padding: 0px;
+				width: 300px;
+				position: absolute;
+				bottom: 20px;
+				left: 70px;
+			}
+			#container ul li{
+				float: left;
+				width: 20px;
+				height: 20px;
+				background: #CCC;
+				margin: 5px;
+				border-radius: 5px;
+			}
+			#container ul li:hover{
+				cursor: pointer;
+			}
+			
+			.directionButton{
+				width: 50px;
+				height: 80px;
+				background-color: rgba(0,0,0,0.5);
+				color: #FFFFFF;
+				font-size: 30px;
+				text-align: center;
+				line-height: 80px;
+				display: none;
+			}
+			#left{
+				position: absolute;
+				left: 0;
+				top: 253px;
+			}
+			#right{
+				position: absolute;
+				right: 0;
+				top: 253px;
+			}
+			.directionButton:hover{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img src="img/img000.jpg" id="pic"/>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+			</ul>
+			<div id="left" class="directionButton">&lt;</div>
+			<div id="right" class="directionButton">&gt;</div>
+		</div>
+		
+		<script type="text/javascript">
+			var pic = document.getElementById('pic');
+			var lis = document.getElementsByTagName('li');
+			lis[0].style.backgroundColor = "#F00";
+			
+			var index = 0;
+			function change(){
+				index++;
+				if(index ==lis.length){
+					index = 0;
+				}
+				pic.src = "img/img00"+index+".jpg";//src="img/img000.jpg"
+				changeColor();
+			}
+			
+			function changeColor(){
+				//A：将所有的li的颜色改为原始背景色
+				for(var i=0;i<lis.length;i++){
+					lis[i].style.backgroundColor = '#CCC';
+				}
+				//B:改变当前的li的为红色
+				lis[index].style.backgroundColor = '#F00';
+			}
+			var t1 = setInterval("change()",2000);
+			
+			
+			//li 点击事件
+			for(var i = 0;i<lis.length;i++){
+//				alert(i);//1,2,3,4,5
+				lis[i].tag = i; ////<li tag='0'></li>
+				lis[i].onclick = function(){
+					console.log(i);//都是5
+					console.log(this);
+					console.log(this.tag);
+//					console.log(lis[i].tag);//报错
+					index = this.tag;
+					pic.src = "img/img00"+index+".jpg";
+					changeColor();
+				}
+			}
+			
+			document.getElementById("container").onmouseover = function(){
+				clearInterval(t1);
+				leftButton.style.display = "block";
+				rightButton.setAttribute("style" , "display:block");
+			}
+			document.getElementById("container").onmouseout = function(){
+				t1 = setInterval("change()",3000);
+				leftButton.style.display = "none";
+				rightButton.setAttribute("style" , "display:none");
+			}
+			
+			//获取按钮
+			var leftButton = document.getElementById("left");
+			var rightButton = document.getElementById("right");
+			//点击左侧按钮
+			leftButton.onclick = function(){
+				index--;
+				if(index == -1){
+					index = lis.length-1;
+				}
+				pic.src = "img/img00"+index+".jpg";//src="img/img000.jpg"
+				changeColor();
+			}
+			
+			//点击右侧按钮
+			rightButton.onclick = function(){
+				change();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组的方法</title>
+	</head>
+	<body>
+		<button onclick="testPush();">push()方法</button><br />
+		<button onclick="testPop();">pop()方法</button><br />
+		<button onclick="testUnShift();">unshift()方法</button><br />
+		<button onclick="testShift();">shift()方法</button><br />
+		<button onclick="testSplice();">splice()方法</button><br />
+		<button onclick="testSlice();">slice()方法</button><br />
+		<button onclick="testIndexOf();">indexOf()方法</button><br />
+		<button onclick="testOther();">其他方法</button><br />
+		<button onclick="testSort();">sort方法</button><br />
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 数组的常用方法：
+		 * 添加类
+		 * 1.push(),添加元素，数组末尾添加
+		 * 2.pop()，删除元素，数组末尾删除
+		 * 3.unshift(),添加元素，数组开头添加
+		 * 4.shift()，删除元素，删除数组的第一个元素。
+		 * 5.splice(index,howmany,el，el。。。),添加，删除，替换。。
+		 * 
+		 * 
+		 * 查找：
+		 * 1.indexOf()
+		 * 2.lastIndexOf()
+		 * 
+		 * 截取：
+		 * 1.slice()
+		 * 
+		 * 
+		 * 
+		 */
+		//1.push()方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。
+		function testPush(){
+			var arr = ["我","是","小白兔"];
+			console.log(arr);
+			console.log(arr.length)
+			var len = arr.push("才怪");
+			console.log(arr);
+			console.log(arr.length)
+			console.log(len);
+		}
+		
+		//2.pop()方法用于删除数组的最后一个元素，并返回该元素。
+		function testPop(){
+			var arr = ["我","是","小白兔"];
+			console.log(arr);
+			console.log(arr.length);
+			var el = arr.pop();
+			console.log(arr);
+			console.log(el); //小白兔
+			
+			arr.pop();
+			console.log(arr);
+			
+			arr.pop();
+			console.log(arr);
+		}
+		
+		//3.unshift()方法用于在数组前添加一个或多个元素，并返回添加新元素后的数组长度。
+		function testUnShift(){
+			var arr = ["我","是","小白兔"];
+			console.log(arr);
+			var len = arr.unshift("白骨精","小钻风")
+			console.log(arr);
+			console.log(len);
+		}
+		
+		//4.shift()方法用于删除数组的起始元素，并返回该元素。
+		function testShift(){
+			var arr = ["我","是","小白兔"];
+			var el = arr.shift();
+			console.log(arr);
+			console.log(el);
+			arr.shift();
+			console.log(arr);
+			arr.shift();
+			console.log(arr);
+
+		}
+		
+		/*
+		 * 5.splice()，可以用于数组在任意位置上的添加，删除，替换等操作。
+		 * 	第一个参数：index，从哪个下标开始操作
+		 * 	第二个参数：howmany：删除的数量，0表示不删除
+		 * 	第三个参数：可选的，要添加的元素
+		 * 
+		 * 返回值：被删除的数组
+		 */
+		function testSplice(){
+			var a = [1,2,3,4,5,6,7];
+			console.log(a);
+			//删除操作
+//			var b = a.splice(1,2);//从下标为1开始的位置，删除2个元素，返回值b是被删除的数组
+//			var b = a.splice(2,3);//从下标为2开始的位置，删除3个元素，
+//			console.log(a);
+//			console.log(b);
+			
+			
+			//添加元素
+//			var b = a.splice(2,0,"haha");//在下标为2的位置，添加"haha"
+//			a.splice(5,0,"王二狗","李小花");//下标为5的位置，添加2个元素
+//			console.log(a);
+//			console.log(b);
+
+			//替换
+//			var b = a.splice(1,1,100);//从下标1开始操作，删除1个元素，添加100
+			var b = a.splice(2,2,100,200);//从下标为2开始操作，删除2个元素，添加100,200,2个元素。
+			console.log(a);
+			console.log(b);
+		}
+		
+		
+		//6.slice(start,end)，slice()方法为截取数组，也可将其看作为查找数组的方法。第一个参数为数组的起始位置，第二个参数为数组的结束位置，且不包括结束位置。
+		function testSlice(){
+			var a = ['a','b','c','d','e','f','g','h'];
+			console.log(a);
+			var b = a.slice(1,5);
+			console.log(b);
+		}
+		
+		//7.indexOf(),在数组中查找指定的元素，返回第一次下标，如果没有返回-1
+		//8.lastIndexOf(),从后往前找
+		function testIndexOf(){
+			var a = ['a','b','c','d','e','c','g','h'];
+			var index = a.indexOf('c');
+			console.log(index);
+		}
+		
+		// 9.concat()，拼接数组，得到新的数组。
+		//10.join()方法以参数作为分隔符，将所有数组成员组成一个字符串返回。
+		//如果不提供参数，默认用逗号分隔。
+		//11.reverse(),数组中的元素，前后颠倒。
+		function testOther(){
+//			var a = [1,2,3];
+//			var b = [4,5,6];
+//			var c = [7,8,9];
+//			var d = a.concat(b);
+//			console.log(a);
+//			console.log(b);
+//			console.log(d);
+//			d = d.concat(c);
+//			console.log(d);
+
+			var a = ["王二狗","李小花","肖睿哲"];
+//			var str = a.join("爱");//"*","-",
+//			console.log(str);
+
+
+			var b = a.reverse();
+			console.log(b);
+		}
+		
+		//12.sort(),sort()方法对数组成员进行排序，默认是按照字典顺序排序。
+		function testSort(){
+			var a = [1, 12, 5, 23, 4, 36];
+			console.log(a);
+			a.sort();
+			console.log(a);
+			
+			var b = ['a','c','d','b'];
+			console.log(b);
+			b.sort();
+			console.log(b);
+			
+			var c = [2,1];
+			c.sort(compare)
+			console.log(c);
+			
+			a.sort(compare);
+			console.log(a);
+			
+			
+		}
+		//比较函数：比较a和b的大小：
+		/*
+		 * 函数的返回值：
+		 * 	负数：a < b
+		 * 	正数：a > b
+		 *  零： a = b
+		 *  
+		 */
+		function compare(a,b){
+			if(a > b){
+				return 1;//正数
+			}else if(a < b){
+				return -1;
+			}else{
+				return 0;
+			}
+		}
+		function compare2(a,b){
+			return a - b;
+		}
+	</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>visibility</title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 50px;
+			}
+			#box1{
+				background: pink;
+			}
+			#box2{
+				background: palegoldenrod;
+				/*display: none;*/
+				visibility:hidden ;
+			}
+			#box3{
+				background: tomato;
+			}
+</style>
+	</head>
+	<body>
+	<!--
+		隐藏，不显示：
+			display: none;消失了，空间也释放了
+			
+		visibility:可见的
+			visible:可见的
+			hidden：隐藏的，看不见了，但是没有释放空间
+	-->
+		<div id="box1">
+			
+		</div>
+		<div id="box2">
+			
+		</div>
+		<div id="box3">
+			
+		</div>
+	</body>
+</html>

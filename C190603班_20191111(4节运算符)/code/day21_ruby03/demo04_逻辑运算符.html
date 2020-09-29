@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>逻辑运算符</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 逻辑运算符：操作数是boolean，运算的结果也是boolean类型。
+		 * 
+		 * &&：逻辑与运算，相当于“并且”
+		 * 	运算规则：操作数如果都为真，结果就为真，有一个为假，结果就为假。
+		 * 	结论：全真则真，一假则假
+		 * 
+		 * ||:逻辑或运算，相当于“或者”
+		 * 	运算规则：操作数如果都为假，结果就为假，有要给为真，结果就为真。
+		 * 	结论：一真则真，全假则假。
+		 * 
+		 * !：逻辑非，取反
+		 * 	!true-->false
+		 * 	!false-->true
+		 */
+		var b1 = true;
+		var b2 = true;
+		var b3 = false;
+		
+		var res = b1 && b2 && b3 && b1 && b2; 
+		console.log(res);
+		
+		var res2 = b1 || b2 || b3;
+		console.log(res2);
+		
+		console.log(b1);//true;
+		console.log(!b1);//对b1进行取反，false
+		
+		
+		var a = 3;
+		var b = 4;
+		var res3 = a > b && a != b && a >= b;
+		/*			f  &&  t   &&  f
+		 * 			false
+		 */
+		console.log(res3);
+		var res4 = a > b || a != b || a >= b;
+		/*
+		 * 			f  ||  t || f
+		 */
+		console.log(res4);
+		
+		var num = 100;
+		console.log(num); // 100
+		console.log(!num); //false
+		console.log(!!num);// false-->true
+		
+		console.log(Boolean(num));
+		
+		
+	</script>
+</html>

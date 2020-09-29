@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>聚焦和失焦</title>
+	</head>
+	<body>
+		用户名：
+		<input type="text" id="input1" />
+		<span id="span1"></span>
+		<br />
+		密&nbsp;&nbsp;&nbsp;码：
+		<input type="password" id="input2" />
+		<span id="span2"></span>
+		
+		<script type="text/javascript">
+			/*
+			 * 聚焦和失焦
+			 * onfocus：
+			 * 
+			 * onblur：
+			 */
+			
+			//input1，聚焦事件，给提示信息
+			//事件，元素，函数
+			var input1 = document.getElementById('input1');
+			var span1 = document.getElementById('span1');
+			//聚焦
+			input1.addEventListener('focus',function(){
+				//span1上设置提示信息
+				span1.innerHTML = '用户名的长度3-5个字符'
+			})
+			
+			//失焦
+			input1.addEventListener('blur',function(){
+				//获取用户名，判断是否满足规则
+				var username = input1.value;
+				if(username.length <3 || username.length > 5){
+					span1.innerHTML = '用户名的长度必须是3-5个字符！！！'
+					span1.style.color = 'red';
+				}else{
+					span1.innerHTML = '√';
+					span1.style.color = 'green';
+				}
+			})
+			
+			//用户名：3-5个字符，密码：5-10个字符
+			var input2 = document.getElementById('input2');
+			var span2 = document.getElementById('span2');
+			input2.addEventListener('focus',function(){
+				span2.innerHTML = '密码的长度5-10个字符'
+			})
+			
+			input2.addEventListener('blur',function(){
+				//密码
+				var password = input2.value;
+				if(password.length < 5 || password.length > 10){
+					span2.innerHTML = '密码的长度必须是5-10个字符！！！';
+					span2.style.color = 'red';
+				}else{
+					span2.innerHTML = '√';
+					span2.style.color = 'green';
+				}
+			})
+			
+		</script>
+	</body>
+</html>

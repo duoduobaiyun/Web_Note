@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button  id="btn">按钮</button>
+		<script type="text/javascript">
+		//定义函数：
+			function foo(e){//e，是形参，接收调用处传来的实参
+				console.log('函数执行了。。');
+				console.log(e);//event对象
+			}
+			//直接调用
+			foo();
+			//事件驱动：当事件发生的时候，浏览器来执行该函数，那么会自动的传入event对象
+			
+			
+			var btn = document.getElementById('btn');
+			//点击文档
+			document.onclick = function(e){
+				console.log(e);
+			}
+			
+			
+		</script>
+	</body>
+</html>

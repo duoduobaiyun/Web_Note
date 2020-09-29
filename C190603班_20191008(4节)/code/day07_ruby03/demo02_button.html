@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>按钮</title>
+	</head>
+
+	<body>
+		
+		<!--
+			表单一定先写form标签
+			action：要提交的路径，是服务器的地址
+			
+			
+			事件：理解为就是发生了什么事儿
+			按钮分为两种：
+				带事件：
+					reset：重置
+					submit：提交，自动处罚form表单中action属性的url地址
+					
+				不带事件：未来学习js，自己写事件调用函数
+					button：
+					image：
+		-->
+		<form action="demo01_form.html">
+			用户名：
+			<input type="text" name="username" />
+			<br /> 
+			密&nbsp;码：
+			<input type="password" name="pwd" />
+			<br />
+			<input type="button" value="普通按钮" onClick="alert('点我啊')" />
+			<input type="image" src="img/qq.gif" />
+			<input type="reset" value="重置" />
+			<input type="submit" value="提交" />
+		</form>
+		
+		
+		
+	</body>
+
+</html>

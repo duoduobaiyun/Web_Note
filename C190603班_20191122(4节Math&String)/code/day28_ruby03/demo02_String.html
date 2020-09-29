@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>String对象</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 字符串：
+		 * 	string类型
+		 * 	String对象
+		 * 		length
+		 * 
+		 * Date，Array。。。
+		 * 
+		 * 
+		 * new：关键字
+		 * 	词义：新建
+		 * 	专门用于创建对象：语法new 构造函数();
+		 * 		new String()--->String对象
+		 * 		new Date()--->Date对象
+		 * 		new Array()--->数组对象
+		 * 
+		 * 
+		 * string对象：
+		 * 		属性
+		 * 		方法：
+		 */
+		
+		//1.使用字面值创建字符串。
+		var s1 = "hello";//
+		console.log(typeof s1); //string
+		//s1在语法是string类型，length等这些属性或方法，是对象调用。
+		//s1是string类型，但是使用String对象的属性和方法到时候，看成object类型。
+		
+		
+		//2.使用构造方法/函数来创建字符串对象：专门用于创建对象
+		var s2 = new String("hello");
+		console.log(typeof s2); //object
+		console.log(s1);
+		console.log(s2);
+		
+		
+		//3.字符串的长度：字符的个数
+		//字符串的长度属性：length
+		console.log(s1.length);//对象访问属性，5
+		
+		
+		//根据国家的字符计算长度
+		var s3 = "王二狗bushi好人";
+		console.log(s3.length);//10
+		
+		
+		//访问字符串中的单个字符：根据编号，下标
+//		console.log(s1[0]);
+//		console.log(s1[1]);
+//		console.log(s1[2]);
+//		console.log(s1[3]);
+//		console.log(s1[4]);
+//		console.log(s1[5]); //undefined
+		
+		//遍历字符串：
+		/*
+		 * 遍历：依次访问：
+		 * 		从第一个字符，访问到最后一个字符
+		 */
+		
+		for(var i =0;i<s1.length;i++){
+			console.log(s1[i]);
+		}
+		
+		/*
+		 * 练习：定义一个字符串：激励你同桌一辈子的话：中文英文
+		 * 练习：将上面 字符串，打印长度
+		 * 练习：遍历打印该字符串中的每一个字符
+		 */
+		
+		
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>样式的继承</title>
+		<style>
+			div{
+				font-size: 30px;
+				color: green;
+				border: 2px solid red;
+			}
+			p{
+				border: inherit;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			样式的继承：
+				不是所有的的样式都可以继承
+				外观类的样式：字体颜色，粗细，是否倾斜，大小。。。可以被继承
+				布局相关的样式：不会被继承
+				
+				如果非要继承父类的，默认不被继承的样式，可以强行继承：使用inherit
+		-->
+		<div>
+			<p>div里的段落</p>
+		</div>
+	</body>
+</html>

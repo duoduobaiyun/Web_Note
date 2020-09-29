@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数的返回值</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 函数的返回值：
+		 * 	就是一个函数，将执行之后的结果，返回给调用处。
+		 * 	需要使用return语句。
+		 * 		return后的内容，就是要反回的数据
+		 * 		返回哪里？调用处
+		 */
+		//1.设计一个函数，求1-10的和，并将结果返回到调用处
+		function foo(){
+			var sum = 0;//局部变量
+			for( var i = 1;i <= 10;i++){
+				sum += i;
+			}
+//			console.log(sum); //55
+			return sum;//将sum的值返回给调用处。
+//			return 100;
+		}
+		var res = foo(); //res = 100
+		console.log(res);
+		
+		
+		//2.设计一个函数，求两个数的最大值
+		function getMax(a, b){
+			if ( a > b){
+				return a;
+			}else{
+				return b;
+			}
+		}
+		var res2 = getMax(10,20);
+		console.log(res2);
+		/*
+		 * 练习1：设计一个函数，返回n的阶乘，在调用处打印
+		 * 练习2：最大公约数和最小公倍数：
+		 * 		最小公倍数：两个相乘，除以最大公约数。
+		 */
+		
+		function jieCheng(n){//!5 = 5*4*3*2*1		1*2*3*4*5
+			var mul = 1;
+			for(var i = 1;i <= n;i++ ){
+				mul *= i;
+			}
+			return mul;
+		}
+		var res3 = jieCheng(5); //res3 = mul;
+		console.log(res3);
+		console.log(jieCheng(6)); //直接打印函数的结果，就是打印函数中return后的数据
+	</script>
+</html>

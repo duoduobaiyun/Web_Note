@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>递归函数</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/*
+		 * 递归函数：一个函数自己调用自己。
+		 * 		递归函数有出口，每一层递归函数，都是逐渐的向出口靠近。
+		 * 	
+		 * 	
+		 */
+		function test(){
+			console.log("hello world ..test()")
+//			test();
+		}
+		test();
+		
+		/*
+		 * 求1-5的和:
+		 * 	getSum(5) == getSum(4) + 5			--->15
+		 * 		
+		 * 		getSum(4) 相当于：getSum(3) + 4		---> 10
+		 * 
+		 * 				getSum(3) 相当于 getSum(2) + 3	----->6
+		 * 
+		 * 					getSum(2) 相当于 getSum(1) + 2	---->3
+		 * 
+		 * 						getSum(1)--->1
+		 * 
+		 */
+		function getSum(n){
+			console.log("*******")
+			if(n == 1){
+				return 1;
+			}
+			return getSum(n - 1)+n;
+		}
+		var sum = getSum(5);
+		console.log(sum);
+		/*
+		 * 练习1：使用递归函数，求n的阶乘。
+		 */
+	</script>
+</html>

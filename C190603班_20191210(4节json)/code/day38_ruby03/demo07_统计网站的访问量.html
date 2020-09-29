@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<span id="span1"></span>
+		
+		<script type="text/javascript">
+			/*
+			 * 利用localstroage的存储特点，统计一下访问当前这个页面的访问量
+			 * 
+			 * count:0-->1--->2-->3
+			 * 
+			 * localstorage.setItem('count',1)
+			 * 
+			 */
+			//从localstorage中获取count的值
+			//5
+			//null
+			var count = localStorage.count;//getItem
+			console.log(count);
+			if(count == null){
+				//第一次有人访问
+				localStorage.count=1;//setItem()
+				
+			}else{
+				count++;
+				localStorage.count=count;
+			}
+			
+			
+			var span1  = document.getElementById('span1');
+			span1.innerHTML = '你是第'+count+"个访问本站的人。。"
+		</script>
+	</body>
+</html>
